@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sale;
 use App\Category;
+use App\Location;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -16,7 +17,8 @@ class SaleController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('front.postadd.sale', compact('categories'));  
+        $locations = Location::all();
+        return view('front.postadd.sale', compact('categories','locations'));  
     }
 
     /**
@@ -37,25 +39,21 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
+      
+
         $request->validate([
             'name' => 'required',
             'categories' => 'required',
             'price' => 'required',
             'detail' => 'required',
-            'image' => 'required|mimes:jpeg, png, svg, gif, jpg',
             'location' => 'required'
         ]);
-        if(hasFile('image')){
-            $image = time().'.'.$req->getClientOriginalExtension();
-            $req->image->move(public_path('uploads'), $image);
-        }
         Sale::create([
-            'name' => $req->name,
-            'category'=> $req->category,
-            'price' => $req->price,
-            'detail' => $req->detail,
-            'image' => $req->image->getClientOriginalExtension(),
-            'location' => $req->location,
+            'name' => $request->name,
+            'categories'=> $request->categories,
+            'price' => $request->price,
+            'detail' => $request->detail,
+            'location' => $request->location,
         ]);
         return redirect()->back()->with('msg','Your Product has been Posted for sale!');
     }

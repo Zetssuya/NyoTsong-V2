@@ -10,8 +10,6 @@ Route::prefix('admin')->group(function() {
 
         // Categories
         Route::post('/categories/category/add', 'CategoryController@store');
-
-        // Route::resource('/category', 'CategoryController');
         Route::get('/categories/category', 'CategoryShowController@index');
         Route::get('/categories/addcategory', 'CategoryController@index');
 
@@ -40,8 +38,9 @@ Route::prefix('front')->group(function() {
         //Add Product
         Route::get('/postadd/postad', 'PostAddController@index');
         //sale
-        Route::get('/postadd/sale', 'SaleController@index');
         Route::post('/postadd/sale/add', 'SaleController@store');
+        Route::get('/postadd/sale', 'SaleController@index');
+        
 
 
     });
