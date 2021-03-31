@@ -17,7 +17,13 @@
             <li>
                 <a href="{{ url('/admin/categories/category') }}">
                     <i class="ti-panel"></i>
-                    <p>Add Product Category</p>
+                    <p>Product Category</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/admin/locations/location') }}">
+                    <i class="ti-panel"></i>
+                    <p>Location</p>
                 </a>
             </li>
             <li>

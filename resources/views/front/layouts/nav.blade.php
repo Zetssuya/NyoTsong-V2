@@ -32,7 +32,7 @@
     </a>
     </li>
     <li class="nav-item dropdown active">
-    <a class="nav-link" href="post-ads" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link" href="{{ url('/front/postadd/postad') }}" aria-haspopup="true" aria-expanded="false">
     Post an Ad
     </a>
     </li>

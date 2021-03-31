@@ -15,6 +15,10 @@ Route::prefix('admin')->group(function() {
         Route::get('/categories/category', 'CategoryShowController@index');
         Route::get('/categories/addcategory', 'CategoryController@index');
 
+        // location
+        Route::post('/locations/location/add', 'LocationController@store');
+        Route::get('/locations/location', 'LocationShowController@index');
+        Route::get('/locations/addlocation', 'LocationController@index');
 
         // Users
         Route::resource('/users','UsersController');
@@ -30,7 +34,18 @@ Route::prefix('admin')->group(function() {
 });
 
 // Front User routes
+Route::prefix('front')->group(function() {
+    Route::middleware('auth:web')->group(function(){
+        
+        //Add Product
+        Route::get('/postadd/postad', 'PostAddController@index');
+        //sale
+        Route::get('/postadd/sale', 'SaleController@index');
+        Route::post('/postadd/sale/add', 'SaleController@store');
 
+
+    });
+});
 
 /*
  * Front Routes
