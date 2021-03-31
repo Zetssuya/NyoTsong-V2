@@ -12,7 +12,8 @@ Route::prefix('admin')->group(function() {
         Route::post('/categories/category/add', 'CategoryController@store');
 
         // Route::resource('/category', 'CategoryController');
-        Route::get('/categories/category', 'CategoryController@index');
+        Route::get('/categories/category', 'CategoryShowController@index');
+        Route::get('/categories/addcategory', 'CategoryController@index');
 
 
         // Users

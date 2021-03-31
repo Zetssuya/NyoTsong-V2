@@ -3,46 +3,51 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-lg-10 col-md-10">
-            @include('admin.layouts.message')
-            @if ( $errors->any() )
+<div class="container">
+	<div class="page-header">
+		<div class="pull-right">
+			<a href="{!! url('/admin/categories/addcategory') !!}" class="btn btn-primary">Add <i class="fa fa-plus"></i></a>
+		</div>
+		<h2>Categories</h2>
+       
+	</div>
+	@if(Session::has('flash_message'))
+				    <div class="alert alert-success">
+				    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span></button>
+				        {{ Session::get('flash_message') }}
+				    </div>
+	@endif
+     
+<div class="panel panel-default panel-shadow">
+    <div class="panel-body">
+         
+        <table id="data-table" class="table table-striped table-hover dt-responsive" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>Name</th>                           
+                <th class="text-center width-100">Action</th>
+            </tr>
+            </thead>
 
-<div class="alert alert-danger">
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
+            <tbody>
+            @foreach($categories as $i => $category)
+            <tr>
+                <td class="text-center-justified width-100">{{$category->category}}</td>                
+                <td class="text-center">
+                <a href="#" class="btn btn-success">Edit</a>
+                <a href="#" class="btn btn-danger" onclick="return confirm('Are you sure? You will not be able to recover this.')">Delete</i></a>
+            </td>
+            </tr>
+             @endforeach
+            </tbody>
+        </table>
+         <!-- {{ $categories->links() }} -->
+    </div>
+    <div class="clearfix"></div>
 </div>
 
-@endif
-            <div class="card">
-                <div class="header">
-                    <h4 class="title">Add Product Category</h4>
-                </div>
-
-                <div class="content">
-                    <form method="POST" action="{{ action('CategoryController@store')}}">
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            @include('admin.categories._fields')
-
-                            <div class="form-group">
-                            <button class="btn btn-success" type="submit">ADD</button>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="clearfix"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 
 
 @endsection
