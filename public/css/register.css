@@ -1,0 +1,138 @@
+body {
+  background: #fbf3ff !important;
+}
+
+.container {
+  /* position: absolute !important; */
+  /* max-width: 800px !important; */
+  /*height: 400px !important; */
+  /* margin: auto !important; */
+  top: 50% !important;
+  /* left: 50% !important;
+  /* transform: translate(-50%, -50%) !important; */
+}
+.myCard {
+  position: relative !important;
+  background: #fff !important;
+  height: 100% !important;
+  border-radius: 25px !important;
+  -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7) !important;
+  -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7) !important;
+}
+.myLeftCtn {
+  position: relative !important;
+  background: #fff !important;
+  border-radius: 25px !important;
+  height: 100% !important;
+  padding: 25px !important;
+  padding-left: 50px !important;
+}
+.myLeftCtn header {
+  color: blueviolet;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.myLeftCtn .myInput {
+  width: 230px;
+  border-radius: 25px;
+  padding: 10px;
+  padding-left: 50px;
+  border: none;
+  -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+}
+.myLeftCtn .myInput:focus {
+  outline: none;
+}
+.myLeftCtn .butt {
+  background: linear-gradient(45deg, #bb36fd, #9b00e8);
+  color: #fff;
+  width: 230px;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+}
+.myLeftCtn .butt:hover {
+  background: linear-gradient(45deg, #c85bff, #b726ff);
+}
+.myLeftCtn .butt:focus {
+  outline: none;
+}
+.myLeftCtn .fas {
+  position: relative;
+  color: #bb36fd;
+  left: 36px;
+}
+.myForm {
+  position: relative !important;
+  margin-top: 50px !important;
+}
+.indent {
+  height: 100%;
+}
+.row {
+  height: 100%;
+}
+.box {
+  position: relative;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+.butt_out {
+  background: transparent;
+  color: #fff;
+  width: 120px;
+  border: 2px solid#fff;
+  border-radius: 25px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+}
+.butt_out:hover {
+  border: 2px solid#eecbff;
+}
+.butt_out:focus {
+  outline: none;
+}
+.myRightCtn {
+  position: relative;
+  background-image: linear-gradient(45deg, #23346e, #40a13d);
+  border-radius: 26px;
+  height: 100%;
+  padding: 26px;
+  color: rgb(192, 192, 192);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myRightCtn header {
+  color: #fff;
+  font-size: 44px;
+}
+.butt_out {
+  background: transparent;
+  color: #fff;
+  width: 120px;
+  border: 2px solid#fff;
+  border-radius: 25px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+}
+.butt_out:hover {
+  border: 2px solid#eecbff;
+}
+.butt_out:focus {
+  outline: none;
+}
+.fas {
+}
