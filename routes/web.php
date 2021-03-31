@@ -9,9 +9,11 @@ Route::prefix('admin')->group(function() {
         Route::get('/', 'DashboardController@index');
 
         // Categories
+        Route::post('/categories/category/add', 'CategoryController@store');
+
         // Route::resource('/category', 'CategoryController');
         Route::get('/categories/category', 'CategoryController@index');
-        Route::post('storecategory', 'CategoryController@store')->name('storecategory');
+
 
         // Users
         Route::resource('/users','UsersController');
@@ -25,6 +27,9 @@ Route::prefix('admin')->group(function() {
     Route::get('/login', 'AdminUserController@index');
     Route::post('/login', 'AdminUserController@store');
 });
+
+// Front User routes
+
 
 /*
  * Front Routes

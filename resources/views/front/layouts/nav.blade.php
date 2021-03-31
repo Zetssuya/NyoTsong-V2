@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-    <a class="nav-link" href="index" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link" href="/" aria-haspopup="true" aria-expanded="false">
     Home
     </a>
     </li>
