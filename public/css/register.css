@@ -1,38 +1,53 @@
 body {
-  background: #fbf3ff !important;
+  background: #fbf3ff;
 }
-
-.container {
-  /* position: absolute !important; */
-  /* max-width: 800px !important; */
-  /*height: 400px !important; */
-  /* margin: auto !important; */
-  top: 50% !important;
-  /* left: 50% !important;
-  /* transform: translate(-50%, -50%) !important; */
-}
-.myCard {
-  position: relative !important;
-  background: #fff !important;
-  height: 100% !important;
-  border-radius: 25px !important;
-  -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7) !important;
-  -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7) !important;
-  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7) !important;
+.myRightCtn {
+  position: relative;
+  background-image: linear-gradient(45deg, #8d8f2d, #4c36b1);
+  border-radius: 25px;
+  height: 100%;
+  padding: 25px;
+  color: rgb(192, 192, 192);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .myLeftCtn {
-  position: relative !important;
-  background: #fff !important;
-  border-radius: 25px !important;
-  height: 100% !important;
-  padding: 25px !important;
-  padding-left: 50px !important;
+  position: relative;
+  background: #fff;
+  border-radius: 25px;
+  height: 100%;
+  padding: 25px;
+  padding-left: 50px;
 }
 .myLeftCtn header {
   color: blueviolet;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
+}
+.row {
+  height: 100%;
+}
+.myCard {
+  position: relative;
+  background: #fff;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+}
+.myRightCtn header {
+  color: #fff;
+  font-size: 44px;
+}
+.box {
+  position: relative;
+  margin: 20px;
+  margin-bottom: 100px;
+  color: rgb(0, 0, 0);
 }
 .myLeftCtn .myInput {
   width: 230px;
@@ -46,6 +61,10 @@ body {
 }
 .myLeftCtn .myInput:focus {
   outline: none;
+}
+.myForm {
+  position: relative;
+  margin-top: 60px;
 }
 .myLeftCtn .butt {
   background: linear-gradient(45deg, #bb36fd, #9b00e8);
@@ -69,21 +88,6 @@ body {
   color: #bb36fd;
   left: 36px;
 }
-.myForm {
-  position: relative !important;
-  margin-top: 50px !important;
-}
-.indent {
-  height: 100%;
-}
-.row {
-  height: 100%;
-}
-.box {
-  position: relative;
-  margin: 20px;
-  margin-bottom: 100px;
-}
 .butt_out {
   background: transparent;
   color: #fff;
@@ -100,39 +104,4 @@ body {
 }
 .butt_out:focus {
   outline: none;
-}
-.myRightCtn {
-  position: relative;
-  background-image: linear-gradient(45deg, #23346e, #40a13d);
-  border-radius: 26px;
-  height: 100%;
-  padding: 26px;
-  color: rgb(192, 192, 192);
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.myRightCtn header {
-  color: #fff;
-  font-size: 44px;
-}
-.butt_out {
-  background: transparent;
-  color: #fff;
-  width: 120px;
-  border: 2px solid#fff;
-  border-radius: 25px;
-  padding: 10px;
-  -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-}
-.butt_out:hover {
-  border: 2px solid#eecbff;
-}
-.butt_out:focus {
-  outline: none;
-}
-.fas {
 }
