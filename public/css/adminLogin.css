@@ -1,0 +1,97 @@
+body {
+  background: #fbf3ff !important;
+}
+.myLeftCtn {
+  position: relative !important;
+  background: #fff !important;
+  border-radius: 25px !important;
+  height: 100% !important;
+  padding: 15px !important;
+  padding-left: 300px !important;
+}
+.myLeftCtn header {
+  color: rgb(118, 36, 196) !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+}
+.row {
+  height: 100% !important;
+}
+.myCard {
+  position: relative !important;
+  background: #fff !important;
+  height: 100% !important;
+  border-radius: 25px !important;
+  margin-top: 25px !important;
+  margin-left: 145px !important;
+  -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7) !important;
+  -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7) !important;
+}
+.myRightCtn header {
+  color: #fff !important;
+  font-size: 44px !important;
+}
+.box {
+  position: relative !important;
+  margin: 20px !important;
+  margin-bottom: 100px !important;
+  color: rgb(0, 0, 0) !important;
+}
+.myLeftCtn .myInput {
+  width: 230px !important;
+  border-radius: 25px !important;
+  padding: 10px !important;
+  padding-left: 50px !important;
+  border: none !important;
+  -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7) !important;
+  -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7) !important;
+}
+.myLeftCtn .myInput:focus {
+  outline: none !important;
+}
+.myForm {
+  position: relative !important;
+  margin-top: 60px !important;
+}
+.myLeftCtn .butt {
+  background: linear-gradient(45deg, #bb36fd, #9b00e8) !important;
+  color: #fff !important;
+  width: 230px !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 10px !important;
+  -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7) !important;
+  -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7) !important;
+}
+.myLeftCtn .butt:hover {
+  background: linear-gradient(45deg, #c85bff, #b726ff) !important;
+}
+.myLeftCtn .butt:focus {
+  outline: none !important;
+}
+.myLeftCtn .fas {
+  position: relative !important;
+  color: #bb36fd !important;
+  left: 36px !important;
+}
+.butt_out {
+  background: transparent !important;
+  color: #fff !important;
+  width: 120px !important;
+  border: 2px solid#fff !important;
+  border-radius: 25px !important;
+  padding: 10px !important;
+  -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7) !important;
+  -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7) !important;
+}
+.butt_out:hover {
+  border: 2px solid#eecbff !important;
+}
+.butt_out:focus {
+  outline: none !important;
+}
