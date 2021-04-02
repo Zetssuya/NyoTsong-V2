@@ -41,7 +41,7 @@ Route::prefix('front')->group(function() {
         Route::post('/postadd/sale/add', 'SaleController@store');
         Route::get('/postadd/sale', 'SaleController@index');
         //donation
-        Route::post('/postadd/sale/add', 'DonationController@store');
+        Route::post('/postadd/donation/add', 'DonationController@store');
         Route::get('/postadd/donation', 'DonationController@index');
         
 
