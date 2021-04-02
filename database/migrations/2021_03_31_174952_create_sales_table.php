@@ -20,6 +20,7 @@ class CreateSalesTable extends Migration
             $table->string('categories');
             $table->float('price');
             $table->string('detail');
+            $table->string('image');
             $table->string('location');
             $table->timestamps();
         });

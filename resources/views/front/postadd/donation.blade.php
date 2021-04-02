@@ -35,19 +35,16 @@
     </div>
 
     </div>
-    <!-- <div class="form-group md-3">
+    <div class="form-group md-3">
     </section>
     </div>
     <label class="tg-fileuploadlabel" for="tg-photogallery">
-    <span>Drop files anywhere to upload</span>
-    <span>Or</span>
-    <span class="btn btn-common">Select Files</span>
-    <span>Maximum upload file size: 5 MB</span>
+    <span class="btn btn-common">Select Product Image</span>
     <input id="tg-photogallery" class="tg-fileinput" type="file" name="image">
     </label>
     </div>
     </div>
-    </div> -->
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
     <div class="inner-box">
     <div class="tg-contactdetail">

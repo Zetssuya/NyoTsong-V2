@@ -41,11 +41,18 @@ class DonationController extends Controller
         $request->validate([
             'name' => 'required',
             'detail' => 'required',
+            'image' => 'image|required|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'location' => 'required'
         ]);
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $new_name = rand().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path("uploads"), $new_name);
+        }
         Donation::create([
             'name' => $request->name,
             'detail' => $request->detail,
+            'image' => $request->image,
             'location' => $request->location,
         ]);
         return redirect()->back()->with('msg','Your Product has been Posted for donation!');

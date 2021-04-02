@@ -54,19 +54,16 @@
     </div>
 
     </div>
-    <!-- <div class="form-group md-3">
+    <div class="form-group md-3">
     </section>
     </div>
     <label class="tg-fileuploadlabel" for="tg-photogallery">
-    <span>Drop files anywhere to upload</span>
-    <span>Or</span>
-    <span class="btn btn-common">Select Files</span>
-    <span>Maximum upload file size: 5 MB</span>
+    <span class="btn btn-common">Select Product Image</span>
     <input id="tg-photogallery" class="tg-fileinput" type="file" name="image">
     </label>
     </div>
     </div>
-    </div> -->
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
     <div class="inner-box">
     <div class="tg-contactdetail">
@@ -88,21 +85,18 @@
     @foreach($locations as $i => $location)
         <option value="{{$location->id}}">{{$location->location}}</option>
     @endforeach
-    <!-- <option value="none">Electronics</option>
-    <option value="none">Land</option>
-    <option value="none">Vehicles</option> -->
     </select>
     </div>
     </div>
     </div>
     </div>
     
-    <!-- <div class="tg-checkbox">
+    <div class="tg-checkbox">
     <div class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input" id="tg-agreetermsandrules">
     <label class="custom-control-label" for="tg-agreetermsandrules">I agree to all NyoTsong <a href="javascript:void(0);">Privacy Terms &amp; Conditions</a></label>
     </div>
-    </div> -->
+    </div>
     <div class="form-group">
     <button class="btn btn-common" type="submit">Post Ad</button>
     </div>

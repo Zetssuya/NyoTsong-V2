@@ -18,7 +18,7 @@ class CreateDonationsTable extends Migration
             // $table->integer('user_id');
             $table->string('name');
             $table->string('detail');
-            //$table->string('image');
+            $table->string('image');
             $table->string('location');
             $table->timestamps();
         });
