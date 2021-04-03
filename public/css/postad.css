@@ -1,0 +1,55 @@
+.page-title {
+  color: rgb(96, 42, 146);
+  font-size: 40px;
+}
+.myCard {
+  position: relative;
+  background: rgb(62, 26, 85);
+  height: 400px;
+  width: 250px;
+  border-radius: 30px;
+  -webkit-box-shadow: 5px 10px 40px -5px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 5px 10px 40px -5px rgba(0, 0, 0, 0.7);
+  box-shadow: 5px 10px 40px -5px rgba(0, 0, 0, 0.7);
+}
+
+.button {
+  position: relative;
+  top: 90px;
+  text-align: center;
+  padding: 5px 25px;
+  max-width: 150px;
+  margin-left: 37px;
+  font-size: 35px;
+  color: #15f4ee;
+  font-family: poppins;
+  /* font-weight: 100; */
+  border: 5px solid #15f4ee;
+  letter-spacing: 5px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 1.5s;
+}
+
+.button:hover {
+  box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+    0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+  text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+}
+.second {
+  position: relative;
+  top: 130px;
+  text-align: center;
+  padding: 5px 25px;
+  max-width: 150px;
+  margin-left: 11px;
+  font-size: 35px;
+  color: #15f4ee;
+  font-family: poppins;
+  font-weight: 100;
+  border: 5px solid #15f4ee;
+  letter-spacing: 5px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 1.5s;
+}
