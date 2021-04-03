@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-lg-3 col-sm-6">
             <div class="card">
                 <div class="content">
@@ -25,12 +25,12 @@
                     <div class="footer">
                         <hr/>
                         <div class="stats">
-                            <a href="{{ url('/products') }}"><i class="ti-panel"></i> Details</a>
+                            <p><i class="ti-panel"></i> Total products posted for sale and donation</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="col-lg-3 col-sm-6">
             <div class="card">
                 <div class="content">
@@ -43,13 +43,14 @@
                         <div class="col-xs-7">
                             <div class="numbers">
                                 <p>Sales</p>
+                                {{ $sale->count() }}
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr/>
                         <div class="stats">
-                            <a href="{{ url('/orders') }}"><i class="ti-panel"></i> Details</a>
+                            <a href="{{ url('/admin/salesNdons/sale') }}"><i class="ti-panel"></i> Details</a>
                         </div>
                     </div>
                 </div>
@@ -67,13 +68,14 @@
                         <div class="col-xs-7">
                             <div class="numbers">
                                 <p>Donations</p>
+                                {{ $donation->count() }}
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr/>
                         <div class="stats">
-                            <a href="{{ url('/orders') }}"><i class="ti-panel"></i> Details</a>
+                            <a href="{{ url('/admin/salesNdons/donation') }}"><i class="ti-panel"></i> Details</a>
                         </div>
                     </div>
                 </div>
@@ -98,7 +100,7 @@
                     <div class="footer">
                         <hr/>
                         <div class="stats">
-                            <a href="{{ url('/users') }}"><i class="ti-panel"></i> Lists</a>
+                            <a href="{{ url('/admin/users') }}"><i class="ti-panel"></i> Lists</a>
                         </div>
                     </div>
                 </div>

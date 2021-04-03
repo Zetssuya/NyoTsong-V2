@@ -12,7 +12,7 @@ class Sale extends Model
 
     public $timestamps = false;
     
-    public function sale(){
-        return $this->belongsTo('App\Sale');
-     }
+    // public function sale(){
+    //     return $this->belongsTo('App\Sale');
+    //  }
 }
