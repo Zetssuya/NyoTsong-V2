@@ -27,13 +27,13 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url('/admin') }}">
+                <a href="{{ url('/admin/salesNdons/sale') }}">
                     <i class="ti-archive"></i>
                     <p>Sales Products</p>
                 </a>
             </li>
             <li>
-                <a href="{{ url('/admin') }}">
+                <a href="{{ url('/admin/salesNdons/donation') }}">
                     <i class="ti-archive"></i>
                     <p>Donation Products</p>
                 </a>

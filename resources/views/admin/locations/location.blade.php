@@ -1,5 +1,7 @@
 @extends('admin.layouts.master')
-
+@section('page')
+    Product Location
+@endsection
 
 @section('content')
 

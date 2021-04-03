@@ -11,4 +11,8 @@ class Sale extends Model
     protected $fillable = ['name','categories','price','detail','image','location'];
 
     public $timestamps = false;
+    
+    public function sale(){
+        return $this->belongsTo('App\Sale');
+     }
 }

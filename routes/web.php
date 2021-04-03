@@ -18,6 +18,12 @@ Route::prefix('admin')->group(function() {
         Route::get('/locations/location', 'LocationShowController@index');
         Route::get('/locations/addlocation', 'LocationController@index');
 
+        //sales product
+        Route::get('/salesNdons/sale', 'SaleProcuctController@index');
+
+        // Donation Product
+        Route::get('/salesNdons/donation', 'DonationProcuctController@index');
+
         // Users
         Route::resource('/users','UsersController');
 
