@@ -32,7 +32,7 @@
     <select name="categories" class="form-select" required>
         <option value="none">Select Category</option>
             @foreach($categories as $i => $category)
-                 <option value="{{$category->id}}">{{$category->category}}</option>
+                 <option value="{{$category->category}}">{{$category->category}}</option>
             @endforeach
 
     </select>
@@ -83,7 +83,7 @@
     
     <option value="none">Select Product Location</option>
     @foreach($locations as $i => $location)
-        <option value="{{$location->id}}">{{$location->location}}</option>
+        <option value="{{$location->location}}">{{$location->location}}</option>
     @endforeach
     </select>
     </div>

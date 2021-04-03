@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Sale;
+use App\Category;
 use App\SaleProcuct;
 use Illuminate\Http\Request;
 

@@ -29,7 +29,7 @@
                 <th>Category</th> 
                 <th>Price</th> 
                 <th>Detail</th> 
-                <th>Image Name</th> 
+                <th>Image</th> 
                 <th>Location</th> 
                 <th class="text-center width-100">Action</th>
             </tr>
@@ -43,7 +43,7 @@
                 <td class="text-center-justified width-100">{{$sdata->categories}}</td>  
                 <td class="text-center-justified width-100">{{$sdata->price}}</td> 
                 <td class="text-center-justified width-100">{{$sdata->detail}}</td>                    
-                <td class="text-center-justified width-100">{{$sdata->image}}</td>                
+                <td class="text-center-justified width-100"><img height = "50px" src="{{ url('/uploads/') . '/' . $sdata->image }}"></td>                
                 <td class="text-center-justified width-100">{{$sdata->location}}</td>                  
                 <td class="text-center">
                     <a href="#" class="btn btn-success">Edit</a>
