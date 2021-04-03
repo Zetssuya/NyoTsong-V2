@@ -64,7 +64,7 @@
     
     <option value="none">Select Product Location</option>
     @foreach($locations as $i => $location)
-        <option value="{{$location->id}}">{{$location->location}}</option>
+        <option value="{{$location->location}}">{{$location->location}}</option>
     @endforeach
   
     </select>

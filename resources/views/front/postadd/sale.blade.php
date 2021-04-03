@@ -19,6 +19,7 @@
 
 <form action="{{ action('SaleController@store')}}" method="POST" enctype="multipart/form-data">
     @csrf
+
     <div class="dashboard-wrapper">
     <div class="form-group mb-3">
     <label class="control-label">Product Name</label>

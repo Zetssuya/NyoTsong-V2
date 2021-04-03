@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Sale;
 use App\Category;
 use App\Location;
@@ -55,8 +56,9 @@ class SaleController extends Controller
             $new_name = $image->getClientOriginalName();
             $image->move(public_path("uploads"), $new_name);
         }
-           
+        $user_id = Auth::User()->id;   
         Sale::create([
+            'user_id' => $user_id,
             'name' => $request->name,
             'categories'=> $request->categories,
             'price' => $request->price,

@@ -24,7 +24,7 @@
         <table id="data-table" class="table table-striped table-hover dt-responsive" cellspacing="0" width="100%">
             <thead>
             <tr>
-                <!-- <th>User Id</th>   -->
+                <th>User Id</th>  
                 <th>Name</th> 
                 <th>Detail</th> 
                 <th>Image Name</th> 
@@ -36,10 +36,10 @@
             <tbody>
             @foreach($dondata as $i => $ddata)
             <tr>
-                <!-- <td class="text-center-justified width-100">{{$ddata->user_id}}</td>  -->
+                <td class="text-center-justified width-100">{{$ddata->user_id}}</td> 
                 <td class="text-center-justified width-100">{{$ddata->name}}</td>
                 <td class="text-center-justified width-100">{{$ddata->detail}}</td>                    
-                <td class="text-center-justified width-100">{{$ddata->image}}</td>                
+                <td class="text-center-justified width-100"><img height = "50px" src="{{ url('/uploads/') . '/' . $ddata->image }}"></td>              
                 <td class="text-center-justified width-100">{{$ddata->location}}</td>                  
                 <td class="text-center">
                     <a href="#" class="btn btn-success">Edit</a>

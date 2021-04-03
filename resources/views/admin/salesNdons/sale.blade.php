@@ -24,7 +24,7 @@
         <table id="data-table" class="table table-striped table-hover dt-responsive" cellspacing="0" width="100%">
             <thead>
             <tr>
-                <!-- <th>User Id</th>   -->
+                <th>User Id</th>  
                 <th>Name</th> 
                 <th>Category</th> 
                 <th>Price</th> 
@@ -38,7 +38,7 @@
             <tbody>
             @foreach($saledata as $i => $sdata)
             <tr>
-                <!-- <td class="text-center-justified width-100">{{$sdata->user_id}}</td>  -->
+                <td class="text-center-justified width-100">{{$sdata->user_id}}</td> 
                 <td class="text-center-justified width-100">{{$sdata->name}}</td>                
                 <td class="text-center-justified width-100">{{$sdata->categories}}</td>  
                 <td class="text-center-justified width-100">{{$sdata->price}}</td> 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Donation;
 use App\Location;
 use Illuminate\Http\Request;
@@ -46,13 +47,15 @@ class DonationController extends Controller
         ]);
         if($request->hasFile('image')){
             $image = $request->file('image');
-            $new_name = rand().'.'.$image->getClientOriginalExtension();
+            $new_name = $image->getClientOriginalName();
             $image->move(public_path("uploads"), $new_name);
         }
+        $user_id = Auth::User()->id;  
         Donation::create([
+            'user_id' => $user_id,
             'name' => $request->name,
             'detail' => $request->detail,
-            'image' => $request->image,
+            'image' => $request->image->getClientOriginalName(),
             'location' => $request->location,
         ]);
         return redirect()->back()->with('msg','Your Product has been Posted for donation!');
