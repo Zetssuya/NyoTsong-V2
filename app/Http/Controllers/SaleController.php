@@ -19,7 +19,7 @@ class SaleController extends Controller
     {
         $categories = Category::all();
         $locations = Location::all();
-        return view('front.postadd.sale', compact('sales','categories','locations'));  
+        return view('front.postadd.sale', compact('categories','locations'));  
     }
 
     /**

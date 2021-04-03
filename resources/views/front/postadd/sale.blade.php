@@ -1,13 +1,24 @@
+<link href="{{ asset('/css/sale.css') }}" rel="stylesheet">
 @extends('front.layouts.master')
 
 @section('content')
 
-<div class="col-sm-12 col-md-8 col-lg-9">
+<div class="col-sm-12 col-md-8 col-lg-9 myCard">
+    <style>
+        body {
+        background-image: url('/assets/img/product_sale.svg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 55% 55%;
+        background-position: right;
+        }
+    </style>
 <div class="row page-content">
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
 <div class="inner-box">
 <div class="dashboard-box">
-<h2 class="dashbord-title">Ads Detail</h2>
+    <br>
+    <h2 class="dashbord-title">Ads Detail</h2>
 </div>
 @if($message = Session::get('msg'))
     <div class="alert alert-success alert-block">
@@ -17,13 +28,13 @@
 @endif
 
 
-<form action="{{ action('SaleController@store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{ action('SaleController@store')}}" method="POST" enctype="multipart/form-data" class="myForm">
     @csrf
 
     <div class="dashboard-wrapper">
     <div class="form-group mb-3">
     <label class="control-label">Product Name</label>
-    <input class="form-control input-md" name="name" placeholder="Enter product name" autofocus type="text">
+    <input class="myInput" name="name" placeholder="Enter product name" autofocus type="text">
     <span class="text-danger">{{$errors->first('name')}}</span>
     </div>
 
@@ -41,7 +52,7 @@
     </div>
     <div class="form-group mb-3">
     <label class="control-label">Product Price</label>
-    <input class="form-control input-md" name="price" placeholder="Enter product price" type="text">
+    <input class="myInput" name="price" placeholder="Enter product price" type="text">
     <span class="text-danger">{{$errors->first('price')}}</span>
     <div class="tg-checkbox mt-3">
     </div>
@@ -49,7 +60,7 @@
 
     <div class="form-group-lg md-3">
     <label class="control-label">Product Detail</label>
-    <textarea class="form-control input-md" name="detail" placeholder="Enter product Details" type="text"></textarea>
+    <textarea class="myInputProduct" name="detail" placeholder="Enter product details" type="text"></textarea>
     <span class="text-danger">{{$errors->first('detail')}}</span>
     <div class="tg-checkbox mt-3">
     </div>
@@ -95,7 +106,7 @@
     <div class="tg-checkbox">
     <div class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input" id="tg-agreetermsandrules">
-    <label class="custom-control-label" for="tg-agreetermsandrules">I agree to all NyoTsong <a href="javascript:void(0);">Privacy Terms &amp; Conditions</a></label>
+    <label class="custom-control-label" for="tg-agreetermsandrules">I agree to all NyoTsong <a href="javascript:void(0);">Product Guidelines &amp; Conditions</a></label>
     </div>
     </div>
     <div class="form-group">
