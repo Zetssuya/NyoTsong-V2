@@ -51,7 +51,9 @@ Route::prefix('front')->group(function() {
         Route::post('/postadd/donation/add', 'DonationController@store');
         Route::get('/postadd/donation', 'DonationController@index');
         
-
+        //user profile
+        Route::get('/updateprofile', 'UpdateUserProfileController@index');
+        Route::post('/updateprofile', 'UpdateUserProfileController@store');
 
     });
 });
@@ -74,5 +76,6 @@ Route::post('/user/login','Front\SessionsController@store');
 Route::get('/user/logout','Front\SessionsController@logout');
 
 Route::get('/user/profile', 'Front\UserProfileController@index');
+
 
 
