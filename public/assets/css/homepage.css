@@ -1,0 +1,51 @@
+body,
+html {
+  height: 100%;
+}
+.hero-image {
+  background-image: linear-gradient(
+    rgba(199, 151, 49, 0.5),
+    rgba(199, 151, 49, 0.5)
+  );
+  height: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(151, 25, 124);
+}
+#search-bar {
+  height: 46px;
+  margin-top: -100px;
+  border-radius: 48px;
+  border: 1px solid rgb(88, 10, 107);
+  width: 100%;
+  padding-right: 40px;
+  padding-left: 10px;
+}
+#search-btn {
+  height: 46px;
+  margin-top: -100px;
+  border-top-right-radius: 48px;
+  border-bottom-right-radius: 48px;
+  padding: 15px;
+  font-size: 1.1em;
+  position: absolute;
+  right: 15px;
+  border: 0.5px solid rgb(88, 10, 107);
+}
+.carousel-cell {
+  width: 50%;
+  margin-top: -50px;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+}
