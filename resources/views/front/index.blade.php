@@ -21,4 +21,5 @@
 @include('front.layouts.slider')
 @include('front.layouts.product_display')
 
+
 @endsection

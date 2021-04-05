@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+          <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
           
     {{-- CDNs for product display blade --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -21,15 +23,16 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ url('assets/css/heroic-features.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/footer.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('style')
 
 </head>
-
 <body>
 
 @include('front.layouts.nav')
     @yield('content')
+@include('front.layouts.footer')
 
 
 
