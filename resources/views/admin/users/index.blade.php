@@ -40,7 +40,7 @@
                                 <td>{{ $user->created_at->diffForHumans() }}</td>
                                 <td>
                                     <button class="btn btn-success ti-settings" title="Edit User"> Edit</button>
-                                    <button class="btn btn-success ti-close" title="Delete User"> Delete</button>                                    
+                                    <button class="btn btn-danger ti-close" title="Delete User" onclick="return confirm('Are you sure? You will not be able to recover this.')"> Delete</button>                                    
                                 </td>
 
                             </tr>

@@ -37,8 +37,7 @@
             <tr>
                 <td class="text-center-justified width-100">{{$category->category}}</td>                
                 <td class="text-center">
-                <a href="#" class="btn btn-success">Edit</a>
-                <a href="#" class="btn btn-danger" onclick="return confirm('Are you sure? You will not be able to recover this.')">Delete</i></a>
+                <button class="btn btn-danger ti-close" title="Delete Category" onclick="return confirm('Are you sure? You will not be able to recover this.')"> Delete</button>
             </td>
             </tr>
              @endforeach
