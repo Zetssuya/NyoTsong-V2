@@ -1,8 +1,8 @@
-<link href="{{ asset('/css/postad.css') }}" rel="stylesheet">
+
 @extends('front.layouts.master')
 
 @section('content')
-
+<link href="{{ asset('/css/postad.css') }}" rel="stylesheet">
 <div>
 	{{-- SVG Image --}}
 	<style>
