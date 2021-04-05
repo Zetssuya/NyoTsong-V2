@@ -9,6 +9,14 @@
     <meta name="author" content="">
 
     <title>Home</title>
+    {{-- for login page --}}
+    <link href="{{ asset('/css/userLogin.css') }}" rel="stylesheet">
+    {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+    {{-- for login page --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,7 +31,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ url('assets/css/heroic-features.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/footer.css') }}" rel="stylesheet">
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('style')
 
@@ -32,8 +40,6 @@
 
 @include('front.layouts.nav')
     @yield('content')
-@include('front.layouts.footer')
-
 
 
 <!-- Bootstrap core JavaScript -->
