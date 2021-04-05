@@ -21,6 +21,8 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Profile Photo</th>
+                            <th>Contact Number</th>
                             <th>Registered at</th>
                             <th>Actions</th>
                         </tr>
@@ -33,12 +35,12 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td><img  height = "100px" src="{{ url('/uploads/') . '/' . $user->image }}" alt="Profile image here" ></td>
+                                <td>{{ $user->contact_no }}</td>
                                 <td>{{ $user->created_at->diffForHumans() }}</td>
                                 <td>
-                                    <button class="btn btn-sm btn-success ti-close" title="Block User"></button>
-
-                                   {{ link_to_route('users.show', 'Details', $user->id, ['class'=>'btn btn-success btn-sm']) }}
-
+                                    <button class="btn btn-success ti-settings" title="Edit User"> Edit</button>
+                                    <button class="btn btn-success ti-close" title="Delete User"> Delete</button>                                    
                                 </td>
 
                             </tr>

@@ -13,8 +13,8 @@ class UserProfileController extends Controller
         $id = auth()->user()->id;
         $user = User::where('id', $id)->first();
 
-        $profdata = UpdateUserProfile::all();
+        // $profdata = UpdateUserProfile::all();
 
-        return view('front.profile.index', compact('user','profdata'));
+        return view('front.profile.index', compact('user'));
     }
 }

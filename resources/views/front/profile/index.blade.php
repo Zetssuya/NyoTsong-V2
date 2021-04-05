@@ -28,9 +28,9 @@
     </table> -->
     <div class="flex-align">
         <div class="rounded-circle ">
-        @foreach($profdata as $i => $pdata)
-            <img  height = "100px" src="{{ url('/uploads/') . '/' . $pdata->image }}" alt="Profile image here" >
-        @endforeach
+        
+            <img  height = "100px" src="{{ url('/uploads/') . '/' . $user->image }}" alt="Profile image here" >
+        
         
             <div class="pull right">
                 <a href="/front/updateprofile" class="pull-right"><i class="fa fa-cogs"></i> Update Profile</a>

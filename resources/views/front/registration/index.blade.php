@@ -29,7 +29,7 @@
 
                     @endif
 
-                    <form class="myForm col-md-6" action="/user/register" method="post">
+                    <form class="myForm col-md-6" action="/user/register" method="post" enctype="multipart/form-data">
 
                         @csrf
 
@@ -47,6 +47,14 @@
 
                         <div class="form-group">
                             <input type="password" name="password_confirmation" placeholder="Confirm Password" id="password_confirmation" class="form-control myInput">
+                        </div>
+
+                        <div class="form-group">
+                            <span class="btn btn-common">Your Profile Photo</span>
+                            <input id="tg-photogallery" class="tg-fileinput" type="file" name="image">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="contact_no" placeholder="Enter contact number" id="contact_no" class="form-control myInput">
                         </div>
                         <div class="form-group">
                             <label>
