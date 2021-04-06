@@ -1,9 +1,8 @@
-
 @extends('front.layouts.master')
-
 @section('content')
+
 <link href="{{ asset('/css/postad.css') }}" rel="stylesheet">
-<div>
+<div class="content-middle">
 	{{-- SVG Image --}}
 	<style>
 		body {
@@ -22,7 +21,7 @@
 		<br>
 	
 	{{-- Ads posting for sale and donation	 --}}
-		<div class="myCard">
+		<div class="postad">
 			{{-- <div class="">
 				<a href="{!! url('/front/postadd/sale') !!}" class="btn btn-primary">I want to sell <i class="fa fa-plus"></i></a>
 			</div> --}}
