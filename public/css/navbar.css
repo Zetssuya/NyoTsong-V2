@@ -1,3 +1,18 @@
+.navbar {
+  background-color: rgb(252, 252, 252) !important;
+}
+.navbar-brand {
+  color: rgb(27, 26, 26) !important;
+}
 .page-header {
   display: flex;
+}
+.nav-link {
+  color: rgb(22, 11, 20) !important;
+  font-size: 20px !important;
+  font-family: Arial;
+  margin-left: 20px;
+}
+.postad {
+  color: rgb(11, 12, 10) !important;
 }
