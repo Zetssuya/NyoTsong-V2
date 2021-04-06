@@ -33,8 +33,7 @@
         
         
             <div class="pull right">
-                <a href="/front/updateprofile" class="pull-right"><i class="fa fa-cogs"></i> Update Profile</a>
-                
+                <a href="/front/profile/updateprofile/{{$user->id}}" title="Update your profile" class="btn btn-success pull-right"><i class="fa fa-cogs"></i> Update Profile</a>
             </div>
         </div>
             <div class="u-ml16 u-truncate">

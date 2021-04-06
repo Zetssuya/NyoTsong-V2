@@ -12,9 +12,6 @@ class UserProfileController extends Controller
     public function index() {
         $id = auth()->user()->id;
         $user = User::where('id', $id)->first();
-
-        // $profdata = UpdateUserProfile::all();
-
         return view('front.profile.index', compact('user'));
     }
 }

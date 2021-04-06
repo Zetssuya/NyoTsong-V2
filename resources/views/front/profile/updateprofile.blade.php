@@ -9,19 +9,25 @@
     <br>
 @endif
 
-<form action="{{ action('UpdateUserProfileController@store')}}" method="POST" enctype="multipart/form-data">
+<form method="POST" action="/front/profile/updateuser/{{$users->id}}" enctype="multipart/form-data">
 @csrf
-    <div class="form-group">    
-        <label for="prophoto">Select Your Profile Photo</label>
-        <input type="file" name="image" class="form-control-file" id="prophoto">
-        <span class="text-danger">{{$errors->first('image')}}</span>
-    </div>
-    <div class="form-group">
-        <label for="phoneno">Enter Your Phone Number:</label>
-        <input type="text" name="contact_no" class="form-control" id="phoneno"  placeholder="Enter phone number">
-        <span class="text-danger">{{$errors->first('contact_no')}}</span>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+@method('PUT')
+<div class="form-group">
+    <input type="text" name="name" placeholder="Name" id="name" class="form-control myInput">
+</div>
+
+<div class="form-group">
+    <input type="text" name="email" placeholder="Email" id="email" class="form-control myInput">
+</div>
+<div class="form-group">
+    <input type="file" name="image" id="image" class="form-control myInput">
+</div>            
+<div class="form-group">
+    <input type="text" name="contact_no" placeholder="Contact number" id="contact_no" class="form-control myInput">
+</div>
+<div class="form-group">
+ </div>
+     <input type="submit" class="butt" value="Update User Account">
 </form>
 
 @endsection

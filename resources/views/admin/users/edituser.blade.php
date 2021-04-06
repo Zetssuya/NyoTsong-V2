@@ -42,9 +42,9 @@
                         <input type="text" name="contact_no" placeholder="Contact number" id="contact_no" class="form-control myInput">
                     </div>
                     <div class="form-group">
-                    </div>
+                    
                         <input type="submit" class="butt" value="Update User Account">
-
+                        </div>
                 </form>
                                                 
                 </div>
