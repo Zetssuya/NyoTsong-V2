@@ -34,7 +34,7 @@
 
     {{-- Product Name --}}
         <div class="dashboard-wrapper">
-        <div class="pl-lg-2 col-lg-10 col-10">
+        <div class="pl-lg-2 col-lg-10 col-8">
             <small class="form-text text-muted">
                 Product name
             </small>
@@ -73,7 +73,7 @@
             <small class="form-text text-muted">
                Product description
             </small>
-        <textarea class="form-control" name="detail" placeholder="Enter product description" type="text"></textarea>
+        <textarea class="form-control description" name="detail" placeholder="Enter product description" type="text"></textarea>
         <span class="text-danger">{{$errors->first('detail')}}</span>
         </div>
 

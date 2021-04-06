@@ -2,19 +2,27 @@
   outline: 2px solid rgb(109, 90, 90);
   position: relative;
   /* background: rgb(229, 229, 235); */
-  height: 800px;
+  height: 650px;
   width: 400px;
   top: 20px;
-  margin-left: 100px;
+  margin-left: 150px;
 }
 .dashbord-title {
   color: rgb(96, 42, 146);
   font-size: 30px;
 }
-
+.form-control {
+  border-radius: 12px !important;
+  height: 40px !important;
+  border-color: rgb(151, 76, 76);
+}
+.description {
+  height: 70px !important;
+  border-color: rgb(151, 76, 76);
+}
 .btn-nav {
-  background-color: #1a5ad1;
-  padding: 0 1rem;
+  background-color: #0a581b;
+  padding: 1 2rem;
   border-radius: 2rem;
   width: 50%;
   max-width: 300px;
