@@ -4,6 +4,12 @@
 @endsection
 
 @section('content')
+@if($message = Session::get('msg'))
+    <div class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+    </div>
+    <br>
+@endif
 
 <div class="container">
 	<div class="page-header">
@@ -37,7 +43,8 @@
             <tr>
                 <td class="text-center-justified width-100">{{$location->location}}</td>                
                 <td class="text-center">
-                <button class="btn btn-danger ti-close" title="Delete Location" onclick="return confirm('Are you sure? You will not be able to recover this.')"> Delete</button>
+                <a class="btn btn-danger ti-close" href="/admin/locations/delete/{{$location->id}}" title="Delete Location" onclick="return confirm('Are you sure? You will not be able to recover this.')" > Delete</a>                                  
+                
             </td>
             </tr>
              @endforeach

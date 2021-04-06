@@ -12,21 +12,34 @@ Route::prefix('admin')->group(function() {
         Route::post('/categories/category/add', 'CategoryController@store');
         Route::get('/categories/category', 'CategoryShowController@index');
         Route::get('/categories/addcategory', 'CategoryController@index');
+        Route::get('/categories/delete/{id}','CategoryShowController@destroy');
+
 
         // location
         Route::post('/locations/location/add', 'LocationController@store');
         Route::get('/locations/location', 'LocationShowController@index');
         Route::get('/locations/addlocation', 'LocationController@index');
+        Route::get('/locations/delete/{id}','LocationShowController@destroy');
+
 
         //sales product
         Route::get('/salesNdons/sale', 'SaleProcuctController@index');
+        Route::get('/salesNdons/delete/{id}','SaleProcuctController@destroy');
+
 
         // Donation Product
         Route::get('/salesNdons/donation', 'DonationProcuctController@index');
+        Route::get('/salesNdons/delete/{id}','DonationProcuctController@destroy');
 
         // Users
         Route::resource('/users','UsersController');
         // Route::get('/users/index', 'UsersController@index');
+
+        //Editing user details
+        Route::get('/users/edituser/{id}','UsersController@edit');
+        // Route::get('/users/edituser','UsersController@edit');
+        Route::put('/users/updateuser/{id}','UsersController@update');
+        Route::get('/users/deleteuser/{id}','UsersController@deleteuser');
 
         // Logout
         Route::get('/logout','AdminUserController@logout');

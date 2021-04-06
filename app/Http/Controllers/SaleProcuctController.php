@@ -81,8 +81,11 @@ class SaleProcuctController extends Controller
      * @param  \App\SaleProcuct  $saleProcuct
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SaleProcuct $saleProcuct)
+    public function destroy($id)
     {
-        //
+        $saledata = Sale:: findOrFail($id);
+        $saledata->delete();
+        return redirect()->back()->with('msg','Sale Product deleted successfully!');
+    
     }
 }

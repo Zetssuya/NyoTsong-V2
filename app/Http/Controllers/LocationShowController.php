@@ -11,4 +11,10 @@ class LocationShowController extends Controller
         $locations = Location::paginate(20);
         return view('admin.locations.location', compact('locations'));
     }
+
+    public function destroy($id){
+        $locations = Location:: findOrFail($id);
+        $locations->delete();
+        return redirect()->back()->with('msg','Location deleted successfully!');
+    }
 }

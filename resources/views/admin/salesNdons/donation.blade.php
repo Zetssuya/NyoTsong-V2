@@ -17,7 +17,13 @@
             {{ Session::get('flash_message') }}
 		</div>
 	@endif
-     
+    @if($message = Session::get('msg'))
+    <div class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+    </div>
+    <br>
+@endif
+
 <div class="panel panel-default panel-shadow">
     <div class="panel-body">
          
@@ -42,7 +48,7 @@
                 <td class="text-center-justified width-100"><img height = "50px" src="{{ url('/uploads/') . '/' . $ddata->image }}"></td>              
                 <td class="text-center-justified width-100">{{$ddata->location}}</td>                  
                 <td class="text-center">
-                <button class="btn btn-danger ti-close" title="Delete product" onclick="return confirm('Are you sure? You will not be able to recover this.')"> Delete</button>
+                <a class="btn btn-danger ti-close" href="/admin/salesNdons/delete/{{$ddata->id}}" title="Delete Product" onclick="return confirm('Are you sure? You will not be able to recover this.')" > Delete</a>
                 </td>
             </tr>
             @endforeach

@@ -79,8 +79,10 @@ class DonationProcuctController extends Controller
      * @param  \App\DonationProcuct  $donationProcuct
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DonationProcuct $donationProcuct)
+    public function destroy($id)
     {
-        //
+        $dondata = Donation:: findOrFail($id);
+        $dondata->delete();
+        return redirect()->back()->with('msg','Donation Product deleted successfully!');
     }
 }

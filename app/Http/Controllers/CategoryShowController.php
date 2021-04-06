@@ -14,4 +14,15 @@ class CategoryShowController extends Controller
         return view('admin.categories.category', compact('categories'));
     }
 
+    // public function edit(Request $request, $id){
+    //     $categories = Category:: findOrFail($id);
+    //     return view('admin.users.edituser')->with('users', $users);
+    // }
+    
+    public function destroy($id){
+        $categories = Category:: findOrFail($id);
+        $categories->delete();
+        return redirect()->back()->with('msg','Category deleted successfully!');
+    }
+
 }

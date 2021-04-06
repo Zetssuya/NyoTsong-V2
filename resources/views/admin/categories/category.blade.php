@@ -4,7 +4,12 @@
 @endsection
 
 @section('content')
-
+@if($message = Session::get('msg'))
+    <div class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+    </div>
+    <br>
+@endif
 <div class="container">
 	<div class="page-header">
 		<div class="pull-right">
@@ -37,7 +42,7 @@
             <tr>
                 <td class="text-center-justified width-100">{{$category->category}}</td>                
                 <td class="text-center">
-                <button class="btn btn-danger ti-close" title="Delete Category" onclick="return confirm('Are you sure? You will not be able to recover this.')"> Delete</button>
+                <a class="btn btn-danger ti-close" href="/admin/categories/delete/{{$category->id}}" title="Delete Category" onclick="return confirm('Are you sure? You will not be able to recover this.')" > Delete</a>                                  
             </td>
             </tr>
              @endforeach

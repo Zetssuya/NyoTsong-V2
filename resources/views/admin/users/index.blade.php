@@ -5,6 +5,12 @@
 @endsection
 
 @section('content')
+@if($message = Session::get('msg'))
+    <div class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+    </div>
+    <br>
+@endif
 <!-- User page -->
     <div class="row">
 
@@ -39,8 +45,8 @@
                                 <td>{{ $user->contact_no }}</td>
                                 <td>{{ $user->created_at->diffForHumans() }}</td>
                                 <td>
-                                    <button class="btn btn-success ti-settings" title="Edit User"> Edit</button>
-                                    <button class="btn btn-danger ti-close" title="Delete User" onclick="return confirm('Are you sure? You will not be able to recover this.')"> Delete</button>                                    
+                                    <a class="btn btn-success ti-settings" href="/admin/users/edituser/{{$user->id}}" title="Edit User" > Edit</a>
+                                    <a class="btn btn-danger ti-close" href="/admin/users/deleteuser/{{$user->id}}" title="Delete User" onclick="return confirm('Are you sure? You will not be able to recover this.')" > Delete</a>                                  
                                 </td>
 
                             </tr>
