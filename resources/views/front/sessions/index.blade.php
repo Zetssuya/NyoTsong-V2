@@ -1,10 +1,9 @@
 @extends('front.layouts.master')
 
 @section('content')
-    <div class="container position-absolute top-50 start-50 translate-middle">
+    <div class="container">
 
         <div class="myCard" id="register">
-
             <div class="row">
                 <div class="col-md-6">
                     <div class="myLeftCtn">
@@ -52,16 +51,14 @@
                     </div>
 
                 </div>
-                <div class="col-md-6">
-                    <div class="myRightCtn">
+                    <div class="col-md-6">
+                        <div class="myRightCtn">
                             <div class="box"><header>NyoTsong</header>
-                            
                             <h4>Market of Possibilities</h4>
-                                {{-- <input type="button" class="butt_out" value="Read Here"/> --}}
                             </div>
                                 
+                        </div>
                     </div>
-                </div>
             </div>
 
 
