@@ -3,10 +3,6 @@ html {
   height: 100%;
 }
 .hero-image {
-  background-image: linear-gradient(
-    rgba(199, 151, 49, 0.5),
-    rgba(199, 151, 49, 0.5)
-  );
   height: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,4 +44,19 @@ html {
 /* cell number */
 .carousel-cell:before {
   display: block;
+}
+.search-box-container {
+  border: 1px solid #06d6aa;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0.4rem;
+  border-radius: 3rem;
+  box-sizing: inherit;
+  width: 50%;
+  height: 84px;
+  margin: 0 auto;
+  margin-top: -100px;
 }

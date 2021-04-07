@@ -44,10 +44,11 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" class="butt" value="log in">
+                                <input type="submit" class="butt mb-4" value="log in">  
                             </div>
 
                         </form>
+                        <a class="btn butt" href="/user/register" title="User registration"> Sign up</a>
                     </div>
 
                 </div>
