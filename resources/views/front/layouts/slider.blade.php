@@ -1,7 +1,18 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
-
+<style>
+  body{
+      background-image: 
+      url('/assets/img/homepage_wave.svg');
+      background-position: 
+      right top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 
+      100%;
+  }
+</style>
 <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
       <div class="carousel-cell">
         <img class="w3-image" src="https://smash-images.photobox.com/original/5f04c1b41fd48d1b10ff27dfc90548bf13608845_Large-Print-lifestyle-3_1-2600.jpg">
