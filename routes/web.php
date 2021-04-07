@@ -68,6 +68,7 @@ Route::prefix('front')->group(function() {
         Route::get('/profile/updateprofile/{id}','UpdateUserProfileController@index');
         Route::get('/profile/edituser/{id}','UpdateUserProfileController@edit');
         Route::put('/profile/updateuser/{id}','UpdateUserProfileController@update');
+        Route::get('/profile/deleteuser/{id}','UpdateUserProfileController@destroy');
 
     });
 });

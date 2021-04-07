@@ -114,8 +114,10 @@ class UpdateUserProfileController extends Controller
      * @param  \App\UpdateUserProfile  $updateUserProfile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UpdateUserProfile $updateUserProfile)
+    public function destroy($id)
     {
-        //
+        $users = User:: findOrFail($id);
+        $users->delete();
+        return redirect('/user/login');
     }
 }
