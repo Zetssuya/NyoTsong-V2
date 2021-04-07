@@ -1,5 +1,5 @@
 <link href="{{ asset('/css/navbar.css') }}" rel="stylesheet">
-<nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top page-header">
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top page-header navbar-inner">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">NyoTsong : Market of Possibilities</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"

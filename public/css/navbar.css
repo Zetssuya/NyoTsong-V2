@@ -1,6 +1,9 @@
 .navbar {
   background-color: rgb(252, 252, 252) !important;
 }
+.navbar-inner {
+  background: transparent !important;
+}
 .navbar-brand {
   color: rgb(27, 26, 26) !important;
 }
