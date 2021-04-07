@@ -34,6 +34,7 @@
         
             <div class="pull right">
                 <a href="/front/profile/updateprofile/{{$user->id}}" title="Update your profile" class="btn btn-success pull-right"><i class="fa fa-cogs"></i> Update Profile</a>
+                <br/><br/><a href="/front/profile/changepw/{{$user->id}}" title="Password update" class="btn btn-success pull-right"><i class="fa fa-key"></i> Change Password</a>
                 <br/><br/><a href="/front/profile/deleteuser/{{$user->id}}" title="Delete your profile" class="btn btn-danger pull-right" onclick="return confirm('Are you sure? You will not be able to recover this.')"><i class="fa fa-user-times"></i> Deactivate Account</a>
             </div>
         </div>
