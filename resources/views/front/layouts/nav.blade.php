@@ -37,7 +37,7 @@
     </li>
     <li class="nav-item dropdown active">
     <a class="nav-link" href="{{ url('/front/postadd/postad') }}" aria-haspopup="true" aria-expanded="false">
-    <button class="btn btn-success postad" type="button">
+    <button class="btn btn-success" type="button">
     Post an Ad <i class="fas fa-paper-plane"></i>
     </button>
     </a>
