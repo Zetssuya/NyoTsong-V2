@@ -3,7 +3,7 @@
 @section('content')
 {{-- Hero Image --}}
 <div class="hero-image">
-    <img src="{{asset('assets/img/hero_img.svg')}}">
+    {{-- <img src="{{asset('assets/img/hero_img.svg')}}"> --}}
     <div class="hero-text">
       <h1 style="font-size:50px">Welcome to NyoTsong</h1>
       <h5>Bhutan's Largest Online Buying and Selling Marketplace</h5>
