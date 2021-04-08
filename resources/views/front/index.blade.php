@@ -1,6 +1,18 @@
 <link href="{{ asset('assets/css/homepage.css') }}" rel="stylesheet">
 @extends('front.layouts.master')
 @section('content')
+	{{-- SVG Image --}}
+	<style>
+		body {
+		  background-image: url('/assets/img/homepage_wave.svg');
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: 100%;
+		  background-position: top right;
+		}
+		</style>
+		<br>
+	{{-- End of SVG Image --}}
 
 {{-- Search-bar and NyoTsong heading --}}
 <div class="container-fluid">
