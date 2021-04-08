@@ -1,5 +1,5 @@
 <link href="{{ asset('/css/navbar.css') }}" rel="stylesheet">
-<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top page-header navbar-inner">
+<nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top page-header navbar-inner">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">NyoTsong : Market of Possibilities</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -15,12 +15,6 @@
     </a>
     </li>
 
-    {{-- <li class="nav-item">
-    <a class="nav-link" href="category">
-        <i class="fa fa-list-alt" aria-hidden="true"></i>
-    Categories
-    </a>
-    </li> --}}
     <li class="nav-item dropdown">
     <li class="nav-item dropdown">
     <a class="nav-link" href="about" aria-haspopup="true" aria-expanded="false">
@@ -35,13 +29,16 @@
     Contact
     </a>
     </li>
-    <li class="nav-item dropdown active">
-    <a class="nav-link" href="{{ url('/front/postadd/postad') }}" aria-haspopup="true" aria-expanded="false">
-    <button class="btn btn-success" type="button">
-    Post an Ad <i class="fas fa-paper-plane"></i>
-    </button>
+
+    {{-- Post Ad --}}
+    <li class="nav-item p-0 px-md-3 nav-item-special mx-auto mx-md-0">
+    <a class="nav-link" href="{{ url('/front/postadd/postad') }}" target="_self">
+    {{-- <button class="btn btn-success" type="button"> --}}
+    <span>Post an Ad </span>
+    {{-- </button> --}}
     </a>
     </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-item nav-link dropdown mr-md-2" href="#" id="bd-versions"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,10 +58,6 @@
                 </div>
                 </li>
 
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="/admin"><i class="fa fa-id-card-o"></i> Admin Login
-                    </a>
-                </li> -->
             </ul>
         </div>
     </div>
