@@ -41,5 +41,4 @@
 		</div> 
 	{{--End of  Ads posting for sale and donation	 --}}      
 </div>
-
 @endsection
