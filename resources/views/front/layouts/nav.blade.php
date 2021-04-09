@@ -6,16 +6,15 @@
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
     <li class="nav-item">
     <a class="nav-link" href="/" aria-haspopup="true" aria-expanded="false">
     Home
     </a>
     </li>
 
-    <li class="nav-item dropdown">
-    <li class="nav-item dropdown">
+    <li class="nav-item">
     <a class="nav-link" href="about" aria-haspopup="true" aria-expanded="false">
     About
     </a>
@@ -36,25 +35,25 @@
     </a>
     </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-item nav-link dropdown mr-md-2" href="#" id="bd-versions"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                            {{ auth()->check() ? auth()->user()->name : 'Account' }}
+    <li class="nav-item dropdown account">
+        <a class="nav-link" href="#"
+             data-toggle="dropdown" aria-haspopup="true">
+                <i class="fa fa-user-circle-o"></i>
+                    {{ auth()->check() ? auth()->user()->name : 'Account' }}
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-                    @if (!auth()->check())
-                        <a class="dropdown-item " href="{{  url('user/login') }}">Login</a>
-                        <a class="dropdown-item" href="{{  url('user/register') }}">Register</a>
-                    @else
-                        <a class="dropdown-item" href="{{  url('user/profile') }}"><i class="fa fa-user"></i> Profile</a>
-                        <hr>
-                        <a class="dropdown-item" href="{{  url('user/logout') }}"><i class="fa fa-lock"></i> Logout</a>
-                    @endif
-                </div>
-                </li>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                @if (!auth()->check())
+                    <a class="dropdown-item " href="{{  url('user/login') }}">Login</a>
+                    <a class="dropdown-item" href="{{  url('user/register') }}">Register</a>
+                @else
+                    <a class="dropdown-item" href="{{  url('user/profile') }}"><i class="fa fa-user"></i> Profile</a>
+                    <hr>
+                    <a class="dropdown-item" href="{{  url('user/logout') }}"><i class="fa fa-lock"></i> Logout</a>
+                @endif
+            </div>
+    </li>
 
-            </ul>
+    </ul>
         </div>
     </div>
 </nav>

@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgb(43, 41, 41) !important;
+  background-color: rgb(253, 253, 253) !important;
 }
 * {
   box-sizing: border-box;
@@ -34,7 +34,7 @@ li {
 
 .nav-item-special .nav-link {
   border-radius: 3rem;
-  border: 1px solid #06d6aa;
+  border: 3px solid #06d6aa;
   padding: 0.5rem 1.56rem !important;
 }
 .nav-item a:hover {
@@ -54,12 +54,17 @@ li {
   background-color: #06d6aa;
   border-radius: 3rem;
 }
-* a {
-  color: #06d6aa;
-  text-decoration: none;
-  background-color: transparent;
+.navbar-brand {
+  color: rgb(0, 0, 0) !important;
+}
+.nav-link {
+  color: rgb(0, 0, 0) !important;
 }
 .nav-item {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+.account {
+  margin-left: 10px !important;
 }
