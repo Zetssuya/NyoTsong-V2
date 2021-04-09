@@ -46,7 +46,7 @@
             
             </div>
             <div>
-            <a href="" class=" ti-archive"><i class="fa fa-archive"></i> My Ads</a>
+            <a href="/front/profile/myad/{{$user->id}}" class=" ti-archive"><i class="fa fa-archive"></i> My Ads</a>
             </div>
             
         </div>

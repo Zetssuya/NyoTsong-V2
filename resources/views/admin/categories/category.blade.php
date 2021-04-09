@@ -48,9 +48,9 @@
              @endforeach
             </tbody>
         </table>
-         <!-- {{ $categories->links() }} -->
+         {{ $categories->links() }}
     </div>
-    <div class="clearfix"></div>
+    
 </div>
 
 </div>

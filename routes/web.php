@@ -70,6 +70,10 @@ Route::prefix('front')->group(function() {
         Route::put('/profile/updateuser/{id}','UpdateUserProfileController@update');
         Route::get('/profile/deleteuser/{id}','UpdateUserProfileController@destroy');
 
+        //My ads
+        Route::get('/profile/myad/{id}','MyAdController@index');
+        // Route::get('/profile/myad/{id}', 'MyAdController@show');
+
         // Change Password
         Route::get('/profile/changepw/{id}','ChangePwController@index');
         Route::get('/profile/editpw/{id}','ChangePwController@edit');
