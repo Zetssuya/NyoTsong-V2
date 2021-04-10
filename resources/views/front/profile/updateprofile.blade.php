@@ -35,7 +35,7 @@
                 {{-- Name --}}
                 <div class="pl-lg-2 col-lg-10 col-8 mb-2">
                     <label class="form-text text-muted">
-                        New name
+                        <strong> New name</strong>
                     </label>
                     <input type="text" name="name" placeholder="Name" id="name"class="form-control required">
                 </div>
@@ -43,14 +43,14 @@
                 {{-- e-mail --}}
                 <div class="pl-lg-2 col-lg-10 col-8 mb-2">
                     <label class="form-text text-muted">
-                        New e-mail
+                        <strong> New e-mail</strong>
                     </label>
                     <input type="text" name="email" placeholder="Email" id="email" class="form-control required">
                 </div>
                 {{-- image --}}
                 <div class="pl-lg-2 col-lg-10 col-8 mb-2">
                     <label class="form-text text-muted">
-                        New profile picture
+                        <strong> New profile picture</strong>
                      </label>
                     <div>
                         <input type="file" name="image" id="image" class="form-control required">
@@ -59,7 +59,7 @@
                 {{-- Contact No --}}
                 <div class="pl-lg-2 col-lg-10 col-8 mb-2">
                     <label class="form-text text-muted">
-                        New contact no.
+                        <strong> New contact no.</strong>
                      </label>
                     <div>
                     <input type="text" name="contact_no" placeholder="Contact number" id="contact_no" class="form-control required">
