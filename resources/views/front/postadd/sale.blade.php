@@ -17,7 +17,6 @@
     }
 </style>
 <div class="col-sm-12 col-md-8 col-lg-12 row justify-content-center mt-4 container">
-
 <div class="row page-content col-md-9 col-11">
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
 <div class="inner-box">
@@ -125,6 +124,7 @@
             <div>
                 <button type="submit" class="btn btn-success    btn-lg" data-mdb-ripple-color="#d8caca" style="background-color:#169235"> Post Ad</button>
             </div>
+            
            
     </form>
     </div>

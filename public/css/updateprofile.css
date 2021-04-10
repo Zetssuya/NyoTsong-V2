@@ -1,0 +1,19 @@
+.profile-form {
+  background-color: rgb(24, 180, 185) !important;
+  border-radius: 25px;
+}
+.form-shadow {
+  box-shadow: -3px 2px 15px 7px rgba(182, 142, 56, 0.82);
+  box-shadow: -3px 2px 15px 7px rgba(182, 142, 56, 0.82);
+}
+.btn-info {
+  margin-top: 10px;
+  position: relative;
+  border-radius: 3em !important;
+}
+.dashboard-box {
+  color: rgb(171, 22, 190) !important;
+}
+.form {
+  border-radius: 20px;
+}
