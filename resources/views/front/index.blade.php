@@ -1,6 +1,7 @@
 <link href="{{ asset('assets/css/homepage.css') }}" rel="stylesheet">
 @extends('front.layouts.master')
 @section('content')
+
 	{{-- SVG Image --}}
 	<style>
 		body {
@@ -28,5 +29,6 @@
   </div>
 </div>
 </div>
+{{-- End of Search-bar and NyoTsong heading --}}
 @include('front.layouts.product_display')
 @endsection
