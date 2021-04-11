@@ -11,7 +11,7 @@
     }
 </style>
 <div class="container flex-row mt-4">
-    <h1>My Ads</h1>
+    <h1 class="border mb-4 heading">My Ads</h1>
 <div class="row">
 
         {{-- For Sale --}}
