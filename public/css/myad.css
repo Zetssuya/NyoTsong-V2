@@ -1,0 +1,20 @@
+.sale {
+  border-radius: 25px !important;
+}
+.donation {
+  border-radius: 25px !important;
+}
+.product-image {
+  border-radius: 25px !important;
+}
+.product-info {
+  margin-top: 25px !important;
+}
+.border {
+  border-radius: 25px !important;
+  border-color: rgb(12, 162, 189) !important;
+}
+.product-shadow {
+  box-shadow: -10px 1px 14px 5px rgba(25, 173, 192, 0.67);
+  box-shadow: -10px 1px 14px 5px rgba(25, 173, 192, 0.67);
+}
