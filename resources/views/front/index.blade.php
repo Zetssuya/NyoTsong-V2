@@ -16,10 +16,10 @@
 	{{-- End of SVG Image --}}
 
 {{-- Search-bar and NyoTsong heading --}}
-<div class="container-fluid">
+<div class="container">
 <div class="hero-search-container">
   <div class="text-center text-md-left">
-      <h1 class="h1 font-weight-bold mb-4">NyoTsong:Market of possibilities</h1>
+      <h1 class="h1 font-weight-bold mb-4">NyoTsong:market of possibilities</h1>
       <form class="search-box-container large">
           <input placeholder="Search by product name" value class="no-shadow border-0 form-control form-control-lg pac-taregt-input">
           <button type="submit" class="btn button-search-box btn-round btn-success">
@@ -27,6 +27,7 @@
           </button>
       </form>
   </div>
+</div>
 </div>
 </div>
 {{-- End of Search-bar and NyoTsong heading --}}
