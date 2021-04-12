@@ -19,6 +19,24 @@
             @foreach($saledata as $i => $sdata)
                 <div class="product-image border-bottom border-top border-success mb-4">
                         <center>
+                        <div class="third mt-4"> 
+                            <a href="/front/profile/editproduct/{{$sdata->id}}" title="Edit Product" class="btn btn-success">
+                            <i class="fa fa-cogs"></i> Edit</a>
+                        </div>
+                        <div class="third mt-4"> 
+                            <a href="/front/profile/deleteproduct/{{$sdata->id}}" title="Delete Product" class="btn btn-danger" onclick="return confirm('Are you sure? You will not be able to recover this.')">
+                                <i class="fa fa-user-times"></i> Delete</a>
+                        </div>
+                            <!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div> -->
                             <div class="product-info mx-auto d-block border">
                                 <img  height = "200px" src="{{ url('/uploads/') . '/' . $sdata->image }}" alt="Product image here" >
                             </div>
@@ -54,6 +72,15 @@
 @foreach($dondata as $i => $ddata)
           <div class="product-image border-bottom border-top border-success mb-4">
             <center>
+            <div class="third mt-4"> 
+                            <a href="/front/profile/editdonproduct/{{$ddata->id}}" title="Edit Product" class="btn btn-success">
+                            <i class="fa fa-cogs"></i> Edit</a>
+                        </div>
+                        <div class="third mt-4"> 
+                            <a href="/front/profile/deletedonproduct/{{$ddata->id}}" title="Delete Product" class="btn btn-danger" onclick="return confirm('Are you sure? You will not be able to recover this.')">
+                                <i class="fa fa-user-times"></i> Delete</a>
+                        </div>
+
             <div class="product-info mx-auto d-block border">
                 <img  height = "200px" src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Product image here" >
             </div>

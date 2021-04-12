@@ -24,7 +24,7 @@ Route::prefix('admin')->group(function() {
 
         //sales product
         Route::get('/salesNdons/sale', 'SaleProcuctController@index');
-        Route::get('/salesNdons/delete/{id}','SaleProcuctController@destroy');
+        Route::get('/salesNdons/saledelete/{id}','SaleProcuctController@destroy');
 
 
         // Donation Product
@@ -73,6 +73,17 @@ Route::prefix('front')->group(function() {
         //My ads
         Route::get('/profile/myad/{id}','MyAdController@index');
         // Route::get('/profile/myad/{id}', 'MyAdController@show');
+
+        // Sale Product edit and delete
+        Route::get('/profile/editproduct/{id}','EditProductController@index');
+        // Route::get('/profile/editprod/{id}','EditProductController@edit');
+        Route::put('/profile/updateproduct/{id}','EditProductController@update');
+        Route::get('/profile/deleteproduct/{id}','EditProductController@destroy');
+
+        // Donation Product edit and delete
+        Route::get('/profile/editdonproduct/{id}','EditDonProdController@index');
+        Route::put('/profile/updatedonproduct/{id}','EditDonProdController@update');
+        Route::get('/profile/deletedonproduct/{id}','EditDonProdController@destroy');
 
         // Change Password
         Route::get('/profile/changepw/{id}','ChangePwController@index');

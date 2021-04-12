@@ -51,7 +51,7 @@
                 <td class="text-center-justified width-100"><img height = "50px" src="{{ url('/uploads/') . '/' . $sdata->image }}"></td>                
                 <td class="text-center-justified width-100">{{$sdata->location}}</td>                  
                 <td class="text-center">
-                <a class="btn btn-danger ti-close" href="/admin/salesNdons/delete/{{$sdata->id}}" title="Delete Product" onclick="return confirm('Are you sure? You will not be able to recover this.')" > Delete</a>
+                <a class="btn btn-danger ti-close" href="/admin/salesNdons/saledelete/{{$sdata->id}}" title="Delete Product" onclick="return confirm('Are you sure? You will not be able to recover this.')" > Delete</a>
                 </td>
             </tr>
             @endforeach

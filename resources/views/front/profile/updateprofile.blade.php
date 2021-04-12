@@ -37,7 +37,7 @@
                     <label class="form-text text-muted">
                         <strong> New name</strong>
                     </label>
-                    <input type="text" name="name" placeholder="Name" id="name"class="form-control required">
+                    <input type="text" name="name" placeholder="Name" id="name"class="form-control">
                 </div>
 
                 {{-- e-mail --}}
@@ -45,7 +45,7 @@
                     <label class="form-text text-muted">
                         <strong> New e-mail</strong>
                     </label>
-                    <input type="text" name="email" placeholder="Email" id="email" class="form-control required">
+                    <input type="text" name="email" placeholder="Email" id="email" class="form-control">
                 </div>
                 {{-- image --}}
                 <div class="pl-lg-2 col-lg-10 col-8 mb-2">
@@ -53,7 +53,7 @@
                         <strong> New profile picture</strong>
                      </label>
                     <div>
-                        <input type="file" name="image" id="image" class="form-control required">
+                        <input type="file" name="image" id="image" class="form-control ">
                     </div>
                 </div>
                 {{-- Contact No --}}
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="pl-lg-2 col-lg-10 col-8 mb-2">
-                    <button type="button" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                    <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
                          Update profile </button>
                 </div>
                 </form>
