@@ -13,8 +13,8 @@
 
 <div class="container">
 	<div class="page-header">
-		<div class="pull-right">
-			<a href="{!! url('/admin/locations/addlocation') !!}" class="btn btn-primary">Add <i class="fa fa-plus"></i></a>
+		<div class="">
+			<a href="{!! url('/admin/locations/addlocation') !!}" class="btn btn-dark">Add new locations <i class="fa fa-plus"></i></a>
 		</div>
 		<h2>Locations</h2>
        

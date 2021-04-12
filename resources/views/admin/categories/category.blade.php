@@ -12,8 +12,8 @@
 @endif
 <div class="container">
 	<div class="page-header">
-		<div class="pull-right">
-			<a href="{!! url('/admin/categories/addcategory') !!}" class="btn btn-primary">Add <i class="fa fa-plus"></i></a>
+		<div class="">
+			<a href="{!! url('/admin/categories/addcategory') !!}" class="btn btn-dark">Add new category <i class="fa fa-plus"></i></a>
 		</div>
 		<h2>Categories</h2>
        

@@ -26,7 +26,7 @@
 <div class="panel panel-default panel-shadow">
     <div class="panel-body">
          
-        <table id="data-table" class="table table-striped table-hover dt-responsive" cellspacing="0" width="100%">
+        <table id="data-table" class="table table-striped">
             <thead>
             <tr>
                 <th>User Id</th>  
@@ -36,21 +36,21 @@
                 <th>Detail</th> 
                 <th>Image</th> 
                 <th>Location</th> 
-                <th class="text-center width-100">Action</th>
+                <th >Action</th>
             </tr>
             </thead>
 
             <tbody>
             @foreach($saledata as $i => $sdata)
             <tr>
-                <td class="text-center-justified width-100">{{$sdata->user_id}}</td> 
-                <td class="text-center-justified width-100">{{$sdata->name}}</td>                
-                <td class="text-center-justified width-100">{{$sdata->categories}}</td>  
-                <td class="text-center-justified width-100">{{$sdata->price}}</td> 
-                <td class="text-center-justified width-100">{{$sdata->detail}}</td>                    
-                <td class="text-center-justified width-100"><img height = "50px" src="{{ url('/uploads/') . '/' . $sdata->image }}"></td>                
-                <td class="text-center-justified width-100">{{$sdata->location}}</td>                  
-                <td class="text-center">
+                <td >{{$sdata->user_id}}</td> 
+                <td >{{$sdata->name}}</td>                
+                <td >{{$sdata->categories}}</td>  
+                <td >{{$sdata->price}}</td> 
+                <td >{{$sdata->detail}}</td>                    
+                <td ><img height = "50px" src="{{ url('/uploads/') . '/' . $sdata->image }}"></td>                
+                <td >{{$sdata->location}}</td>                  
+                <td >
                 <a class="btn btn-danger ti-close" href="/admin/salesNdons/saledelete/{{$sdata->id}}" title="Delete Product" onclick="return confirm('Are you sure? You will not be able to recover this.')" > Delete</a>
                 </td>
             </tr>
@@ -59,7 +59,7 @@
         </table>
        
     </div>
-    <div class="clearfix"></div>
+    {{-- <div class="clearfix"></div> --}}
 </div>
 
 </div>

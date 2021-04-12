@@ -46,9 +46,11 @@
                             <div class="form-group">
                                 <input type="submit" class="butt mb-4" value="log in">  
                             </div>
-
+                            <small>Don't have an account yet?</small>
+                            <br>
+                            <a class="btn butt" href="/user/register" title="User registration"> Sign up</a>
                         </form>
-                        <a class="btn butt" href="/user/register" title="User registration"> Sign up</a>
+
                     </div>
 
                 </div>
