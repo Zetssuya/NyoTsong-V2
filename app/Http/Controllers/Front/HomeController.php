@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Front;
-
+use App\User;
+use Auth;
 use App\Product;
 use App\Sale;
 use App\Donation;
@@ -15,6 +16,11 @@ class HomeController extends Controller
     {
         $saledata = Sale::paginate(10);
         $dondata = Donation::paginate(10);
+
+        // $id = auth()->user()->id;
+        // $users = User::where('id', $id)->first();
+
+
         return view('front.index', compact('saledata','dondata'));
     }
 }

@@ -90,6 +90,15 @@ Route::prefix('front')->group(function() {
         Route::get('/profile/editpw/{id}','ChangePwController@edit');
         Route::put('/profile/updatepw/{id}','ChangePwController@update');
 
+        // display nearby products
+        Route::get('/nearbyprod','NearbyProdController@index');
+
+        // Display sale product details
+        Route::get('/saledetail/{id}','SaleDetailController@index');
+
+        // Display donation product details
+        Route::get('/donationdetail/{id}','DonationDetailController@index');
+
     });
 });
 

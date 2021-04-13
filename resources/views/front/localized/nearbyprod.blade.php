@@ -1,14 +1,11 @@
-<link href="{{ asset('assets/css/product_display.css') }}" rel="stylesheet">
+@extends('front.layouts.master')
+@section('content')
 
-<div class="">
-      <h3>Recent Product Ads</h3>
-      <div class="third mt-4"> 
-          <a href="/front/nearbyprod" title="Edit Product" class="btn btn-success">
-          <i class="fa fa-cogs"></i> Products Nearby>>>>></a>
-      </div>
-    </div>
+<div class="container flex-row mt-4">
+    <h1 class="border mb-4 heading">Nearby Products</h1>
+<div class="row">
 
-    <section class="products">
+<section class="products">
     <div class="row">
     
     <div class="product-card text-center col-sm" >
@@ -22,7 +19,7 @@
             <h6>Nu. {{$sdata->price}}</h6>
             <h6>{{$sdata->detail}}</h6>
             <div class="third mt-4"> 
-                            <a href="/front/saledetail/{{$sdata->id}}" title="Product Detail" class="btn btn-success">
+                            <a href="/front/saledetail/{{$sdata->id}}" title="Edit Product" class="btn btn-success">
                             <i class="fa fa-cogs"></i> View Details</a>
                         </div>
           @endforeach
@@ -40,7 +37,7 @@
             <h5>{{$ddata->name}}</h5>
             <h6>{{$ddata->detail}}</h6>
             <div class="third mt-4"> 
-                            <a href="/front/donationdetail/{{$ddata->id}}" title="Product Detail" class="btn btn-success">
+                            <a href="/front/donationdetail/{{$ddata->id}}" title="Edit Product" class="btn btn-success">
                             <i class="fa fa-cogs"></i> View Details</a>
                         </div>
 
@@ -49,3 +46,5 @@
         </div>
     </div>
       </section>
+
+@endsection
