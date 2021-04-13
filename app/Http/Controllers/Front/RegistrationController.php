@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\User;
+use App\Location;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -11,7 +12,8 @@ class RegistrationController extends Controller
 
     public function index()
     {
-        return view('front.registration.index');
+        $locations = Location::all();
+        return view('front.registration.index', compact('locations'));
     }
 
     public function store(Request $request)
@@ -23,7 +25,8 @@ class RegistrationController extends Controller
             'email' => 'required|email',
             'password' => 'required|confirmed',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|required',
-            'contact_no' => 'required|min:8'
+            'contact_no' => 'required|min:8',
+            'location' => 'required'
         ]);
 
         //image upload path
@@ -40,6 +43,7 @@ class RegistrationController extends Controller
             'password' => bcrypt($request->password),
             'image' => $request->image->getClientOriginalName(),
             'contact_no' => $request->contact_no,
+            'location' => $request->location,
         ]);
 
         // Sign the user in

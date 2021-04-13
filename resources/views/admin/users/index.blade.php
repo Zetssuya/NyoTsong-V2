@@ -29,6 +29,7 @@
                             <th>Email</th>
                             <th>Profile Photo</th>
                             <th>Contact Number</th>
+                            <th>Location</th>
                             <th>Registered at</th>
                             <th>Actions</th>
                         </tr>
@@ -43,6 +44,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td><img  height = "100px" src="{{ url('/uploads/') . '/' . $user->image }}" alt="Profile image here" ></td>
                                 <td>{{ $user->contact_no }}</td>
+                                <td>{{ $user->location }}</td>
                                 <td>{{ $user->created_at->diffForHumans() }}</td>
                                 <td>
                                     <a class="btn btn-success ti-settings" href="/admin/users/edituser/{{$user->id}}" title="Edit User" > Edit</a>

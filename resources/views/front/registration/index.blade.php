@@ -53,6 +53,19 @@
                             <input type="text" name="contact_no" placeholder="Enter contact number" id="contact_no" class="form-control myInput">
                         </div>
                         <div class="form-group">
+                            <label class="form-text text-muted">
+                                Product location
+                            </label>
+                        <div>
+                            <select name="location" class="pl-lg-3 location form-control" required>
+                            <option value="none">Select location</option>
+                            @foreach($locations as $i => $location)
+                                <option value="{{$location->location}}">{{$location->location}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                        </div>
+                        <div class="form-group">
                             <label>
                                 <input id="check_1" name="check_1"  type="checkbox" required><small> I read and agree to T&Cs</small> 
                                 <div class="invalid-feedback">You must check the box.</div>

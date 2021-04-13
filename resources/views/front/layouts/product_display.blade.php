@@ -3,6 +3,10 @@
 <div class="">
       <h3>Recent Product Ads</h3>
       <button href="" type="button" class="btn btn-success">Products Nearby>>>>></button>
+      <div class="third mt-4"> 
+          <a href="/front/profile/editproduct/{{$sdata->id}}" title="Edit Product" class="btn btn-success">
+          <i class="fa fa-cogs"></i> Edit</a>
+      </div>
     </div>
 
     <section class="products">

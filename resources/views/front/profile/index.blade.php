@@ -35,6 +35,8 @@
                     </div>
                     <div class="d-flex flex-row mb-1"> <span>Contact No.:<strong> {{$user->contact_no}}</strong></span>
                     </div>
+                    <div class="d-flex flex-row mb-1"> <span>Location:<strong> {{$user->location}}</strong></span>
+                    </div>
                     <div>
                         <a href="/front/profile/myad/{{$user->id}}" class="btn btn-primary">
                             <i class="fa fa-archive"></i> My Ads</a>
