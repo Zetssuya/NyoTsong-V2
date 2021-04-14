@@ -13,7 +13,7 @@
     
     <div class="col-sm offset-1" >
     <h3>For sale</h3>
-          <div class="card product-image border border-info">
+          <div class="card product-image border border-info mb-4">
           @foreach($saledata as $i => $sdata)
           <div class="product-info">
               <img  src="{{ url('/uploads/') . '/' . $sdata->image }}" alt="Product image here" >
