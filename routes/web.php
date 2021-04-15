@@ -99,6 +99,12 @@ Route::prefix('front')->group(function() {
         // Display donation product details
         Route::get('/donationdetail/{id}','DonationDetailController@index');
 
+        // comment section
+        Route::post('/comments/{id}','SaleDetailController@store');
+        Route::get('/comments/delete/{id}','CommentController@destroy');
+        Route::post('/replies/comment','ReplyCommentController@store');
+        Route::get('/replies/delete/{id}','ReplyCommentController@destroy');
+
     });
 });
 

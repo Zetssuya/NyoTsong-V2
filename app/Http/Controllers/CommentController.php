@@ -1,39 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
-use Auth;
-use App\SaleDetail;
-use App\Sale;
+
 use App\Comment;
+use Auth;
 use App\ReplyComment;
 use Illuminate\Http\Request;
 
-class SaleDetailController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        
-        $saledata = Sale:: findOrFail($id);
-        $uid = $saledata->user_id;
-        // $pid = $saledata->id;
-        
-
-        $user = User::where('id', $uid)->first();
-        
-        
-
-        $comments = Comment::latest('created_at')->get();
-        // $cid = Comment::all();
-        // $cuid = $cid[3]->user_id;
-        // $commentuser = User::where('id', $cuid);
-        
-        return view('front.proddetails.saledetail', compact('user','saledata','comments'));
+        //
     }
 
     /**
@@ -54,8 +37,6 @@ class SaleDetailController extends Controller
      */
     public function store(Request $request, $id)
     {
-        $saledata = Sale:: findOrFail($id);
-        $pid =$saledata->id;
         $request->validate([
             'comment' => 'required',
         ]);
@@ -65,7 +46,7 @@ class SaleDetailController extends Controller
                 'comment' => $request->input('comment'),
                 'user_id' => Auth::user()->id,
                 'user_image' => Auth::user()->image,
-                'pro_id' => $saledata->id
+                'pro_id' => $id
             ]);
 
             return redirect()->back()->with('success','Comment Added successfully!');
@@ -77,10 +58,10 @@ class SaleDetailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SaleDetail  $saleDetail
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(SaleDetail $saleDetail)
+    public function show(Comment $comment)
     {
         //
     }
@@ -88,10 +69,10 @@ class SaleDetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SaleDetail  $saleDetail
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(SaleDetail $saleDetail)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -100,10 +81,10 @@ class SaleDetailController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SaleDetail  $saleDetail
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SaleDetail $saleDetail)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -111,11 +92,31 @@ class SaleDetailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SaleDetail  $saleDetail
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SaleDetail $saleDetail)
+    public function destroy(Comment $comment, $id)
     {
-        //
+        $mcomment = Comment::where('user_id', Auth::user()->id);
+        // if($comment->user_id == Auth::user()->id){
+                        // $maincomment = Comment::where('user_id', Auth::user()->id)->where('id', $comment->id);
+
+            $reply = ReplyComment::where('comment_id', $id);
+            // $mcomment = Comment::find($id);
+                // $reply->delete();
+                // $mcomment->delete();
+                if ($reply->count() > 0 && $mcomment->count() > 0) {
+                    $reply->delete();
+                    $mcomment->delete();
+                    
+                }else if($mcomment->count() > 0){
+                    $mcomment->delete();
+                   
+                } 
+        // }
+        return redirect()->back();
+       
+
+        
     }
 }

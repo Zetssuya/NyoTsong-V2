@@ -5,6 +5,8 @@ use App\User;
 use Auth;
 use App\Donation;
 use App\DonationDetail;
+use App\Comment;
+use App\ReplyComment;
 use Illuminate\Http\Request;
 
 class DonationDetailController extends Controller
@@ -19,7 +21,10 @@ class DonationDetailController extends Controller
         $dondata = Donation:: findOrFail($id);
         $uid = $dondata->user_id;
         $user = User::where('id', $uid)->first();
-        return view('front.proddetails.donationdetail', compact('user','dondata'));
+
+        $comments = Comment::latest('created_at')->get();
+
+        return view('front.proddetails.donationdetail', compact('user','dondata','comments'));
     }
 
     /**
