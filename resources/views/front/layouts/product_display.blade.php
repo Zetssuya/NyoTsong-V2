@@ -57,7 +57,7 @@
           <h3 class="text-center">For donation</h3>
           <div class="position-relative">
             @foreach($dondata as $i => $ddata)
-            <article class="card-article d-flex flex-column text-center">
+            <article class="card-article d-flex flex-column text-center mb-4">
             <div class="card-article d-flex flex-column text-center">
               <div class="category text-success h6 mb-3">
                 <div>{{$ddata->name}}</div>
