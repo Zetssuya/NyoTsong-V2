@@ -136,13 +136,18 @@
                 <div class="">
                     <div class="d-flex flex-row mb-1"><span>Name: <strong>{{$user->name}}</strong></span>
                     </div>
-                    <div class="d-flex flex-row mb-1"> <span>E-mail: <strong>{{$user->email}}</strong></span>
+                    <!-- <div class="d-flex flex-row mb-1"> <span>E-mail: <strong>{{$user->email}}</strong></span> -->
                     </div>
                     <div class="d-flex flex-row mb-1"> <span>Contact No.:<strong> {{$user->contact_no}}</strong></span>
                     </div>
                     <div class="d-flex flex-row mb-1"> <span>Location:<strong> {{$user->location}}</strong></span>
                     </div>
+                    
                 </div>
+                <div class="third mt-4"> 
+                                          <a href="/front/userdetail/{{$user->id}}" title="Product Detail" class="btn btn-success">
+                                          <i class="fa fa-cogs"></i> View User Details</a>
+                                      </div>
         </div>
         
   

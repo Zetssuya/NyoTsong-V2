@@ -111,6 +111,9 @@ Route::prefix('front')->group(function() {
         Route::post('/donreplies/comment','ReplyDonCommentController@store');
         Route::get('/donreplies/delete/{id}','ReplyDonCommentController@destroy');
 
+        // view user details
+        Route::get('/userdetail/{id}','UserDetailController@index');
+
     });
 });
 
