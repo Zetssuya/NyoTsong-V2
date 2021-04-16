@@ -54,11 +54,11 @@
                         </div>
                         <div class="form-group">
                             <label class="form-text text-muted">
-                                Product location
+                                Location
                             </label>
                         <div>
-                            <select name="location" class="pl-lg-3 location form-control" required>
-                            <option value="none">Select location</option>
+                            <select name="location" class="pl-lg-3 location form-control" id="location" required>
+                            <option value="">Select location</option>
                             @foreach($locations as $i => $location)
                                 <option value="{{$location->location}}">{{$location->location}}</option>
                             @endforeach

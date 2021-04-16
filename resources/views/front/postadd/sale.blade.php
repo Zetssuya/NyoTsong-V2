@@ -39,7 +39,7 @@
     {{-- Product Name --}}
         <div class="dashboard-wrapper">
         <div class="pl-lg-2 col-lg-10 col-8 mb-4">
-            <label class="form-text text-muted">
+            <label class="form-text text-muted" required>
                 Product name
             </label>
         <input class="form-control" name="name" placeholder="Enter product name" autocomplete="off" type="text" aria-label="Product name">
@@ -54,7 +54,7 @@
             </label>
         <div class="tg-select form-control mb-4">
         <select name="categories" required>
-            <option value="none">Select category</option>
+            <option value="">Select category</option>
                 @foreach($categories as $i => $category)
                     <option value="{{$category->category}}">{{$category->category}}</option>
                 @endforeach
@@ -65,7 +65,7 @@
 
         {{-- Select Price --}}
         <div class="pl-lg-2 col-lg-10 col-8">
-            <label class="form-text text-muted">
+            <label class="form-text text-muted" required>
                 Product price
             </label>
         <input class="form-control" name="price" placeholder="Enter product price" type="text">
@@ -74,7 +74,7 @@
 
         {{-- Enter product Details --}}
         <div class="pl-lg-2 col-lg-10 col-8 mb-4">
-            <label class="form-text text-muted">
+            <label class="form-text text-muted" required>
                Product description
             </label>
         <textarea class="form-control description" name="detail" placeholder="Enter product description" type="text"></textarea>
@@ -83,10 +83,10 @@
 
         {{-- Select Product Image --}}
         <div class="pl-lg-2 col-lg-10 col-8 mb-4 ">
-            <label class="form-text text-muted ">
+            <label class="form-text text-muted">
                 Select product image
             </label>
-        <input id="tg-photogallery" class="tg-fileinput form-control" type="file" name="image">
+        <input id="tg-photogallery" class="tg-fileinput form-control" type="file" name="image" value="" required>
         </div>
         </div>
         </div>
@@ -100,12 +100,12 @@
             Location detail
         </h2>
         <div class="pl-lg-2 col-lg-6 col-8">
-            <label class="form-text text-muted">
+            <label class="form-text text-muted required">
                 Product location
              </label>
         <div>
             <select name="location" class="pl-lg-3 location form-control" required>
-            <option value="none">Select location</option>
+            <option value="">Select location</option>
             @foreach($locations as $i => $location)
                 <option value="{{$location->location}}">{{$location->location}}</option>
             @endforeach
@@ -117,12 +117,12 @@
     
             <div class="tg-checkbox mb-5">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="tg-agreetermsandrules">
-                    <label class="custom-control-label required" for="tg-agreetermsandrules">I agree to all NyoTsong <a href="javascript:void(0);">Product Guidelines &amp; Conditions</a></label>
+                    <input type="checkbox" class="custom-control-input required" value="" id="tg-agreetermsandrules" required>
+                    <label class="custom-control-label" for="tg-agreetermsandrules">I agree to all NyoTsong <a href="javascript:void(0);">Product Guidelines &amp; Conditions</a></label>
                 </div>
             </div>
             <div>
-                <button type="submit" class="btn btn-success    btn-lg" data-mdb-ripple-color="#d8caca" style="background-color:#169235"> Post Ad</button>
+                <button type="submit" class="btn btn-success btn-lg" data-mdb-ripple-color="#d8caca" style="background-color:#169235"> Post Ad</button>
             </div>
             
            
