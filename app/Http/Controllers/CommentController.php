@@ -37,22 +37,22 @@ class CommentController extends Controller
      */
     public function store(Request $request, $id)
     {
-        $request->validate([
-            'comment' => 'required',
-        ]);
-        if (Auth::check()) {
-            Comment::create([
-                'name' => Auth::user()->name,
-                'comment' => $request->input('comment'),
-                'user_id' => Auth::user()->id,
-                'user_image' => Auth::user()->image,
-                'pro_id' => $id
-            ]);
+        // $request->validate([
+        //     'comment' => 'required',
+        // ]);
+        // if (Auth::check()) {
+        //     Comment::create([
+        //         'name' => Auth::user()->name,
+        //         'comment' => $request->input('comment'),
+        //         'user_id' => Auth::user()->id,
+        //         'user_image' => Auth::user()->image,
+        //         'pro_id' => $id
+        //     ]);
 
-            return redirect()->back()->with('success','Comment Added successfully!');
-        }else{
-            return back()->withInput()->with('error','Something wrong');
-        }
+        //     return redirect()->back()->with('success','Comment Added successfully!');
+        // }else{
+        //     return back()->withInput()->with('error','Something wrong');
+        // }
     }
 
     /**

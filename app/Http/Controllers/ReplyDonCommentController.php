@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Auth;
-use App\ReplyComment;
+use App\ReplyDonComment;
 use Illuminate\Http\Request;
 
-class ReplyCommentController extends Controller
+class ReplyDonCommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +36,7 @@ class ReplyCommentController extends Controller
     public function store(Request $request)
     {
         if (Auth::check()) {
-            ReplyComment::create([
+            ReplyDonComment::create([
                 'comment_id' => $request->input('comment_id'),
                 'name' => $request->input('name'),
                 'reply' => $request->input('reply'),
@@ -54,10 +53,10 @@ class ReplyCommentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ReplyComment  $replyComment
+     * @param  \App\ReplyDonComment  $replyDonComment
      * @return \Illuminate\Http\Response
      */
-    public function show(ReplyComment $replyComment)
+    public function show(ReplyDonComment $replyDonComment)
     {
         //
     }
@@ -65,10 +64,10 @@ class ReplyCommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ReplyComment  $replyComment
+     * @param  \App\ReplyDonComment  $replyDonComment
      * @return \Illuminate\Http\Response
      */
-    public function edit(ReplyComment $replyComment)
+    public function edit(ReplyDonComment $replyDonComment)
     {
         //
     }
@@ -77,10 +76,10 @@ class ReplyCommentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ReplyComment  $replyComment
+     * @param  \App\ReplyDonComment  $replyDonComment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ReplyComment $replyComment)
+    public function update(Request $request, ReplyDonComment $replyDonComment)
     {
         //
     }
@@ -88,14 +87,13 @@ class ReplyCommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ReplyComment  $replyComment
+     * @param  \App\ReplyDonComment  $replyDonComment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ReplyComment $replyComment, $id)
+    public function destroy(ReplyDonComment $replyDonComment, $id)
     {
-    
-        $replyComment = ReplyComment::where('id', $id);
-        $userauth = ReplyComment::where('user_id', Auth::user()->id);
+        $replyComment = ReplyDonComment::where('id', $id);
+        $userauth = ReplyDonComment::where('user_id', Auth::user()->id);
 
         $replyComment->delete();
         return redirect()->back();

@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 use App\User;
 use Auth;
 use App\Donation;
+use App\CommentDon;
+use App\ReplyDonComment;
 use App\DonationDetail;
-use App\Comment;
-use App\ReplyComment;
 use Illuminate\Http\Request;
 
 class DonationDetailController extends Controller
@@ -22,9 +22,9 @@ class DonationDetailController extends Controller
         $uid = $dondata->user_id;
         $user = User::where('id', $uid)->first();
 
-        $comments = Comment::latest('created_at')->get();
-
-        return view('front.proddetails.donationdetail', compact('user','dondata','comments'));
+        $comments = CommentDon::latest('created_at')->get();
+        $replies = ReplyDonComment::latest('created_at')->get();
+        return view('front.proddetails.donationdetail', compact('user','dondata','comments','replies'));
     }
 
     /**
@@ -43,9 +43,26 @@ class DonationDetailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $dondata = Donation:: findOrFail($id);
+        $pid =$dondata->id;
+        $request->validate([
+            'comment' => 'required',
+        ]);
+        if (Auth::check()) {
+            CommentDon::create([
+                'name' => Auth::user()->name,
+                'comment' => $request->input('comment'),
+                'user_id' => Auth::user()->id,
+                'user_image' => Auth::user()->image,
+                'pro_id' => $dondata->id
+            ]);
+
+            return redirect()->back()->with('success','Comment Added successfully!');
+        }else{
+            return back()->withInput()->with('error','Something wrong');
+        }
     }
 
     /**

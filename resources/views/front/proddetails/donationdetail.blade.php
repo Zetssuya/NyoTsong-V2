@@ -25,7 +25,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form id="comment-form" method="post" action="{{ action('CommentController@store')}}" >
+                    <form id="comment-form" method="post" action="{{ action('DonationDetailController@store', ['id' => $dondata->id])}}" >
                         {{ csrf_field() }}
                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
                         <div class="row" style="padding: 10px;">
@@ -40,7 +40,7 @@
                         </div>
                     </form>
                     
-                </div>
+</div>
 <div class="row">
          <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -48,20 +48,21 @@
 
                 <div class="panel-body comment-container" >
                 @foreach($comments as $comment)
+                @if($comment->pro_id === $dondata->id)
                         <div class="well">
                         <div class="image mr-3"> 
                                             <img src="{{ url('/uploads/') . '/' . $comment->user_image }}" class="rounded-circle" width="40" /> 
                             <i><b> {{ $comment->name }} </b></i>&nbsp;&nbsp;
                             <span> {{ $comment->comment }} </span>
                         </div>
-                            <div style="margin-left:10px;">
+                        <div style="margin-left:10px;">
                                 
                                 <div class="container">
                                 <a style="cursor: pointer;"  data-toggle="collapse" data-target="#{{ $comment->id }}">Reply</a>&nbsp;
-                                <a style="cursor: pointer;"  href="/front/comments/delete/{{ $comment->id }}" >Delete</a>
+                                <a style="cursor: pointer;"  href="/front/doncomments/delete/{{ $comment->id }}" >Delete</a>
                                     <div id="{{ $comment->id }}" class="collapse">
                                         <!-- reply form -->
-                                        <form id="reply-form" method="post" action="{{ action('ReplyCommentController@store')}}" >
+                                        <form id="reply-form" method="post" action="{{ action('ReplyDonCommentController@store')}}" >
                                             {{ csrf_field() }}
                                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
                                             <input type="hidden" name="comment_id" value="{{ $comment->id }}" >
@@ -79,8 +80,8 @@
                                         </form>
 
                                     </div>
-                                </div>
-                                @foreach($comment->replies as $rep)
+                             </div>
+                             @foreach($replies as $rep)
                                      @if($comment->id === $rep->comment_id)
                                         <div class="well" style="margin-left:50px;">
                                         <div class="image mr-3"> 
@@ -91,11 +92,12 @@
                                             
                                             <div style="margin-left:10px;">
                                             <a style="cursor: pointer;"  data-toggle="collapse" data-target="#{{ $rep->id }}">Reply</a>&nbsp;
-                                            <a style="cursor: pointer;"  href="/front/replies/delete/{{ $rep->id }}" >Delete</a>
+                                            <a style="cursor: pointer;"  href="/front/donreplies/delete/{{ $rep->id }}" >Delete</a>
                                             </div>
+
                                             <div id="{{ $rep->id }}" class="collapse">
                                                 <!-- reply form -->
-                                                <form id="reply-form" method="post" action="{{ action('ReplyCommentController@store')}}" >
+                                                <form id="reply-form" method="post" action="{{ action('ReplyDonCommentController@store')}}" >
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
                                                     <input type="hidden" name="comment_id" value="{{ $comment->id }}" >
@@ -116,13 +118,15 @@
                                         </div>
                                     @endif 
                                 @endforeach
-                                </div>
-                        </div>
+                             </div>
+                            </div>
+                        @endif 
                     @endforeach
                 </div>
             </div>
         </div>
-</div><hr/>
+</div>
+<hr/>
 
 <div class="container flex-row mt-4">
     <h1 class="border mb-4 heading">User Detail</h1>

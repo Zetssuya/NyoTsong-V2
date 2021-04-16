@@ -99,11 +99,17 @@ Route::prefix('front')->group(function() {
         // Display donation product details
         Route::get('/donationdetail/{id}','DonationDetailController@index');
 
-        // comment section
+        // Sale comment section
         Route::post('/comments/{id}','SaleDetailController@store');
         Route::get('/comments/delete/{id}','CommentController@destroy');
         Route::post('/replies/comment','ReplyCommentController@store');
         Route::get('/replies/delete/{id}','ReplyCommentController@destroy');
+
+        // Sale comment section
+        Route::post('/doncomments/{id}','DonationDetailController@store');
+        Route::get('/doncomments/delete/{id}','CommentDonController@destroy');
+        Route::post('/donreplies/comment','ReplyDonCommentController@store');
+        Route::get('/donreplies/delete/{id}','ReplyDonCommentController@destroy');
 
     });
 });
