@@ -114,6 +114,9 @@ Route::prefix('front')->group(function() {
         // view user details
         Route::get('/userdetail/{id}','UserDetailController@index');
 
+        // User Rating
+        Route::post('/rating/{id}','UserDetailController@store');
+
     });
 });
 
