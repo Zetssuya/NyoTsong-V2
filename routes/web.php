@@ -117,6 +117,10 @@ Route::prefix('front')->group(function() {
         // User Rating
         Route::post('/rating/{id}','UserDetailController@store');
 
+        // system feedback
+        Route::get('/feedbacksystem','FeedbackSystemController@index');
+        Route::post('/feedbacksystem/feedadd','FeedbackSystemController@store');
+
     });
 });
 

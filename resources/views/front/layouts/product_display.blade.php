@@ -1,4 +1,11 @@
 <link href="{{ asset('assets/css/product_display.css') }}" rel="stylesheet">
+
+<div>
+  <a href="/front/feedbacksystem" class="btn btn-primary">
+    <i class="fa fa-archive"></i>Provide System Feedback</a>
+</div>
+
+<!-- Product display -->
 <div class="">
       <center><h3>Recent Products</h3>
       <div class="third mt-4"> 
@@ -35,7 +42,7 @@
           </div>
         </div>
 
-                  {{-- <div class="card product-image border border-info mb-4">
+                  <!-- {{-- <div class="card product-image border border-info mb-4">
                   @foreach($saledata as $i => $sdata)
                   <div class="product-info">
                       <img  src="{{ url('/uploads/') . '/' . $sdata->image }}" alt="Product image here" >
@@ -49,7 +56,7 @@
                     </div>
                   @endforeach
                     
-                  </div> --}}
+                  </div> --}} -->
         
 
 
@@ -75,7 +82,7 @@
             </article>
             @endforeach
             </div>
-                      {{-- <h3>Products for donation</h3>
+                      <!-- {{-- <h3>Products for donation</h3>
                         <div class="card product-image border border-info">
                         @foreach($dondata as $i => $ddata)
                         <div class="product-info">
@@ -89,7 +96,7 @@
                                       </div>
 
                         @endforeach
-                        </div> --}}
+                        </div> --}} -->
         </div>
     </div>
   </div>
