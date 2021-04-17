@@ -5,50 +5,97 @@
 <div class="container flex-row mt-4">
 <div class="row"> 
 
-<div class="text-center col-sm border" >
-    <h1 class="mb-4 heading">Product Detail</h1>
-          <div class="product-image">
-
-          <div class="product-info">
-              <img  src="{{ url('/uploads/') . '/' . $saledata->image }}" alt="Product image here" 
-              style="border-radius: 8px;
-                    height: 200px;
-                    ">
-          </div>
-
-            <h5>{{$saledata->name}}</h5>
-            <h6>Nu. {{$saledata->price}}</h6>
-            <h6>{{$saledata->detail}}</h6>       
-            <h6>{{$saledata->categories}}</h6>       
-            <h6>{{$saledata->location}}</h6>        
-          </div>
-</div>
-<!-- user detail -->
-<div class="text-center col-sm">
-    <h1 class="border mb-4 heading">User Detail</h1>
-            <div class="image mr-3"> <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="80" /> </div>
-                <div class="">
-                    <div class="d-flex flex-row mb-1"><span>Name: <strong>{{$user->name}}</strong></span>
-                    </div>
-                    </div>
-                    <div class="d-flex flex-row mb-1"> <span>Contact No.:<strong> {{$user->contact_no}}</strong></span>
-                    </div>
-                    <div class="d-flex flex-row mb-1"> <span>Location:<strong> {{$user->location}}</strong></span>
-                    </div>
-                    
-
-                <div class="third mt-4"> 
-                                          <a href="/front/userdetail/{{$user->id}}" title="Product Detail" class="btn btn-success">
-                                          <i class="fa fa-cogs"></i> View User Details</a>
-                                      </div>
+<div class="text-center col-sm" style="
+        height: 420px;
+        width: 654px;
+        margin: 50px auto;
+        background-color: rgb(100, 27, 143);
+        border-radius: 7px 7px 7px 7px;
+        -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 11px 8px rgba(0, 0, 0, 0.17) !important;">
+    <h3 class="mb-4 heading" style="
+            color: rgb(26, 24, 27) !important;
+            ">Product Detail</h3>
+            <div class="product-image">
+              <img  src="{{ url('/uploads/') . '/' . $saledata->image }}" alt="Product image here"  style=" float: left;
+                    height: 280px;
+                    border-radius: 7px 10px 10px 7px;">
+            </div>
+        <div style="
+                    border-radius: 0 7px 10px 7px;
+                    background-color: #e2de9f;">    
+        <div class="product-info" style="
+                    height: 280px;
+                    margin: 0 0 0 38px;
+                    color: #070707;
+                    line-height: 1.7em;
+                    font-size: 15px;;
+                    overflow: hidden;">
+            <label>{{$saledata->name}}</label>
+            <br>
+            <label>Nu. {{$saledata->price}}</label>
+            <br>
+            <label>{{$saledata->detail}}</label>
+            <br>      
+            <label>{{$saledata->categories}}</label>
+            <br>       
+            <label>{{$saledata->location}}</label>        
         </div>
+        </div>
+</div>
+
+<!-- user detail -->
+<div class="text-center col-sm border" style="
+            margin-left:10px !important;
+            margin-top: 50px;
+            margin-bottom: 50px !important;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 11px 8px rgba(0, 0, 0, 0.17) !important; ">
+        <div class="bio" >
+            <img src="/assets/img/background.jpg" alt="background" class="bg" style="
+            background-color: rgb(29, 25, 25);
+            width: 50% !important;
+            height: 50% !important;
+            border-bottom: 8px solid rgb(100, 27, 143);">
+        </div>
+        <div class="image mr-3" style="
+                                margin-left: 230px !important;
+                                margin-top: -50px !important;
+                                width: 70px;
+                                height: 70px;
+                                display: block;"> 
+                <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="80"  style="
+                            border: 8px solid rgb(100, 27, 143);
+                            -webkit-border-radius: 50%;
+                            -moz-border-radius: 50%;
+                            -ms-border-radius: 50%;
+                            -o-border-radius: 50%;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            position: relative;"/> 
+        </div>
+            <div class="mb-4" style="
+                    margin-top: 30px !important;">
+            <label>{{$user->name}}</label>
+            <br>
+            <label>{{$user->contact_no}}</label>
+            <br>
+            <label>{{$user->location}}</label>
+            </div>
+            <div class="third mt-4 mb-4"> 
+                <a href="/front/userdetail/{{$user->id}}" title="Product Detail" class="btn btn-success">
+                <i class="fa fa-cogs"></i> View User Details</a>
+            </div>
+        </div>
+
     </div> 
 </div>
 
 
 
 <!-- Comment section -->
-<div class="panel-body border-bottom" 
+<div class="panel-body border-bottom mb-4" 
         style="margin-left: 105px;
                 margin-right: 670px;
                 margin-top: 10px;
@@ -109,8 +156,8 @@
         <div>
         <a data-toggle="collapse" data-target="#{{ $comment->id }}" style="
             cursor: pointer;
-            margin-left: -95px !important;
-            margin-top: -40px !important;
+            margin-left: -100px !important;
+            margin-top: -70px !important;
             ">Reply</a>&nbsp;
         <a style="cursor: pointer;"  href="/front/comments/delete/{{ $comment->id }}" >Delete</a>
         <div id="{{ $comment->id }}" class="collapse">
@@ -146,35 +193,54 @@
         </form>
         </div>
         </div>
+
+        {{-- Reply display div from here --}}
         @foreach($comment->replies as $rep)
         @if($comment->id === $rep->comment_id)
-            <div class="well" style="margin-left:50px;">
-            <div class="image mr-3"> 
-                <img src="{{ url('/uploads/') . '/' . $rep->user_image }}" class="rounded-circle" width="40" /> 
+            <div class="well">
+            <div class="image mr-3" style="
+                margin-left: -100px !important;"> 
+                <img src="{{ url('/uploads/') . '/' . $rep->user_image }}" class="rounded-circle" width="40"  /> 
                     <i><b> {{ $rep->name }} </b></i>&nbsp;&nbsp;
                     <span> {{ $rep->reply }} </span>
             </div>
                                             
-            <div style="margin-left:10px;">
-                <a style="cursor: pointer;"  data-toggle="collapse" data-target="#{{ $rep->id }}">Reply</a>&nbsp;
+            <div >
+                <a data-toggle="collapse" data-target="#{{ $rep->id }}" style="
+                    cursor: pointer;
+                    margin-left: -95px !important;
+                    margin-top: -40px !important;
+                    ">Reply</a>&nbsp;
                 <a style="cursor: pointer;"  href="/front/replies/delete/{{ $rep->id }}" >Delete</a>
             </div>
             <div id="{{ $rep->id }}" class="collapse">
-            <!-- reply form -->
+
+            <!-- reply form for reply -->
             <form id="reply-form" method="post" action="{{ action('ReplyCommentController@store')}}" >
             {{ csrf_field() }}
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
                 <input type="hidden" name="comment_id" value="{{ $comment->id }}" >
                 <input type="hidden" name="name" value="{{ Auth::user()->name }}" >
 
-                <div class="row" style="padding: 10px;">
-                    <div class="form-group">
-                        <textarea class="form-control" name="reply" placeholder="Write reply from your heart!"></textarea>
+                <div class="row">
+                    <div>
+                        <textarea name="reply" placeholder="Write reply from your heart!" style="
+                        margin-left: -95px;
+                        font-family: inherit;
+                        font-size: inherit;
+                        padding: 5px 30px;
+                        border-radius: 25px;
+                        border-color: rgb(50, 14, 136) !important"></textarea>
                     </div>
                 </div>
                 <div class="row" style="padding: 0 10px 0 10px;">
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary btn-sm" style="width: 100%" name="submit">
+                        <button type="button submit" class="btn btn-warning" name="send" style="
+                            padding: 5px 20px;
+                            margin-left: 120px;
+                            margin-top: -100px;
+                            border-radius: 25px">
+                            Reply <i class="fa fa-reply" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </form>
