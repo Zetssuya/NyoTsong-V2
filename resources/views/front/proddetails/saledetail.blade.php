@@ -48,10 +48,13 @@
 
 
 <!-- Comment section -->
-<div class="panel-body border" 
+<div class="panel-body border-bottom" 
         style="margin-left: 105px;
                 margin-right: 670px;
-                margin-top: 10px">
+                margin-top: 10px;
+                border-radius: 25px;
+                border-width: thick;
+                border-color: rgb(8, 158, 158) !important">
     @if (session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
@@ -64,44 +67,55 @@
             <div class="row comment-row" 
                     style="margin-left: 0px;">
                 <div class="form-group">
-                    <textarea name="comment" placeholder="Write something from your heart!" style="
-                        border: 1px solid rgb(24, 131, 150);
+                    <textarea name="comment" placeholder="Ask the owner about the product" class="border" style="
                         font-family: inherit;
                         font-size: inherit;
-                        padding: 5px 100px;"></textarea>
+                        padding: 5px 100px;
+                        border-radius: 25px;
+                        border-color: rgb(50, 14, 136) !important"></textarea>
                 </div>
             </div>
         <div class="row comment-submit" style="padding: 0 10px 0 10px;">
             <div class="form-group">
                 <button type="button submit" class="btn btn-warning" name="send" style="
+                    padding: 10px 30px;
                     margin-left: 370px;
-                    margin-top: -130px">
-                Send</button>
+                    margin-top: -130px;
+                    border-radius: 25px">
+                Comment <i class="fa fa-comment-o" aria-hidden="true"></i></button>
             </div>
         </div>
     </form>
 
-
+{{-- This is displayed when an initial comment is made --}}
 <div class="conatiner" style="margin-left: 150px" >
     <div class="col-md-8 col-md-offset-2" >
         <div class="panel panel-default">
-            <div class="panel-heading">Comments</div>
+            <div class="panel-heading"></div>
 
-    <div class="panel-body comment-container" >
+    <div class="panel-body comment-container">
         @foreach($comments as $comment)
         @if($comment->pro_id === $saledata->id)
         <div class="well">
-            <div class="image mr-3"> 
+            <div class="image mr-3" style="
+                    margin-left: -150px !important;
+                    margin-top: -40px !important"> 
                 <img src="{{ url('/uploads/') . '/' . $comment->user_image }}" class="rounded-circle" width="40" /> 
                 <i><b> {{ $comment->name }} </b></i>&nbsp;&nbsp;
                 <span> {{ $comment->comment }} </span>
             </div>
-        <div style="margin-left:10px;">
+        <div>
                                 
         <div>
-        <a style="cursor: pointer;"  data-toggle="collapse" data-target="#{{ $comment->id }}">Reply</a>&nbsp;
+        <a data-toggle="collapse" data-target="#{{ $comment->id }}" style="
+            cursor: pointer;
+            margin-left: -95px !important;
+            margin-top: -40px !important;
+            ">Reply</a>&nbsp;
         <a style="cursor: pointer;"  href="/front/comments/delete/{{ $comment->id }}" >Delete</a>
         <div id="{{ $comment->id }}" class="collapse">
+{{--END OF This is displayed when an initial comment is made --}}
+
         <!-- reply form -->
         <form id="reply-form" method="post" action="{{ action('ReplyCommentController@store')}}" >
         {{ csrf_field() }}
@@ -110,12 +124,23 @@
             <input type="hidden" name="name" value="{{ Auth::user()->name }}" >
             <div class="row" style="padding: 10px;">
                 <div class="form-group">
-                    <textarea class="form-control" name="reply" placeholder="Write reply from your heart!"></textarea>
+                    <textarea name="reply" placeholder="Your reply goes here..." style="
+                        margin-left: -95px;
+                        font-family: inherit;
+                        font-size: inherit;
+                        padding: 5px 30px;
+                        border-radius: 25px;
+                        border-color: rgb(50, 14, 136) !important"></textarea>
                 </div>
             </div>
-            <div class="row" style="padding: 0 10px 0 10px;">
+            <div class="row" >
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-sm" style="width: 100%" name="submit">
+                    <button type="button submit" class="btn btn-warning" name="send" style="
+                    padding: 5px 20px;
+                    margin-left: 150px;
+                    margin-top: -150px;
+                    border-radius: 25px">
+                Reply <i class="fa fa-reply" aria-hidden="true"></i></button>
                 </div>
             </div>
         </form>
