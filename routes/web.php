@@ -143,5 +143,5 @@ Route::get('/user/logout','Front\SessionsController@logout');
 
 Route::get('/user/profile', 'Front\UserProfileController@index');
 
-
-
+// Search functionality
+Route::any('/search', 'Front\HomeController@searches');

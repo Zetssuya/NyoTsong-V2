@@ -82,7 +82,7 @@ class CommentDonController extends Controller
      */
     public function destroy(CommentDon $commentDon, $id)
     {
-        $mcomment = CommentDon::where('user_id', Auth::user()->id);
+        $mcomment = CommentDon::where('user_id', Auth::user()->id)->where('id',$commentDon->id);
         // if($comment->user_id == Auth::user()->id){
                         // $maincomment = Comment::where('user_id', Auth::user()->id)->where('id', $comment->id);
 

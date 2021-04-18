@@ -2,7 +2,7 @@
 @extends('front.layouts.master')
 @section('content')
 
-	{{-- SVG Image --}}
+	<!-- {{-- SVG Image --}} -->
 	<style>
 		body {
 		  background-image: url('/assets/img/homepage_wave.svg');
@@ -13,23 +13,83 @@
 		}
 		</style>
 		<br>
-	{{-- End of SVG Image --}}
+	<!-- {{-- End of SVG Image --}} -->
 
-{{-- Search-bar and NyoTsong heading --}}
+<!-- {{-- Search-bar and NyoTsong heading --}} -->
 <div class="container">
 <div class="hero-search-container">
   <div class="text-center text-md-left">
       <h1 class="h1 font-weight-bold mb-4">NyoTsong:market of possibilities</h1>
-      <form class="search-box-container large">
-          <input placeholder="Search by product name" value class="no-shadow border-0 form-control form-control-lg pac-taregt-input">
-          <button type="submit" class="btn button-search-box btn-round btn-success">
-            <svg width="32px" height="23px" viewBox="0 0 32 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class=""><g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-810.000000, -407.000000)"><g id="Hero-Search" transform="translate(151.000000, 313.000000)"><g id="Search-box" transform="translate(0.000000, 63.000000)"><g id="Button" transform="translate(641.000000, 8.000000)"><g id="left-arrow" transform="translate(34.000000, 34.500000) scale(-1, 1) translate(-34.000000, -34.500000) translate(18.000000, 23.000000)" fill="#FFFFFF" fill-rule="nonzero"><path d="M10.273,1.009 C10.717,0.565 11.416,0.565 11.86,1.009 C12.289,1.438 12.289,2.152 11.86,2.58 L3.813,10.627 L30.367,10.627 C30.986,10.627 31.494,11.119 31.494,11.738 C31.494,12.357 30.986,12.865 30.367,12.865 L3.813,12.865 L11.86,20.897 C12.289,21.341 12.289,22.056 11.86,22.484 C11.416,22.928 10.717,22.928 10.273,22.484 L0.321,12.532 C-0.108,12.103 -0.108,11.389 0.321,10.961 L10.273,1.009 Z" id="Path"></path></g></g></g></g></g></g></svg>
+      <form class="search-box-container large" action="{{ action('Front\HomeController@searches')}}" method="POST" role="search">
+	  @csrf
+          <input placeholder="Search by product name" name="search" class="no-shadow border-0 form-control form-control-lg pac-taregt-input">
+          <button type="submit" class="btn button-search-box btn-round btn-success fa fa-search">
           </button>
       </form>
   </div>
 </div>
+@if($message = Session::get('msg'))
+    <div class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+    </div>
+    <br>
+@endif
+<!-- Search Results -->
+<div class="container">
+    @if(isset($saleresult) OR isset($donresult))
+        <p> The Search results for your query <b> {{ $search }} </b> are :</p>
+
+	<div class="container">
+	<div class="row">
+		
+			<div class="position-relative col-sm">
+			@foreach($saleresult as $sres)
+					<article class="card-article d-flex flex-column text-center mb-4">
+					<div class="card-article d-flex flex-column text-center">
+						<div class="category text-success h6 mb-3">
+						<div>{{$sres->name}}</div>
+						</div>
+						<img src="{{ url('/uploads/') . '/' . $sres->image }}" alt="Products for sale" class="img-fluid card-img-top">
+						<h4 class="font-weight-bold mb-3">
+						<span>Nu. {{$sres->price}}</span>
+						</h4>
+						<div class="description mb-3">
+						{{$sres->detail}}
+						</div>
+						<span class="text-success h6"> <a href="/front/saledetail/{{$sres->id}}" class="text-success h6">
+						View details </a></span>
+					</div>
+					</article>
+					@endforeach
+			</div>
+			
+			<div class="position-relative col-sm">
+			@foreach($donresult as $dres)
+				<article class="card-article d-flex flex-column text-center mb-4">
+				<div class="card-article d-flex flex-column text-center">
+				<div class="category text-success h6 mb-3">
+					<div>{{$dres->name}}</div>
+				</div>
+				<img src="{{ url('/uploads/') . '/' . $dres->image }}" alt="Products for donation" class="img-fluid card-img-top">
+				<div class="description mb-3">
+					{{$dres->detail}}
+				</div>
+				<span class="text-success h6"> 
+					<a href="/front/donationdetail/{{$dres->id}}" class="text-success h6">
+					View details </a></span>
+				</article>
+				@endforeach
+				</div>
+		
+			
+		</div>
+	</div>
+    @endif
+
 </div>
-{{-- End of Search-bar and NyoTsong heading --}}
+</div>
+
+<!-- {{-- End of Search-bar and NyoTsong heading --}} -->
 
 @include('front.layouts.product_display')
 @endsection

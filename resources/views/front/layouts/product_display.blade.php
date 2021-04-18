@@ -42,24 +42,7 @@
           </div>
         </div>
 
-                  <!-- {{-- <div class="card product-image border border-info mb-4">
-                  @foreach($saledata as $i => $sdata)
-                  <div class="product-info">
-                      <img  src="{{ url('/uploads/') . '/' . $sdata->image }}" alt="Product image here" >
-                  </div>
-                    <h5>{{$sdata->name}}</h5>
-                    <h6>Nu. {{$sdata->price}}</h6>
-                    <h6>{{$sdata->detail}}</h6>
-                    <div class="third mt-4"> 
-                    <a href="/front/saledetail/{{$sdata->id}}" title="Product Detail" class="btn btn-success">
-                    <i class="fa fa-cogs"></i> View Details</a>
-                    </div>
-                  @endforeach
-                    
-                  </div> --}} -->
-        
-
-
+     
         <div class="col-sm">
           <h3 class="text-center">For donation</h3>
           <div class="position-relative">
@@ -70,9 +53,6 @@
                 <div>{{$ddata->name}}</div>
               </div>
               <img src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Products for donation" class="img-fluid card-img-top">
-              {{-- <h4 class="font-weight-bold mb-3">
-                <span>Osteopathy for Sports Injuries</span>
-              </h4> --}}
               <div class="description mb-3">
                 {{$ddata->detail}}
               </div>
@@ -82,21 +62,7 @@
             </article>
             @endforeach
             </div>
-                      <!-- {{-- <h3>Products for donation</h3>
-                        <div class="card product-image border border-info">
-                        @foreach($dondata as $i => $ddata)
-                        <div class="product-info">
-                            <img src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Product image here" >
-                        </div>
-                          <h5>{{$ddata->name}}</h5>
-                          <h6>{{$ddata->detail}}</h6>
-                          <div class="third mt-4"> 
-                                          <a href="/front/donationdetail/{{$ddata->id}}" title="Product Detail" class="btn btn-success">
-                                          <i class="fa fa-cogs"></i> View Details</a>
-                                      </div>
-
-                        @endforeach
-                        </div> --}} -->
+                
         </div>
     </div>
   </div>

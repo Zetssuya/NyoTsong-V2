@@ -97,7 +97,7 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment, $id)
     {
-        $mcomment = Comment::where('user_id', Auth::user()->id);
+        $mcomment = Comment::where('user_id', Auth::user()->id)->where('id',$comment->id);
         // if($comment->user_id == Auth::user()->id){
                         // $maincomment = Comment::where('user_id', Auth::user()->id)->where('id', $comment->id);
 
