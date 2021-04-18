@@ -9,7 +9,7 @@
         height: 420px;
         width: 654px;
         margin: 50px auto;
-        background-color: rgb(100, 27, 143);
+        background-color: rgb(255, 255, 255);
         border-radius: 7px 7px 7px 7px;
         -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
@@ -20,28 +20,30 @@
             ">Product Detail</h3>
             <div class="product-image">
               <img  src="{{ url('/uploads/') . '/' . $saledata->image }}" alt="Product image here"  style=" float: left;
-                    height: 280px;
+                    height: 280px !important;
+                    width: 50% !important;
                     border-radius: 7px 10px 10px 7px;">
             </div>
         <div style="
                     border-radius: 0 7px 10px 7px;
-                    background-color: #e2de9f;">    
-        <div class="product-info" style="
+                    background-color: #f0edf1;">    
+        <div class="product-info border-right border-bottom border-success" style="
+                    border-radius: 25px;
                     height: 280px;
                     margin: 0 0 0 38px;
                     color: #070707;
                     line-height: 1.7em;
                     font-size: 15px;;
                     overflow: hidden;">
-            <label>{{$saledata->name}}</label>
+            <label>Product name: <b>{{$saledata->name}}</b></label>
             <br>
-            <label>Nu. {{$saledata->price}}</label>
+            <label>Price <b>Nu. {{$saledata->price}}</b></label>
             <br>
-            <label>{{$saledata->detail}}</label>
+            <label>Description: <b>{{$saledata->detail}}</b></label>
             <br>      
-            <label>{{$saledata->categories}}</label>
+            <label>Category: <b>{{$saledata->categories}}</b></label>
             <br>       
-            <label>{{$saledata->location}}</label>        
+            <label>Location: <b>{{$saledata->location}}</b></label>        
         </div>
         </div>
 </div>
@@ -75,17 +77,18 @@
                             overflow: hidden;
                             position: relative;"/> 
         </div>
-            <div class="mb-4" style="
-                    margin-top: 30px !important;">
-            <label>{{$user->name}}</label>
+            <div class="mb-4 border-left border-bottom border-warning" style="
+                    margin-top: 30px !important;
+                    border-radius: 25px;">
+            <label class="border-bottom border-primary" style="border-radius: 25px">Name: <b>{{$user->name}}</b></label>
             <br>
-            <label>{{$user->contact_no}}</label>
+            <label class="border-bottom border-primary" style="border-radius: 25px">Phone no. <b>{{$user->contact_no}}</b></label>
             <br>
-            <label>{{$user->location}}</label>
+            <label class="border-bottom border-primary" style="border-radius: 25px">Location: <b>{{$user->location}}</b></label>
             </div>
             <div class="third mt-4 mb-4"> 
-                <a href="/front/userdetail/{{$user->id}}" title="Product Detail" class="btn btn-success">
-                <i class="fa fa-cogs"></i> View User Details</a>
+                <a href="/front/userdetail/{{$user->id}}" title="Product Detail" class="btn btn-outline-success">
+                 View user details</a>
             </div>
         </div>
 
