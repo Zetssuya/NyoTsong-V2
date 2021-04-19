@@ -46,6 +46,7 @@ class SaleController extends Controller
             'name' => 'required',
             'categories' => 'required',
             'price' => 'required',
+            'negotiation' => 'required',
             'detail' => 'required',
             'image' => 'image|required|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'location' => 'required'
@@ -62,6 +63,7 @@ class SaleController extends Controller
             'name' => $request->name,
             'categories'=> $request->categories,
             'price' => $request->price,
+            'negotiation' => $request->negotiation,
             'detail' => $request->detail,
             'image' => $request->image->getClientOriginalName(),
             'location' => $request->location,

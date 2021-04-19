@@ -52,8 +52,8 @@
             <label class="form-text text-muted">
                 Product category
             </label>
-        <div class="tg-select form-control mb-4">
-        <select name="categories" required>
+        <div>
+        <select name="categories" class="pl-lg-3 location form-control" required>
             <option value="">Select category</option>
                 @foreach($categories as $i => $category)
                     <option value="{{$category->category}}">{{$category->category}}</option>
@@ -70,6 +70,20 @@
             </label>
         <input class="form-control" name="price" placeholder="Enter product price" type="text">
         <span class="text-danger">{{$errors->first('price')}}</span>
+        </div>
+
+        <div class="pl-lg-2 col-lg-6 col-8">
+            <label class="form-text text-muted required">
+                Product Negotiation
+            </label>
+        <div>
+        <select name="negotiation" class="pl-lg-3 location form-control" required>
+            <option value="">Select product negotiation</option>
+                
+                <option value="Negotiable">Negotiable</option>
+                <option value="Fixed Price">Fixed Price</option>
+        </select>
+        </div>
         </div>
 
         {{-- Enter product Details --}}

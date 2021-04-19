@@ -17,6 +17,7 @@
           </div>
             <h5>{{$sdata->name}}</h5>
             <h6>Nu. {{$sdata->price}}</h6>
+            <h6>{{$sdata->negotiation}}</h6>
             <h6>{{$sdata->detail}}</h6>
             <div class="third mt-4"> 
                             <a href="/front/saledetail/{{$sdata->id}}" title="Edit Product" class="btn btn-success">

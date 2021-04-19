@@ -31,6 +31,9 @@
                     <h4 class="font-weight-bold mb-3">
                       <span>Nu. {{$sdata->price}}</span>
                     </h4>
+                    <h4 class="font-weight-bold mb-3">
+                      <span>{{$sdata->negotiation}}</span>
+                    </h4>
                     <div class="description mb-3">
                       {{$sdata->detail}}
                     </div>
