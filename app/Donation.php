@@ -10,5 +10,5 @@ class Donation extends Model
 
     protected $fillable = ['user_id','name','detail','image','location'];
 
-    public $timestamps = false;
+    // public $timestamps = false;
 }

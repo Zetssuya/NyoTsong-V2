@@ -10,7 +10,7 @@ class Sale extends Model
 
     protected $fillable = ['user_id','name','categories','price','detail','image','location'];
 
-    public $timestamps = false;
+    // public $timestamps = false;
     
     // public function sale(){
     //     return $this->belongsTo('App\Sale');

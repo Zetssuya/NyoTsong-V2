@@ -18,8 +18,8 @@ class MyAdController extends Controller
     public function index()
     {
         $id = auth()->user()->id;
-        $saledata = Sale::where('user_id', $id)->paginate(10);
-        $dondata = Donation::where('user_id', $id)->paginate(10);
+        $saledata = Sale::where('user_id', $id)->latest()->paginate(10);
+        $dondata = Donation::where('user_id', $id)->latest()->paginate(10);
         return view('front.profile.myad', compact('saledata','dondata'));
     }
 

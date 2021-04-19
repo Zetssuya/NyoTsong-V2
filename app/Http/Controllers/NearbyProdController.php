@@ -21,8 +21,8 @@ class NearbyProdController extends Controller
         $users = User::where('id', $id)->first();
         
         $userloc = auth()->user()->location;
-        $saledata = Sale::where('location', $userloc)->paginate(10);
-        $dondata = Donation::where('location', $userloc)->paginate(10);
+        $saledata = Sale::where('location', $userloc)->latest()->paginate(10);
+        $dondata = Donation::where('location', $userloc)->latest()->paginate(10);
 
         return view('front.localized.nearbyprod', compact('users','saledata','dondata'));
     }

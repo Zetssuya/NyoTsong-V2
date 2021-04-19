@@ -15,8 +15,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $saledata = Sale::paginate(10);
-        $dondata = Donation::paginate(10);
+        $saledata = Sale::latest()->paginate(10);
+        $dondata = Donation::latest()->paginate(10);
+        
+        // $comments = Comment::latest('created_at')->get();
 
         // $id = auth()->user()->id;
         // $users = User::where('id', $id)->first();

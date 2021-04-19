@@ -105,7 +105,7 @@ Route::prefix('front')->group(function() {
         Route::post('/replies/comment','ReplyCommentController@store');
         Route::get('/replies/delete/{id}','ReplyCommentController@destroy');
 
-        // Sale comment section
+        // Donation comment section
         Route::post('/doncomments/{id}','DonationDetailController@store');
         Route::get('/doncomments/delete/{id}','CommentDonController@destroy');
         Route::post('/donreplies/comment','ReplyDonCommentController@store');
