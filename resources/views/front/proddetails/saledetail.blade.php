@@ -1,4 +1,3 @@
-{{-- <link href="{{ asset('/css/saled.css') }}" rel="stylesheet"> --}}
 @extends('front.layouts.master')
 @section('content')
 
@@ -128,16 +127,16 @@
         <div class="row comment-submit" style="padding: 0 10px 0 10px;">
             <div class="form-group">
                 <button type="button submit" class="btn btn-warning" name="send" style="
-                    padding: 10px 30px;
-                    margin-left: 370px;
-                    margin-top: -130px;
-                    border-radius: 25px">
+                            padding: 10px 30px;
+                            margin-left: 370px;
+                            margin-top: -130px;
+                            border-radius: 25px">
                 Comment <i class="fa fa-comment-o" aria-hidden="true"></i></button>
             </div>
         </div>
     </form>
 
-{{-- This is displayed when an initial comment is made --}}
+<!-- This is displayed when an initial comment is made -->
 <div class="conatiner" style="margin-left: 150px" >
     <div class="col-md-8 col-md-offset-2" >
         <div class="panel panel-default">
@@ -154,8 +153,7 @@
                 <i><b> {{ $comment->name }} </b></i>&nbsp;&nbsp;
                 <span> {{ $comment->comment }} </span>
             </div>
-        <div>
-                                
+        <div>        
         <div>
         <a data-toggle="collapse" data-target="#{{ $comment->id }}" style="
             cursor: pointer;
