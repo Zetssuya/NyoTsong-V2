@@ -92,7 +92,7 @@
 
 
 <!-- Comment section -->
-<div class="panel-body border-bottom mb-4" style="
+<div class="panel-body border-bottom mb-5" style="
             margin-left: 105px;
             margin-right: 670px;
             margin-top: 10px;
@@ -141,22 +141,24 @@
         @foreach($comments as $comment)
         @if($comment->pro_id === $dondata->id)
         <div class="well">
-        <div class="image mr-3" style="
+        <div class="image mb-5" style="
                     margin-left: -150px !important;
                     margin-top: -40px !important"> 
                 <img src="{{ url('/uploads/') . '/' . $comment->user_image }}" class="rounded-circle" width="40" /> 
                 <i><b> {{ $comment->name }} </b></i>&nbsp;&nbsp;
                 <span> {{ $comment->comment }} </span>
         </div>
-        <div style="margin-left:10px;">
+        <div >
                                 
-        <div class="container">
+        <div >
+        <div class="mb-5" style=" 
+        margin-top: -60px !important;
+        margin-left: -90px !important">
         <a  data-toggle="collapse" data-target="#{{ $comment->id }}" style="
-                        cursor: pointer;
-                        margin-left: -100px !important;
-                        margin-top: -70px !important;
-            ">Reply</a>&nbsp;
+                        cursor: pointer">Reply</a>&nbsp;
+
         <a style="cursor: pointer;"  href="/front/doncomments/delete/{{ $comment->id }}" >Delete</a>
+        </div>
         <div id="{{ $comment->id }}" class="collapse">
         <!-- reply form -->
         <form id="reply-form" method="post" action="{{ action('ReplyDonCommentController@store')}}" >
@@ -166,8 +168,9 @@
             <input type="hidden" name="name" value="{{ Auth::user()->name }}" >
             <div class="row" style="padding: 10px;">
             <div class="form-group">
-                <textarea class="form-control" name="reply" placeholder="Write reply from your heart!" style="
-                margin-left: -95px;
+                <textarea name="reply" placeholder="Write reply from your heart!"style="
+                margin-top:-40px !important; 
+                margin-left: -85px;
                 font-family: inherit;
                 font-size: inherit;
                 padding: 5px 30px;
@@ -176,7 +179,7 @@
             </div>
             </div>
 
-            <div class="row" >
+            <div class="row mb-5" >
                 <div class="form-group">
                     <button type="button submit" class="btn btn-warning" name="send" style="
                     padding: 5px 20px;
@@ -193,15 +196,17 @@
         {{-- Reply display div from here --}}
         @foreach($replies as $rep)
         @if($comment->id === $rep->comment_id)
-        <div class="well" style="margin-left:50px;">
-        <div class="image mr-3" style="
-                    margin-left: -100px !important;"> 
+        <div class="well" >
+        <div class="image mb-5"  style="
+                     margin-left: -100px !important;"> 
         <img src="{{ url('/uploads/') . '/' . $rep->user_image }}" class="rounded-circle" width="40" /> 
         <i><b> {{ $rep->name }} </b></i>&nbsp;&nbsp;
             <span> {{ $rep->reply }} </span>
         </div>
                                             
-        <div >
+        <div class="mb-5" style="
+                    margin-top: -50px !important;
+                    margin-left: 50px !important">
             <a data-toggle="collapse" data-target="#{{ $rep->id }}" style="
                 cursor: pointer;
                 margin-left: -95px !important;
@@ -220,7 +225,7 @@
             <div class="row" >
 
             <div >
-                <textarea class="form-control" name="reply" placeholder="Write reply from your heart!" style="
+                <textarea name="reply" placeholder="Write reply from your heart!" style="
                                 margin-left: -95px;
                                 font-family: inherit;
                                 font-size: inherit;
