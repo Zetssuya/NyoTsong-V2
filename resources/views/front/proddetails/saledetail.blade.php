@@ -97,7 +97,7 @@
 
 
 <!-- Comment section -->
-<div class="panel-body border-bottom mb-4" 
+<div class="panel-body border-bottom mb-5" 
         style="margin-left: 105px;
                 margin-right: 670px;
                 margin-top: 10px;
@@ -146,7 +146,7 @@
         @foreach($comments as $comment)
         @if($comment->pro_id === $saledata->id)
         <div class="well">
-            <div class="image mr-3" style="
+            <div class="image mb-5" style="
                     margin-left: -150px !important;
                     margin-top: -40px !important"> 
                 <img src="{{ url('/uploads/') . '/' . $comment->user_image }}" class="rounded-circle" width="40" /> 
@@ -155,13 +155,17 @@
             </div>
         <div>        
         <div>
+        <div class="mb-5" style=" 
+        margin-top: -60px !important;
+        margin-left: -90px !important">
         <a data-toggle="collapse" data-target="#{{ $comment->id }}" style="
-            cursor: pointer;
-            margin-left: -100px !important;
-            margin-top: -70px !important;
-            ">Reply</a>&nbsp;
-        <a style="cursor: pointer;"  href="/front/comments/delete/{{ $comment->id }}" >Delete</a>
-        <div id="{{ $comment->id }}" class="collapse">
+            cursor: pointer;">Reply</a>&nbsp;
+
+        <a  href="/front/comments/delete/{{ $comment->id }}" style="
+            cursor: pointer;">Delete</a>
+        </div>
+        <div id="{{ $comment->id }}" class="collapse" >
+
 {{--END OF This is displayed when an initial comment is made --}}
 
         <!-- reply form -->
@@ -173,7 +177,8 @@
             <div class="row" style="padding: 10px;">
                 <div class="form-group">
                     <textarea name="reply" placeholder="Your reply goes here..." style="
-                        margin-left: -95px;
+                        margin-top:-40px !important; 
+                        margin-left: -85px;
                         font-family: inherit;
                         font-size: inherit;
                         padding: 5px 30px;
@@ -181,7 +186,7 @@
                         border-color: rgb(50, 14, 136) !important"></textarea>
                 </div>
             </div>
-            <div class="row" >
+            <div class="row mb-5" >
                 <div class="form-group">
                     <button type="button submit" class="btn btn-warning" name="send" style="
                     padding: 5px 20px;
@@ -199,14 +204,16 @@
         @foreach($comment->replies as $rep)
         @if($comment->id === $rep->comment_id)
             <div class="well">
-            <div class="image mr-3" style="
+            <div class="image mb-5" style="
                 margin-left: -100px !important;"> 
                 <img src="{{ url('/uploads/') . '/' . $rep->user_image }}" class="rounded-circle" width="40"  /> 
                     <i><b> {{ $rep->name }} </b></i>&nbsp;&nbsp;
                     <span> {{ $rep->reply }} </span>
             </div>
                                             
-            <div >
+            <div class="mb-5" style="
+                    margin-top: -50px !important;
+                    margin-left: 50px !important">
                 <a data-toggle="collapse" data-target="#{{ $rep->id }}" style="
                     cursor: pointer;
                     margin-left: -95px !important;
