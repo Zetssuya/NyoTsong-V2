@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\User;
+use App\Sale;
+use App\Donation;
 use App\UserDetail;
 use Illuminate\Http\Request;
 
@@ -24,15 +26,16 @@ class UserDetailController extends Controller
         $sumratings = $uid->sum('rating');
         // $numrates = count($uid->id);
         // $totalrates = sum($uid->rating);
-        
+        $saledata = Sale::where('user_id', $id)->latest()->paginate(5);
+        $dondata = Donation::where('user_id', $id)->latest()->paginate(5);
             if($numratings > 0){
                 $avgrating =  $sumratings/$numratings;
-                return view('front.userdetail.userdetail', compact('user','avgrating'));
+                return view('front.userdetail.userdetail', compact('user','avgrating','saledata','dondata'));
             } 
             // dd($avgrating);
             else{
                 $avgrating = "The User have not been rated yet!";
-                return view('front.userdetail.userdetail', compact('user','avgrating'));
+                return view('front.userdetail.userdetail', compact('user','avgrating','saledata','dondata'));
             }
         
      
