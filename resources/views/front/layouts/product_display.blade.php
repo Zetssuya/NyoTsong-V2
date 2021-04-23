@@ -25,7 +25,11 @@
                   <article class="card-article d-flex flex-column text-center mb-4">
                   <div class="card-article d-flex flex-column text-center">
                     <div class="category text-success h6 mb-3">
-                      <div>{{$sdata->name}}</div>
+                      <div>
+                        <h5 class="font-weight-bold mb-3">
+                        <span>{{$sdata->name}}</span>
+                      </h5>
+                      </div>
                     </div>
                     <img src="{{ url('/uploads/') . '/' . $sdata->image }}" alt="Products for sale" class="img-fluid card-img-top">
                     <h4 class="font-weight-bold mb-3">
@@ -53,7 +57,10 @@
             <article class="card-article d-flex flex-column text-center mb-4">
             <div class="card-article d-flex flex-column text-center">
               <div class="category text-success h6 mb-3">
-                <div>{{$ddata->name}}</div>
+                <div>
+                  <h5 class="font-weight-bold mb-3">
+                  {{$ddata->name}}</div>
+                </h5>
               </div>
               <img src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Products for donation" class="img-fluid card-img-top">
               <div class="description mb-3">

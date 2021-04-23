@@ -4,9 +4,9 @@
 <div class="container flex-row mt-4">
 <div class="row"> 
 
-<div class="text-center col-sm" style="
+<div class="text-center col-md-7" style="
         height: 420px;
-        width: 654px;
+        width: 700px !important;
         margin: 50px auto;
         background-color: rgb(255, 255, 255);
         border-radius: 7px 7px 7px 7px;
@@ -20,7 +20,7 @@
             <div class="product-image">
               <img  src="{{ url('/uploads/') . '/' . $saledata->image }}" alt="Product image here"  style=" float: left;
                     height: 280px !important;
-                    width: 50% !important;
+                    /* width: 50% !important; */
                     border-radius: 7px 10px 10px 7px;">
             </div>
         <div style="
@@ -48,26 +48,29 @@
 </div>
 
 <!-- user detail -->
-<div class="text-center col-sm border" style="
-            margin-left:10px !important;
+<div class="text-center col-sm" style="
+            margin-left:50px !important;
             margin-top: 50px;
             margin-bottom: 50px !important;
-            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 11px 8px rgba(0, 0, 0, 0.17) !important; ">
-        <div class="bio" >
+            /* box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 11px 8px rgba(0, 0, 0, 0.17) !important;  */
+            ">
+            <h3 class="mb-4 heading" style="
+            color: rgb(26, 24, 27) !important;
+            ">Seller bio</h3>
+        {{-- <div class="bio" >
             <img src="/assets/img/background.jpg" alt="background" class="bg" style="
             background-color: rgb(29, 25, 25);
             width: 50% !important;
             height: 50% !important;
             border-bottom: 8px solid rgb(100, 27, 143);">
-        </div>
+        </div> --}}
         <div class="image mr-3" style="
-                                margin-left: 230px !important;
-                                margin-top: -50px !important;
+                                margin-left: -50px !important;
+                                margin-top: -60px !important;
                                 width: 70px;
-                                height: 70px;
-                                display: block;"> 
-                <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="80"  style="
-                            border: 8px solid rgb(100, 27, 143);
+                                height: 70px;"> 
+                <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="90"  style="
+                            border: 4px solid rgb(23, 135, 143);
                             -webkit-border-radius: 50%;
                             -moz-border-radius: 50%;
                             -ms-border-radius: 50%;
@@ -76,14 +79,16 @@
                             overflow: hidden;
                             position: relative;"/> 
         </div>
-            <div class="mb-4 border-left border-bottom border-warning" style="
-                    margin-top: 30px !important;
+            <div class="mb-4 " style="
+                    border: 4px solid rgb(23, 135, 143);
+                    background-color:#BAE87D;
+                    /* margin-top: 20px !important; */
                     border-radius: 25px;">
-            <label class="border-bottom border-primary" style="border-radius: 25px">Name: <b>{{$user->name}}</b></label>
+            <label>Name: <b>{{$user->name}}</b></label>
             <br>
-            <label class="border-bottom border-primary" style="border-radius: 25px">Phone no. <b>{{$user->contact_no}}</b></label>
+            <label>Phone no. <b>{{$user->contact_no}}</b></label>
             <br>
-            <label class="border-bottom border-primary" style="border-radius: 25px">Location: <b>{{$user->location}}</b></label>
+            <label >Location: <b>{{$user->location}}</b></label>
             </div>
             <div class="third mt-4 mb-4"> 
                 <a href="/front/userdetail/{{$user->id}}" title="Product Detail" class="btn btn-outline-success">
