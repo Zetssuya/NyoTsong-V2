@@ -1,12 +1,27 @@
 @extends('front.layouts.master')
 @section('content')
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+<style>
+    body{
+        background-image: 
+        url('/assets/img/don_wave2.svg'),
+        url('/assets/img/don_wave.svg');
+        background-position: 
+        right,
+        left;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 
+        10%,
+        5%;
+    }
+</style>
 <div class="container flex-row mt-4">
 <div class="row">
     <!--Product details -->
-    <div class="text-center col-sm" style="
+    <div class="text-center col-md-7" style="
                 height: 420px;
-                width: 654px;
+                width: 700px !important;
                 margin: 50px auto;
                 background-color: rgb(255, 255, 255);
                 border-radius: 7px 7px 7px 7px;
@@ -15,13 +30,14 @@
                 box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
                 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 11px 8px rgba(0, 0, 0, 0.17) !important;">
         <h3 class="mb-4 heading" style="
+        font-family: Audiowide, sans-serif;
         color: rgb(26, 24, 27) !important;
         ">Item details</h3>
             <div class="product-image">
                 <img  src="{{ url('/uploads/') . '/' . $dondata->image }}" alt="Product image here"  style=" float: left;
-                        height: 280px !important;
-                        width: 50% !important;
-                        border-radius: 7px 10px 10px 7px;" >
+                         height: 280px !important;
+                         max-width: 50%;
+                    border-radius: 7px 10px 10px 7px;">
             </div>
             <div style="
                     border-radius: 0 7px 10px 7px;
@@ -44,26 +60,29 @@
     </div>
 
 <!-- user detail -->
-<div class="text-center col-sm border" style="
-            margin-left:10px !important;
+<div class="text-center col-sm"style="
+            margin-left:50px !important;
             margin-top: 50px;
             margin-bottom: 50px !important;
-            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 11px 8px rgba(0, 0, 0, 0.17) !important; ">
-        <div class="bio" >
+                ">
+                    <h3 class="mb-4 heading" style="
+                    font-family: Audiowide, sans-serif;
+                    color: rgb(26, 24, 27) !important;
+                    ">Donator bio</h3>
+        {{-- <div class="bio" >
             <img src="/assets/img/background.jpg" alt="background" class="bg" style="
             background-color: rgb(29, 25, 25);
             width: 50% !important;
             height: 50% !important;
             border-bottom: 8px solid rgb(100, 27, 143);">
-        </div>
-        <div class="image mr-3" style="
-                                margin-left: 230px !important;
-                                margin-top: -50px !important;
+        </div> --}}
+        <div class="image" style="
+                                margin-left: -50px !important;
+                                margin-top: -60px !important;
                                 width: 70px;
-                                height: 70px;
-                                display: block;"> 
+                                height: 70px;"> 
                 <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="80"  style="
-                            border: 8px solid rgb(100, 27, 143);
+                            border: 4px solid rgb(23, 135, 143);
                             -webkit-border-radius: 50%;
                             -moz-border-radius: 50%;
                             -ms-border-radius: 50%;
@@ -72,14 +91,16 @@
                             overflow: hidden;
                             position: relative;"/> 
         </div>
-            <div class="mb-4 border-left border-bottom border-warning" style="
-                    margin-top: 30px !important;
+            <div class="mb-4" style="
+                    margin-top: -10px !important;
+                    border: 4px solid rgb(23, 135, 143);
+                    background-color:#ffffff;
                     border-radius: 25px;">
-            <label class="border-bottom border-primary" style="border-radius: 25px">Name: <b>{{$user->name}}</b></label>
+            <label >Name: <b>{{$user->name}}</b></label>
             <br>
-            <label class="border-bottom border-primary" style="border-radius: 25px">Phone no. <b>{{$user->contact_no}}</b></label>
+            <label >Phone no. <b>{{$user->contact_no}}</b></label>
             <br>
-            <label class="border-bottom border-primary" style="border-radius: 25px">Location: <b>{{$user->location}}</b></label>
+            <label >Location: <b>{{$user->location}}</b></label>
             </div>
             <div class="third mt-4 mb-4"> 
                 <a href="/front/userdetail/{{$user->id}}" title="Product Detail" class="btn btn-outline-success">
@@ -98,7 +119,11 @@
             margin-top: 10px;
             border-radius: 25px;
             border-width: thick;
-            border-color: rgb(8, 158, 158) !important">
+            border-color: rgb(8, 158, 158) !important;
+            
+            @media (max-width:500px){
+                margin-top: 100px !important;
+            } ">
     @if (session('status'))
     <div class="alert alert-success">
         {{ session('status') }}

@@ -1,6 +1,21 @@
 @extends('front.layouts.master')
 @section('content')
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+<style>
+    body{
+        background-image: 
+        url('/assets/img/sale_wave.svg'),
+        url('/assets/img/sale_wave2.svg');
+        background-position: 
+        right,
+        left;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 
+        15%,
+        10%;
+    }
+</style>
 <div class="container flex-row mt-4">
 <div class="row"> 
 
@@ -14,13 +29,14 @@
         -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 11px 8px rgba(0, 0, 0, 0.17) !important;">
-    <h3 class="mb-4 heading" style="
+    <h3 class="mb-4 heading"  style="
+            font-family: Audiowide, sans-serif;
             color: rgb(26, 24, 27) !important;
             ">Product Detail</h3>
             <div class="product-image">
               <img  src="{{ url('/uploads/') . '/' . $saledata->image }}" alt="Product image here"  style=" float: left;
                     height: 280px !important;
-                    /* width: 50% !important; */
+                    max-width: 50%;
                     border-radius: 7px 10px 10px 7px;">
             </div>
         <div style="
@@ -52,9 +68,9 @@
             margin-left:50px !important;
             margin-top: 50px;
             margin-bottom: 50px !important;
-            /* box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 11px 8px rgba(0, 0, 0, 0.17) !important;  */
             ">
             <h3 class="mb-4 heading" style="
+            font-family: Audiowide, sans-serif;
             color: rgb(26, 24, 27) !important;
             ">Seller bio</h3>
         {{-- <div class="bio" >
@@ -81,8 +97,7 @@
         </div>
             <div class="mb-4 " style="
                     border: 4px solid rgb(23, 135, 143);
-                    background-color:#BAE87D;
-                    /* margin-top: 20px !important; */
+                    background-color:#ffffff;
                     border-radius: 25px;">
             <label>Name: <b>{{$user->name}}</b></label>
             <br>
