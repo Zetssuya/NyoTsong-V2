@@ -36,11 +36,19 @@
     </li>
 
     <li class="nav-item dropdown account">
+        @if (!auth()->check())
         <a class="nav-link" href="#"
              data-toggle="dropdown" aria-haspopup="true">
                 <i class="fa fa-user-circle-o"></i>
                     {{ auth()->check() ? auth()->user()->name : 'Account' }}
                 </a>
+        @else
+        <a class="nav-link" href="#"
+             data-toggle="dropdown" aria-haspopup="true">
+             <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="30" height="30">
+                    {{ auth()->check() ? auth()->user()->name : 'Account' }}
+                </a>
+        @endif
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
                 @if (!auth()->check())
                     <a class="dropdown-item " href="{{  url('user/login') }}">Login</a>
