@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Sale;
+use App\User;
 use App\Category;
 use App\Location;
 use Illuminate\Http\Request;
@@ -17,9 +18,10 @@ class SaleController extends Controller
      */
     public function index()
     {
+        $user = User::where('id', Auth::user()->id)->first();
         $categories = Category::all();
         $locations = Location::all();
-        return view('front.postadd.sale', compact('categories','locations'));  
+        return view('front.postadd.sale', compact('categories','locations','user'));  
     }
 
     /**

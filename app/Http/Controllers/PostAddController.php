@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\PostAdd;
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class PostAddController extends Controller
@@ -14,7 +16,8 @@ class PostAddController extends Controller
      */
     public function index()
     {
-        return view('front.postadd.postad');        
+        $user = User::where('id', Auth::user()->id)->first();
+        return view('front.postadd.postad', compact('user'));        
     }
 
     /**

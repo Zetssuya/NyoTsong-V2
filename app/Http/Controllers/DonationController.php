@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Donation;
+use App\User;
 use App\Location;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,10 @@ class DonationController extends Controller
      */
     public function index()
     {
+        $user = User::where('id', Auth::user()->id)->first();
         
         $locations = Location::all();
-        return view('front.postadd.donation', compact('locations'));  
+        return view('front.postadd.donation', compact('locations','user'));  
     }
 
     /**

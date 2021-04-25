@@ -21,22 +21,24 @@ class HomeController extends Controller
         // $comments = Comment::latest('created_at')->get();
 
         // $id = auth()->user()->id;
-        // $users = User::where('id', $id)->first();
+         $user = User::where('id', Auth::user()->id)->first();
 
 
-        return view('front.index', compact('saledata','dondata'));
+        return view('front.index', compact('saledata','dondata','user'));
     }
 
     public function searches(Request $request){
         $saledata = Sale::paginate(10);
         $dondata = Donation::paginate(10);
+        $user = User::where('id', Auth::user()->id)->first();
+
         $search = $request->search;
         $saleresult = Sale::where ( 'name', 'LIKE', '%' . $search . '%' )->orWhere ( 'categories', 'LIKE', '%' . $search . '%' )->get ();
         $donresult = Donation::where ( 'name', 'LIKE', '%' . $search . '%' )->get ();
         // dd($result);
         if($search !=""){
             if (count ( $saleresult ) > 0 OR count ( $donresult ) > 0  ){
-                return view('front.index', compact('saleresult', 'donresult', 'search', 'saledata','dondata'));
+                return view('front.index', compact('saleresult', 'donresult', 'search', 'saledata','dondata','user'));
             }
             else{
                 return redirect()->back()->with('msg', 'No Details found. Try to search again !' );
@@ -44,6 +46,6 @@ class HomeController extends Controller
             // return view('front.index', compact('saledata','dondata'))->with('msg', 'No Details found. Try to search again !' );
         }
         //     return redirect()->back();
-            return view('front.index', compact('saledata','dondata'));
+            return view('front.index', compact('saledata','dondata','user'));
     }
 }

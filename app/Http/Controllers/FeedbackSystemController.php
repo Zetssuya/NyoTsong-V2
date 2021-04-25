@@ -16,8 +16,9 @@ class FeedbackSystemController extends Controller
      */
     public function index()
     {
+        $user = User::where('id', Auth::user()->id)->first();
         $feedbacks = FeedbackSystem::latest('created_at')->get();
-        return view('front.feedbacks.feedbacksys', compact('feedbacks'));
+        return view('front.feedbacks.feedbacksys', compact('feedbacks','user'));
     }
 
     /**

@@ -15,9 +15,11 @@ class UpdateUserProfileController extends Controller
      */
     public function index()
     { 
+        $user = User::where('id', Auth::user()->id)->first();
+        
         $id = auth()->user()->id;
         $users = User::where('id', $id)->first();
-        return view('front.profile.updateprofile', compact('users'));
+        return view('front.profile.updateprofile', compact('users','user'));
     }
 
     /**

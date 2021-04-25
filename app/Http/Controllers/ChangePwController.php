@@ -16,9 +16,10 @@ class ChangePwController extends Controller
      */
     public function index()
     { 
+        $user = User::where('id', Auth::user()->id)->first();
         $id = auth()->user()->id;
         $users = User::where('id', $id)->first();
-        return view('front.profile.changepw', compact('users'));
+        return view('front.profile.changepw', compact('users','user'));
     }
 
     /**
