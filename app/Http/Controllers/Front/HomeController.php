@@ -21,10 +21,17 @@ class HomeController extends Controller
         // $comments = Comment::latest('created_at')->get();
 
         // $id = auth()->user()->id;
-         $user = User::where('id', Auth::user()->id)->first();
+        //  $user = User::where('id', Auth::user()->id)->first();
+        if(!auth()->check()){
+            $user = User::find('id');
+            return view('front.index', compact('saledata','dondata','user'));
+        }
+        else{
+            $user = User::where('id', Auth::user()->id)->first();
+            return view('front.index', compact('saledata','dondata','user'));
+        }
 
-
-        return view('front.index', compact('saledata','dondata','user'));
+        
     }
 
     public function searches(Request $request){
