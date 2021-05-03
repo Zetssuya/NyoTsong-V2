@@ -17,8 +17,8 @@ class UserDetailController extends Controller
      */
     public function index($id, UserDetail $userDetail)
     {
-        $user = User::find($id);
-        
+        $users = User::find($id);
+        $user = User::where('id', Auth::user()->id)->first();
         
         // to show user rating average 
         $uid = UserDetail::where('rated_user', $id); 
@@ -30,12 +30,12 @@ class UserDetailController extends Controller
         $dondata = Donation::where('user_id', $id)->latest()->paginate(5);
             if($numratings > 0){
                 $avgrating =  $sumratings/$numratings;
-                return view('front.userdetail.userdetail', compact('user','avgrating','saledata','dondata'));
+                return view('front.userdetail.userdetail', compact('users','avgrating','saledata','dondata','user'));
             } 
             // dd($avgrating);
             else{
                 $avgrating = "The User have not been rated yet!";
-                return view('front.userdetail.userdetail', compact('user','avgrating','saledata','dondata'));
+                return view('front.userdetail.userdetail', compact('users','avgrating','saledata','dondata','user'));
             }
         
      

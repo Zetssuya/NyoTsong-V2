@@ -10,15 +10,15 @@
           <h6 class="heading">User info</h6>
       </div>
       <div class="second d-flex flex-row mt-2">
-          <div class="image mr-3"> <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="80" /> </div>
+          <div class="image mr-3"> <img src="{{ url('/uploads/') . '/' . $users->image }}" class="rounded-circle" width="80" /> </div>
               <div class="">
-                  <div class="d-flex flex-row mb-1"><span>Name: <strong>{{$user->name}}</strong></span>
+                  <div class="d-flex flex-row mb-1"><span>Name: <strong>{{$users->name}}</strong></span>
                   </div>
-                  <div class="d-flex flex-row mb-1"> <span>E-mail: <strong>{{$user->email}}</strong></span>
+                  <div class="d-flex flex-row mb-1"> <span>E-mail: <strong>{{$users->email}}</strong></span>
                   </div>
-                  <div class="d-flex flex-row mb-1"> <span>Contact No.:<strong> {{$user->contact_no}}</strong></span>
+                  <div class="d-flex flex-row mb-1"> <span>Contact No.:<strong> {{$users->contact_no}}</strong></span>
                   </div>
-                  <div class="d-flex flex-row mb-1"> <span>Location:<strong> {{$user->location}}</strong></span>
+                  <div class="d-flex flex-row mb-1"> <span>Location:<strong> {{$users->location}}</strong></span>
                   </div>
               </div>
       </div>
@@ -32,15 +32,15 @@
             <h6 class="heading">User Details</h6>
         </div>
         <div class="second d-flex flex-row mt-2">
-            <div class="image mr-3"> <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="80" /> </div>
+            <div class="image mr-3"> <img src="{{ url('/uploads/') . '/' . $users->image }}" class="rounded-circle" width="80" /> </div>
                 <div class="">
-                    <div class="d-flex flex-row mb-1"><span>Name: <strong>{{$user->name}}</strong></span>
+                    <div class="d-flex flex-row mb-1"><span>Name: <strong>{{$users->name}}</strong></span>
                     </div>
-                    <div class="d-flex flex-row mb-1"> <span>E-mail: <strong>{{$user->email}}</strong></span>
+                    <div class="d-flex flex-row mb-1"> <span>E-mail: <strong>{{$users->email}}</strong></span>
                     </div>
-                    <div class="d-flex flex-row mb-1"> <span>Contact No.:<strong> {{$user->contact_no}}</strong></span>
+                    <div class="d-flex flex-row mb-1"> <span>Contact No.:<strong> {{$users->contact_no}}</strong></span>
                     </div>
-                    <div class="d-flex flex-row mb-1"> <span>Location:<strong> {{$user->location}}</strong></span>
+                    <div class="d-flex flex-row mb-1"> <span>Location:<strong> {{$users->location}}</strong></span>
                     </div>
                 </div>
         </div>
@@ -74,7 +74,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{ action('UserDetailController@store', ['id' => $user->id])}}" method="post">
+        <form action="{{ action('UserDetailController@store', ['id' => $users->id])}}" method="post">
         @csrf
         <div>
         <h6>Rate this User </h6>
@@ -120,7 +120,7 @@
     }
 </style>
 <div class="container flex-row mt-4">
-    <h1 class="border mb-4 heading">Ads by <strong>{{$user->name}}</strong></h1>
+    <h1 class="border mb-4 heading">Ads by <strong>{{$users->name}}</strong></h1>
 <div class="row">
         {{-- For Sale --}}
         <div class="col-sm offset-1 border border-info sale product-shadow">

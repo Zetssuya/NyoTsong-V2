@@ -25,6 +25,19 @@
     Contact
     </a>
     </li>
+   
+<!-- 
+    <li class="nav-item dropdown notification">
+        @if (!auth()->check())
+        @else
+        <a class="nav-link" href="#"  data-toggle="dropdown" aria-haspopup="true">
+        <i class="fa fa-bell"></i>
+        </a>
+        @endif
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                    <a class="dropdown-item " href="#">Notify</a>
+            </div>
+    </li>
 
     {{-- Post Ad --}}
     <li class="nav-item p-0 px-md-3 nav-item-special mx-auto mx-md-0">
@@ -33,7 +46,7 @@
     <span>Post an Ad </span>
     {{-- </button> --}}
     </a>
-    </li>
+    </li> -->
 
     <li class="nav-item dropdown account">
         @if (!auth()->check())

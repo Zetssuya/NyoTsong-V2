@@ -20,11 +20,13 @@ class DonationDetailController extends Controller
     {
         $dondata = Donation:: findOrFail($id);
         $uid = $dondata->user_id;
-        $user = User::where('id', $uid)->first();
+        $users = User::where('id', $uid)->first();
+        $user = User::where('id', Auth::user()->id)->first();
+
 
         $comments = CommentDon::latest('created_at')->get();
         $replies = ReplyDonComment::latest('created_at')->get();
-        return view('front.proddetails.donationdetail', compact('user','dondata','comments','replies'));
+        return view('front.proddetails.donationdetail', compact('users','dondata','comments','replies','user'));
     }
 
     /**

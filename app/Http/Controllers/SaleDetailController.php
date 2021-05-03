@@ -8,6 +8,7 @@ use App\Sale;
 use App\Comment;
 use App\ReplyComment;
 use Illuminate\Http\Request;
+use App\Notifications\UserCommented;
 
 class SaleDetailController extends Controller
 {
@@ -24,8 +25,8 @@ class SaleDetailController extends Controller
         // $pid = $saledata->id;
         
 
-        $user = User::where('id', $uid)->first();
-        
+        $users = User::where('id', $uid)->first();
+        $user = User::where('id', Auth::user()->id)->first();
         
 
         $comments = Comment::latest('created_at')->get();
@@ -33,7 +34,7 @@ class SaleDetailController extends Controller
         // $cuid = $cid[3]->user_id;
         // $commentuser = User::where('id', $cuid);
         
-        return view('front.proddetails.saledetail', compact('user','saledata','comments'));
+        return view('front.proddetails.saledetail', compact('users','saledata','comments','user'));
     }
 
     /**
@@ -67,6 +68,13 @@ class SaleDetailController extends Controller
                 'user_image' => Auth::user()->image,
                 'pro_id' => $saledata->id
             ]);
+
+            // $comment = new Comment;
+            // // for notification
+            // $user = $saledata->user_id;
+            // if(\Notification::send($user, new UserCommented(Comment::latest('id')->first()))){
+            //     return back();
+            // }
 
             return redirect()->back()->with('success','Comment Added successfully!');
         }else{

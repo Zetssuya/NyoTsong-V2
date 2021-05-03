@@ -81,7 +81,7 @@
                                 margin-top: -60px !important;
                                 width: 70px;
                                 height: 70px;"> 
-                <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="80"  style="
+                <img src="{{ url('/uploads/') . '/' . $users->image }}" class="rounded-circle" width="80"  style="
                             border: 4px solid rgb(23, 135, 143);
                             -webkit-border-radius: 50%;
                             -moz-border-radius: 50%;
@@ -96,14 +96,14 @@
                     border: 4px solid rgb(23, 135, 143);
                     background-color:#ffffff;
                     border-radius: 25px;">
-            <label >Name: <b>{{$user->name}}</b></label>
+            <label >Name: <b>{{$users->name}}</b></label>
             <br>
-            <label >Phone no. <b>{{$user->contact_no}}</b></label>
+            <label >Phone no. <b>{{$users->contact_no}}</b></label>
             <br>
-            <label >Location: <b>{{$user->location}}</b></label>
+            <label >Location: <b>{{$users->location}}</b></label>
             </div>
             <div class="third mt-4 mb-4"> 
-                <a href="/front/userdetail/{{$user->id}}" title="Product Detail" class="btn btn-outline-success">
+                <a href="/front/userdetail/{{$users->id}}" title="Product Detail" class="btn btn-outline-success">
                  View user details</a>
             </div>
     </div>
