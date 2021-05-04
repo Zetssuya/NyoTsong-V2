@@ -26,17 +26,29 @@
     </a>
     </li>
    
-<!-- 
+
     <li class="nav-item dropdown notification">
         @if (!auth()->check())
         @else
         <a class="nav-link" href="#"  data-toggle="dropdown" aria-haspopup="true">
-        <i class="fa fa-bell"></i>
+        <i class="fa fa-bell">{{$user->unreadNotifications->count()}}</i>
         </a>
-        @endif
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-                    <a class="dropdown-item " href="#">Notify</a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                    @forelse($user->unreadNotifications as $notification)
+                        @if($notification->data['product_type']==1)
+                            <a class="dropdown-item " href="/front/saledetail/{{$notification->data['id']}}">{{ $notification->data['comment'] }}</a>
+                            {{$notification->markAsRead()}}
+                        @else
+                            <a class="dropdown-item " href="/front/donationdetail/{{$notification->data['id']}}">{{ $notification->data['comment'] }}</a>
+                            {{$notification->markAsRead()}}
+                        @endif
+                    @empty
+                    <a class="dropdown-item " href="#">No Notifications</a>
+                    @endforelse 
+                    
             </div>
+        @endif
+            
     </li>
 
     {{-- Post Ad --}}
@@ -46,7 +58,7 @@
     <span>Post an Ad </span>
     {{-- </button> --}}
     </a>
-    </li> -->
+    </li>
 
     <li class="nav-item dropdown account">
         @if (!auth()->check())

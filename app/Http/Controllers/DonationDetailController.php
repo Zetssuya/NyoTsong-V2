@@ -8,6 +8,8 @@ use App\CommentDon;
 use App\ReplyDonComment;
 use App\DonationDetail;
 use Illuminate\Http\Request;
+use App\Notifications\UserDonCommented;
+use App\Notifications\UserDonCommentedReplied;
 
 class DonationDetailController extends Controller
 {
@@ -61,10 +63,37 @@ class DonationDetailController extends Controller
                 'pro_id' => $dondata->id
             ]);
 
+            $userid = $dondata->user_id;
+            // for notification
+            $user = User::where('id', $userid)->first();
+            // Notification::send($user, new UserCommented($request->comment));
+            $user->notify(new UserDonCommented($dondata));
             return redirect()->back()->with('success','Comment Added successfully!');
         }else{
             return back()->withInput()->with('error','Something wrong');
         }
+    }
+
+    public function replydonstore(Request $request, $id)
+    {
+        if (Auth::check()) {
+            ReplyDonComment::create([
+                'comment_id' => $request->input('comment_id'),
+                'name' => $request->input('name'),
+                'reply' => $request->input('reply'),
+                'user_id' => Auth::user()->id,
+                'user_image' => Auth::user()->image
+            ]);
+            $dondata = Donation:: findOrFail($id);
+            $userid = $dondata->user_id;
+            // for notification
+            $user = User::where('id', $userid)->first();
+            // Notification::send($user, new UserCommented($request->comment));
+            $user->notify(new UserDonCommentedReplied($dondata));
+            return redirect()->back()->with('success','Reply added');
+        }
+
+        return back()->withInput()->with('error','Something wronmg');
     }
 
     /**

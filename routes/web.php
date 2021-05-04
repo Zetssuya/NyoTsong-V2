@@ -102,13 +102,13 @@ Route::prefix('front')->group(function() {
         // Sale comment section
         Route::post('/comments/{id}','SaleDetailController@store');
         Route::get('/comments/delete/{id}','CommentController@destroy');
-        Route::post('/replies/comment','ReplyCommentController@store');
+        Route::post('/replies/{id}','SaleDetailController@replystore');
         Route::get('/replies/delete/{id}','ReplyCommentController@destroy');
 
         // Donation comment section
         Route::post('/doncomments/{id}','DonationDetailController@store');
         Route::get('/doncomments/delete/{id}','CommentDonController@destroy');
-        Route::post('/donreplies/comment','ReplyDonCommentController@store');
+        Route::post('/donreplies/{id}','DonationDetailController@replydonstore');
         Route::get('/donreplies/delete/{id}','ReplyDonCommentController@destroy');
 
         // view user details

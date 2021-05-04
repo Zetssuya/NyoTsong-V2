@@ -189,7 +189,7 @@
 {{--END OF This is displayed when an initial comment is made --}}
 
         <!-- reply form -->
-        <form id="reply-form" method="post" action="{{ action('ReplyCommentController@store')}}" >
+        <form id="reply-form" method="post" action="{{ action('SaleDetailController@replystore', ['id' => $saledata->id])}}" >
         {{ csrf_field() }}
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
             <input type="hidden" name="comment_id" value="{{ $comment->id }}" >
@@ -244,7 +244,7 @@
             <div id="{{ $rep->id }}" class="collapse">
 
             <!-- reply form for reply -->
-            <form id="reply-form" method="post" action="{{ action('ReplyCommentController@store')}}" >
+            <form id="reply-form" method="post" action="{{ action('SaleDetailController@replystore', ['id' => $saledata->id])}}" >
             {{ csrf_field() }}
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
                 <input type="hidden" name="comment_id" value="{{ $comment->id }}" >

@@ -186,7 +186,7 @@
         </div>
         <div id="{{ $comment->id }}" class="collapse">
         <!-- reply form -->
-        <form id="reply-form" method="post" action="{{ action('ReplyDonCommentController@store')}}" >
+        <form id="reply-form" method="post" action="{{ action('DonationDetailController@replydonstore', ['id' => $dondata->id])}}" >
             {{ csrf_field() }}
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
             <input type="hidden" name="comment_id" value="{{ $comment->id }}" >
@@ -242,7 +242,7 @@
 
         <div id="{{ $rep->id }}" class="collapse">
                   <!-- reply form for reply -->
-        <form id="reply-form" method="post" action="{{ action('ReplyDonCommentController@store')}}" >
+        <form id="reply-form" method="post" action="{{ action('DonationDetailController@replydonstore', ['id' => $dondata->id])}}" >
             {{ csrf_field() }}
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
             <input type="hidden" name="comment_id" value="{{ $comment->id }}" >

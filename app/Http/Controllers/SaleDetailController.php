@@ -9,6 +9,8 @@ use App\Comment;
 use App\ReplyComment;
 use Illuminate\Http\Request;
 use App\Notifications\UserCommented;
+use App\Notifications\UserCommentReplied;
+use Illuminate\Support\Facades\Notification;
 
 class SaleDetailController extends Controller
 {
@@ -56,7 +58,7 @@ class SaleDetailController extends Controller
     public function store(Request $request, $id)
     {
         $saledata = Sale:: findOrFail($id);
-        $pid =$saledata->id;
+        
         $request->validate([
             'comment' => 'required',
         ]);
@@ -69,12 +71,17 @@ class SaleDetailController extends Controller
                 'pro_id' => $saledata->id
             ]);
 
-            // $comment = new Comment;
-            // // for notification
-            // $user = $saledata->user_id;
-            // if(\Notification::send($user, new UserCommented(Comment::latest('id')->first()))){
-            //     return back();
-            // }
+            $userid = $saledata->user_id;
+            // for notification
+            // $cid = User::find(Auth::user()->id);
+            $pid =$saledata->id;
+            $commented = $saledata->name;
+            $notific = $commented.' has a comment!';
+            $user = User::where('id', $userid)->first();
+            // Notification::send($user, new UserCommented($request->comment));
+            $user->notify(new UserCommented($saledata));
+            // $user->notify(new UserCommented($request->comment));
+             
 
             return redirect()->back()->with('success','Comment Added successfully!');
         }else{
@@ -82,6 +89,32 @@ class SaleDetailController extends Controller
         }
     }
 
+    public function replystore(Request $request, $id)
+    {
+        $prodata = Sale:: findOrFail($id);
+        if (Auth::check()) {
+            ReplyComment::create([
+                'comment_id' => $request->input('comment_id'),
+                'name' => $request->input('name'),
+                'reply' => $request->input('reply'),
+                'user_id' => Auth::user()->id,
+                'user_image' => Auth::user()->image
+            ]);
+
+            
+            
+            $prev = Comment::find($request->input('comment_id'));
+            $userid = $prev->user_id;
+            // for notification
+            $user = User::where('id', $userid)->first();
+            // Notification::send($user, new UserCommented($request->comment));
+            $user->notify(new UserCommentReplied($prodata));
+
+            return redirect()->back()->with('success','Reply added');
+        }
+
+        return back()->withInput()->with('error','Something wronmg');
+    }
     /**
      * Display the specified resource.
      *
