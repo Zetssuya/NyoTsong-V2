@@ -75,7 +75,7 @@
         </div>
       </div>
       @endforeach
-      {{ $sdata->links() }}
+      {{ $saledata->links() }}
     <!--Products for donation -->
     <div class="mb-4">
     <h1 class = "lg-title">Items for donation</h1>
@@ -102,7 +102,7 @@
       </div>
     </div>
       @endforeach
-      {{ $ddata->links() }}
+      {{ $dondata->links() }}
     </div>
     <a href="/front/feedbacksystem" class="btn btn-primary">
       <i class="fa fa-archive"></i>Provide System Feedback</a>
