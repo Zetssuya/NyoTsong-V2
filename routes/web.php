@@ -145,3 +145,10 @@ Route::get('/user/profile', 'Front\UserProfileController@index');
 
 // Search functionality
 Route::any('/search', 'Front\HomeController@searches');
+
+// category wise product view
+Route::get('/vehicles', 'ProductCategoryController@vehicleindex');
+Route::get('/land', 'ProductCategoryController@landindex');
+Route::get('/livestock', 'ProductCategoryController@livindex');
+Route::get('/electronics', 'ProductCategoryController@eceindex');
+

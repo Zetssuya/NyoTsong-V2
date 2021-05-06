@@ -18,10 +18,7 @@ class HomeController extends Controller
         $saledata = Sale::latest()->paginate(10);
         $dondata = Donation::latest()->paginate(10);
         
-        // $comments = Comment::latest('created_at')->get();
-
-        // $id = auth()->user()->id;
-        //  $user = User::where('id', Auth::user()->id)->first();
+        
         if(!auth()->check()){
             $user = User::find('id');
             return view('front.index', compact('saledata','dondata','user'));

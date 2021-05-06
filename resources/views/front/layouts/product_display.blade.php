@@ -2,25 +2,25 @@
 
  <!--Slider trial -->
  <div class="d-flex flex-row justify-content-center" style="background-color: rgb(255, 255, 255)" >
-  <a href=" #">
+  <a href="/vehicles">
   <div class="p-2" style="margin-left: 50px">
     <img src="/assets/img/img-1.png" alt="">
     <h6>Vehicles</h6>
   </div>
 </a>
-<a href="#">
+<a href="/electronics">
   <div class="p-2" style="margin-left: 50px">
     <img src="/assets/img/img-3.png" alt="">
     <h6>Electronics</h6>
   </div>
 </a>
-<a href="#">
+<a href="/livestock">
   <div class="p-2" style="margin-left: 50px">
     <img src="/assets/img/img-5.png" alt="">
     <h6>Livestock</h6>
   </div>
 </a>
-<a href="">
+<a href="/land">
   <div class="p-2" style="margin-left: 50px">
     <img src="/assets/img/land.png" alt="" height="55px" width="55px" href="#">
     <h6>Land</h6>
@@ -75,7 +75,7 @@
         </div>
       </div>
       @endforeach
-
+      {{ $sdata->links() }}
     <!--Products for donation -->
     <div class="mb-4">
     <h1 class = "lg-title">Items for donation</h1>
@@ -102,6 +102,7 @@
       </div>
     </div>
       @endforeach
+      {{ $ddata->links() }}
     </div>
     <a href="/front/feedbacksystem" class="btn btn-primary">
       <i class="fa fa-archive"></i>Provide System Feedback</a>
