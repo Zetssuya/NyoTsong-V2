@@ -63,13 +63,12 @@ class ProductCategoryController extends Controller
     }
     public function eceindex()
     {
-        // $id = auth()->user()->id;
-        // $users = User::where('id', $id)->first();
+        
         $user = User::where('id', Auth::user()->id)->first();
         $catId = 1;
         
         $cat = Category::where('id', $catId)->first();
-        // dd ($cat);
+        
         $catname = $cat->category;
         
         $saledata = Sale::where('categories', $catname)->latest()->paginate(20);

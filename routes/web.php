@@ -152,3 +152,7 @@ Route::get('/land', 'ProductCategoryController@landindex');
 Route::get('/livestock', 'ProductCategoryController@livindex');
 Route::get('/electronics', 'ProductCategoryController@eceindex');
 
+// Latest Product page
+Route::get('/latestsale', 'LatestProductController@saleindex');
+Route::get('/latestdonation', 'LatestProductController@donindex');
+

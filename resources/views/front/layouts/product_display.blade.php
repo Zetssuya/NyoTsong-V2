@@ -75,7 +75,9 @@
         </div>
       </div>
       @endforeach
-      {{ $saledata->links() }}
+      <a href="/latestsale" class="text-success product-name">
+                  See more </a>
+     
     <!--Products for donation -->
     <div class="mb-4">
     <h1 class = "lg-title">Items for donation</h1>
@@ -101,9 +103,10 @@
         </div>
       </div>
     </div>
-      @endforeach
-      {{ $dondata->links() }}
+      @endforeach  
     </div>
+    <a href="/latestdonation" class="text-success product-name">
+                  See more </a>
     <a href="/front/feedbacksystem" class="btn btn-primary">
       <i class="fa fa-archive"></i>Provide System Feedback</a>
 </div>
