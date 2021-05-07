@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
+use Auth;
 use App\Location;
 use App\Donation;
 use App\EditDonProd;
@@ -16,9 +18,10 @@ class EditDonProdController extends Controller
     public function index($id)
     {
         $locations = Location::all();
+        $user = User::where('id', Auth::user()->id)->first();
         // $proddata = Sale::where('id', $id)->first();
         $proddondata = Donation:: findOrFail($id);
-        return view('front.profile.editdonprod', compact('locations','proddondata'));
+        return view('front.profile.editdonprod', compact('locations','proddondata','user'));
     }
 
     /**

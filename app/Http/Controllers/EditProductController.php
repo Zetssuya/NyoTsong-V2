@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Sale;
+use App\User;
+use Auth;
+
 use App\Category;
 use App\Location;
 use App\EditProduct;
@@ -21,8 +24,10 @@ class EditProductController extends Controller
         $categories = Category::all();
         $locations = Location::all();
         // $proddata = Sale::where('id', $id)->first();
+        $user = User::where('id', Auth::user()->id)->first();
+
         $proddata = Sale:: findOrFail($id);
-        return view('front.profile.editproduct', compact('categories','locations','proddata'));
+        return view('front.profile.editproduct', compact('categories','locations','proddata','user'));
     }
 
     /**
