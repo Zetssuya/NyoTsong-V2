@@ -52,4 +52,12 @@ class HomeController extends Controller
         //     return redirect()->back();
             return view('front.index', compact('saledata','dondata','user'));
     }
+
+    public function markingread($id){
+        $user = User::where('id', Auth::user()->id)->first();
+        $users = User::where('id', Auth::user()->id)->first();
+        $user->unreadNotifications->markAsRead();
+        $users->notifications()->where('id',$id)->get()->first()->delete();
+        return redirect()->back();
+    }
 }

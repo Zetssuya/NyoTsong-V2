@@ -30,21 +30,31 @@
     <li class="nav-item dropdown notification">
         @if (!auth()->check())
         @else
-        <a class="nav-link" href="#"  data-toggle="dropdown" aria-haspopup="true">
+        <a class="nav-link" href=""  data-toggle="dropdown" aria-haspopup="true">
         <i class="fa fa-bell">{{$user->unreadNotifications->count()}}</i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
                     @forelse($user->unreadNotifications as $notification)
                         @if($notification->data['product_type']==1)
                             <a class="dropdown-item " href="/front/saledetail/{{$notification->data['id']}}">{{ $notification->data['comment'] }}</a>
-                            {{$notification->markAsRead()}}
+                            @if($user->unreadNotifications->count())
+                                <a class="dropdown-item " href="/front/readnotification/{{$notification->id}}">Mark as read</a>
+                                
+                            @else
+                            @endif
                         @else
                             <a class="dropdown-item " href="/front/donationdetail/{{$notification->data['id']}}">{{ $notification->data['comment'] }}</a>
-                            {{$notification->markAsRead()}}
+                            @if($user->unreadNotifications->count())
+                                <a class="dropdown-item " href="/front/readnotification/{{$notification->id}}">Mark as read</a>
+                                
+                            @else
+                            @endif
                         @endif
                     @empty
                     <a class="dropdown-item " href="#">No Notifications</a>
                     @endforelse 
+                  
+                   
                     
             </div>
         @endif

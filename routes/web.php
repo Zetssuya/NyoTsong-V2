@@ -125,6 +125,10 @@ Route::prefix('front')->group(function() {
         Route::get('/feedbacksystem','FeedbackSystemController@index');
         Route::post('/feedbacksystem/feedadd','FeedbackSystemController@store');
 
+        // Notification read
+        Route::get('/readnotification/{id}','Front\HomeController@markingread');
+
+
     });
 });
 
