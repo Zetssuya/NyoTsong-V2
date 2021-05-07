@@ -31,7 +31,12 @@
         @if (!auth()->check())
         @else
         <a class="nav-link" href=""  data-toggle="dropdown" aria-haspopup="true">
+        @if($user->unreadNotifications->count())
         <i class="fa fa-bell">{{$user->unreadNotifications->count()}}</i>
+        @else
+        <i class="fa fa-bell"></i>
+        @endif
+
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
                     @forelse($user->unreadNotifications as $notification)
