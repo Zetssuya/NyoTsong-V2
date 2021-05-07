@@ -44,6 +44,12 @@
                     <p>Users</p>
                 </a>
             </li>
+            <li>
+                <a href="{{ url('/admin/systemfeedback') }}">
+                    <i class="fa fa-archive"></i>
+                    <p>System Feedbacks</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

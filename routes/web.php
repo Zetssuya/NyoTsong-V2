@@ -35,6 +35,10 @@ Route::prefix('admin')->group(function() {
         Route::resource('/users','UsersController');
         // Route::get('/users/index', 'UsersController@index');
 
+        // System Feedbacks
+        Route::get('/systemfeedback', 'SystemFeedbackController@index');
+        Route::get('/feedback/delete/{id}','SystemFeedbackController@destroy');
+
         //Editing user details
         Route::get('/users/edituser/{id}','UsersController@edit');
         // Route::get('/users/edituser','UsersController@edit');
