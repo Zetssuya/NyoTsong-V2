@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\User;
+use App\UserOTP;
 use App\Location;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -36,6 +37,9 @@ class RegistrationController extends Controller
             $image->move(public_path("uploads"), $new_name);
         }
 
+
+        $otpemail = $request->email;
+        // $this->otpverify($otpemail);
         // Save the data
         $user = User::create([
             'name' => $request->name,
@@ -46,10 +50,17 @@ class RegistrationController extends Controller
             'location' => $request->location,
         ]);
 
-        // Sign the user in
-        //auth()->login($user);
+        
+       
 
         // Redirect to
+        return redirect('/user/otp');
+    }
+    public function otpverify(Request $request){
+        UserOTP::create([
+            'email' => $request->email,
+            'verified' => 1,
+        ]);
         return redirect('/user/login');
     }
 }

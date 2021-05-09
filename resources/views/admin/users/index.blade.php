@@ -17,6 +17,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="header">
+                <div class="">
+                    <a href="/admin/delete/nonotp" > <i class="btn btn-danger ti-close">Delete Unnecessary Users</i></a><br/>
+
+                </div><hr/>
                     <h4 class="title">Users</h4>
                     <p class="category">List of all registered users</p>
                 </div>

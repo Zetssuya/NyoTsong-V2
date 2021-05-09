@@ -45,6 +45,10 @@ Route::prefix('admin')->group(function() {
         Route::put('/users/updateuser/{id}','UsersController@update');
         Route::get('/users/deleteuser/{id}','UsersController@deleteuser');
 
+        // Delete Non OTP users
+        Route::get('/delete/nonotp','UsersController@deletenonotp');
+        
+
         // Logout
         Route::get('/logout','AdminUserController@logout');
 
@@ -163,4 +167,9 @@ Route::get('/electronics', 'ProductCategoryController@eceindex');
 // Latest Product page
 Route::get('/latestsale', 'LatestProductController@saleindex');
 Route::get('/latestdonation', 'LatestProductController@donindex');
+
+// User OTP
+Route::get('/user/otp', 'UserOTPController@index');
+Route::post('/user/otp/verify', 'Front\RegistrationController@otpverify');
+
 

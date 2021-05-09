@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
+use App\UserOTP;
+
 use App\Http\Controllers\Controller;
 
 class SessionsController extends Controller
@@ -28,13 +30,24 @@ class SessionsController extends Controller
 
         // Check if exists
         $data= request(['email','password']);
-        if ( ! auth()->attempt($data) ) {
-            return back()->withErrors([
-                'message' => 'Wrong credentials please try again'
-            ]);
+        $verified = request('email');
+        // dd ($verified);
+        $emailverify = UserOTP::where('email',$verified)->first();
+        if($emailverify ==""){
+            return redirect()->back()->with('msg','You have not verified your account through OTP!');;
         }
-
-        return redirect('/user/profile');
+        else{
+            $verification = $emailverify->verified;
+            if($verification == 1){
+            if ( ! auth()->attempt($data) ) {
+                return back()->withErrors([
+                    'message' => 'Wrong credentials please try again'
+                ]);
+            }
+            return redirect('/user/profile');
+        }
+        }
+        
 
     }
 

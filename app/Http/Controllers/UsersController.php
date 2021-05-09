@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\UserOTP;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -35,5 +36,13 @@ class UsersController extends Controller
         $users = User:: findOrFail($id);
         $users->delete();
         return redirect()->back()->with('msg','User deleted successfully!');
+    }
+
+    public function deletenonotp(){
+        $otpusers = UserOTP::select('email')->get();
+        // dd($otpusers);
+        // $uemail = $otpusers->email;
+        $users = User::whereNotIn('email', $otpusers)->delete();
+        return redirect()->back()->with('msg','Unnecessary Users deleted successfully!');
     }
 }

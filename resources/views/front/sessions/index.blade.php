@@ -28,7 +28,7 @@
 
                         @endif
 
-                        <form action="/user/login" method="post" class="myForm col-md-6" action="/user/register" method="post">
+                        <form action="/user/login" method="post" class="myForm col-md-6">
 
                             @csrf
 
