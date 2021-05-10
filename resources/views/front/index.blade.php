@@ -1,4 +1,5 @@
 <link href="{{ asset('assets/css/homepage.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/product_display.css') }}" rel="stylesheet">
 @extends('front.layouts.master')
 @section('content')
 
@@ -42,7 +43,7 @@
 	<div class="container">
 	<div class="row">
 		
-			<div class="position-relative col-sm">
+			{{-- <div class="position-relative col-sm">
 			@foreach($saleresult as $sres)
 					<article class="card-article d-flex flex-column text-center mb-4">
 					<div class="card-article d-flex flex-column text-center">
@@ -61,9 +62,42 @@
 					</div>
 					</article>
 					@endforeach
+			</div> --}}
+
+			@foreach($saleresult as $sres)
+			<div class="col-md-3">
+			<div class = "product-items">
+				<!-- single product -->
+				<div class = "product">
+					<div class = "product-content">
+						<div class = "product-img">
+							<img src="{{ url('/uploads/') . '/' . $sres->image }}" alt = "product image" height="200px" width="100%">
+						</div>
+					</div>
+	  
+					<div class = "product-info">
+						<div class = "product-info-top">
+							<h2 class = "sm-title justify-text-center">{{$sres->name}}</h2>
+						</div>
+						<a class = "product-name">Nu. {{$sres->price}}</a>
+						<p class = "product-price">{{$sres->detail}}</p>
+						<a href="/front/saledetail/{{$sres->id}}" class="text-success product-name">
+						  View details </a>
+					</div>
+	  
+					<div class = "off-info">
+						<h2 class = "sm-title">{{$sres->negotiation}}</h2>
+					   
+					</div>
+					
+				</div>
+			  </div>
 			</div>
+			@endforeach
+
+
 			
-			<div class="position-relative col-sm">
+			{{-- <div class="position-relative col-sm">
 			@foreach($donresult as $dres)
 				<article class="card-article d-flex flex-column text-center mb-4">
 				<div class="card-article d-flex flex-column text-center">
@@ -79,8 +113,32 @@
 					View details </a></span>
 				</article>
 				@endforeach
+				</div> --}}
+		    <!--Products for donation -->
+				@foreach($donresult as $dres)
+				<div class="col-md-3">
+				<div class = "product-items">
+					<!-- single product -->
+					<div class = "product">
+						<div class = "product-content">
+							<div class = "product-img">
+								<img src="{{ url('/uploads/') . '/' . $dres->image }}" alt="Products for donation" height="200px" width="100%">
+							</div>
+						</div>
+			
+						<div class = "product-info">
+							<div class = "product-info-top">
+								<h2 class = "sm-title justify-text-center">Item name: {{$dres->name}}</h2>
+							</div>
+							<p class = "product-price">Item description: {{$dres->detail}}</p>
+							<a href="/front/donationdetail/{{$dres->id}}" class="text-success product-name">
+							  View details </a>
+						</div> 
+					</div>
+				  </div>
 				</div>
-		
+				  @endforeach
+				</div>
 			
 		</div>
 	</div>

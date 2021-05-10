@@ -34,7 +34,7 @@ class SessionsController extends Controller
         // dd ($verified);
         $emailverify = UserOTP::where('email',$verified)->first();
         if($emailverify ==""){
-            return redirect()->back()->with('msg','You have not verified your account through OTP!');;
+            return redirect()->back()->with('msg','You have not registered or verified your account through OTP!');;
         }
         else{
             $verification = $emailverify->verified;

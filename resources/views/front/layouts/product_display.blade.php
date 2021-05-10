@@ -1,5 +1,6 @@
 <link href="{{ asset('assets/css/product_display.css') }}" rel="stylesheet">
 
+<div style="background-color: #fff">
  <!--Slider trial -->
  <div class="d-flex flex-row justify-content-center" style="background-color: rgb(255, 255, 255)" >
   <a href="/vehicles">
@@ -39,11 +40,10 @@
     </center>
 </div>
 
-<div class = "products">
-  <div class = "container">
-    <h1 class = "lg-title">Products for sale</h1>
+<div class = "container">
+  <div class = "products">
+      <h1 class = "lg-title">Products for sale</h1>
     <div class="row">
-
     <!--Products for sale -->
       @foreach($saledata as $i => $sdata)
       <div class="col-md-3">
@@ -73,17 +73,27 @@
               
           </div>
         </div>
+
       </div>
       @endforeach
-      <a href="/latestsale" class="text-success product-name">
-                  See more </a>
-     
-    <!--Products for donation -->
-    <div class="mb-4">
-    <h1 class = "lg-title">Items for donation</h1>
+      </div>
+    </div>
+  </div>
+  <center>
+    <div class="third mb-4" style="margin-top: 500px"> 
+      <a href="/latestsale" title="Product Detail" class="btn btn-outline-danger">
+      See more</a>
+    </div>
+    </center>
+
+
+  <div class ="container">
+    <div class ="products">
+      <h1 class="lg-title">Products for donation</h1>
+    <div class="row">
     @foreach($dondata as $i => $ddata)
     <div class="col-md-3">
-    <div class = "product-items">
+    <div class = "product-items" style="margin-top:100px !important">
         <!-- single product -->
         <div class = "product">
             <div class = "product-content">
@@ -103,16 +113,16 @@
         </div>
       </div>
     </div>
-      @endforeach  
-    </div>
-    <a href="/latestdonation" class="text-success product-name">
-                  See more </a>
-    <a href="/front/feedbacksystem" class="btn btn-primary">
-      <i class="fa fa-archive"></i>Provide System Feedback</a>
+      @endforeach
 </div>
 </div>
+<center>
+<a href="/latestdonation" class="text-success product-name">
+  See more </a>
+</center>
 </div>
+</div>
+<a href="/front/feedbacksystem" class="btn btn-primary">
+  <i class="fa fa-archive"></i>Provide System Feedback</a>
 
-</div>
-<div>
 

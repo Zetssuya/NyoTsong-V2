@@ -18,9 +18,8 @@ class ProductCategoryController extends Controller
      */
     public function vehicleindex()
     {
-        // $id = auth()->user()->id;
-        // $users = User::where('id', $id)->first();
-        $user = User::where('id', Auth::user()->id)->first();
+        if(auth()->check()){
+            $user = User::where('id', Auth::user()->id)->first();
         $catId = 2;
         
         $cat = Category::where('id', $catId)->first();
@@ -30,12 +29,25 @@ class ProductCategoryController extends Controller
         $saledata = Sale::where('categories', $catname)->latest()->paginate(20);
 
         return view('front.categoryproduct.vehicle', compact('saledata','user'));
+        }
+        else{
+            // $user = User::where('id', Auth::user()->id)->first();
+        $catId = 2;
+        
+        $cat = Category::where('id', $catId)->first();
+        // dd ($cat);
+        $catname = $cat->category;
+        
+        $saledata = Sale::where('categories', $catname)->latest()->paginate(20);
+
+        return view('front.categoryproduct.vehicle', compact('saledata'));
+        }
+        
     }
     public function landindex()
     {
-        // $id = auth()->user()->id;
-        // $users = User::where('id', $id)->first();
-        $user = User::where('id', Auth::user()->id)->first();
+        if(auth()->check()){
+            $user = User::where('id', Auth::user()->id)->first();
         $catId = 3;
         
         $cat = Category::where('id', $catId)->first();
@@ -45,12 +57,25 @@ class ProductCategoryController extends Controller
         $saledata = Sale::where('categories', $catname)->latest()->paginate(20);
 
         return view('front.categoryproduct.land', compact('saledata','user'));
+        }
+        else{
+            // $user = User::where('id', Auth::user()->id)->first();
+        $catId = 3;
+        
+        $cat = Category::where('id', $catId)->first();
+        // dd ($cat);
+        $catname = $cat->category;
+        
+        $saledata = Sale::where('categories', $catname)->latest()->paginate(20);
+
+        return view('front.categoryproduct.land', compact('saledata'));
+        }
+        
     }
     public function livindex()
     {
-        // $id = auth()->user()->id;
-        // $users = User::where('id', $id)->first();
-        $user = User::where('id', Auth::user()->id)->first();
+        if(auth()->check()){
+            $user = User::where('id', Auth::user()->id)->first();
         $catId = 4;
         
         $cat = Category::where('id', $catId)->first();
@@ -60,11 +85,26 @@ class ProductCategoryController extends Controller
         $saledata = Sale::where('categories', $catname)->latest()->paginate(20);
 
         return view('front.categoryproduct.livestock', compact('saledata','user'));
+        }
+        else{
+            // $user = User::where('id', Auth::user()->id)->first();
+        $catId = 4;
+        
+        $cat = Category::where('id', $catId)->first();
+        // dd ($cat);
+        $catname = $cat->category;
+        
+        $saledata = Sale::where('categories', $catname)->latest()->paginate(20);
+
+        return view('front.categoryproduct.livestock', compact('saledata'));
+        }
+        
     }
     public function eceindex()
     {
         
-        $user = User::where('id', Auth::user()->id)->first();
+        if(auth()->check()){
+            $user = User::where('id', Auth::user()->id)->first();
         $catId = 1;
         
         $cat = Category::where('id', $catId)->first();
@@ -74,6 +114,19 @@ class ProductCategoryController extends Controller
         $saledata = Sale::where('categories', $catname)->latest()->paginate(20);
 
         return view('front.categoryproduct.electronic', compact('saledata','user'));
+        }
+        else{
+            $catId = 1;
+        
+        $cat = Category::where('id', $catId)->first();
+        
+        $catname = $cat->category;
+        
+        $saledata = Sale::where('categories', $catname)->latest()->paginate(20);
+
+        return view('front.categoryproduct.electronic', compact('saledata'));
+        }
+        
     }
 
     /**
