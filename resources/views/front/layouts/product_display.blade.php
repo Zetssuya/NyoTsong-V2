@@ -87,7 +87,14 @@
     </center>
 
 
-  <div class ="container">
+  <div class ="container-donation">
+    <style scoped>
+        @media(max-width:900px){
+          .container-donation{
+            margin-top:2800px
+          }
+        }
+    </style>
     <div class ="products">
       <h1 class="lg-title">Products for donation</h1>
     <div class="row">
