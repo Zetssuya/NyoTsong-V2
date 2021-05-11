@@ -18,7 +18,7 @@ class CreateSalesTable extends Migration
             $table->integer('user_id');
             $table->string('name');
             $table->string('categories');
-            $table->float('price');
+            $table->string('price');
             $table->string('negotiation');
             $table->string('detail');
             $table->string('image');
