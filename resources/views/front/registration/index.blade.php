@@ -81,7 +81,7 @@
                         <div class="box"><header>Please Note!</header>
                         
                         <h6>Before creating account with NyoTsong, please make sure you have read our privacy & general usage T&Cs.</h6>
-                            <input type="button" class="butt_out" value="Read Here"/>
+                            <a type="button" class="btn btn-success" href="/tc">Read Here</a>
                         </div>
                             
                 </div>

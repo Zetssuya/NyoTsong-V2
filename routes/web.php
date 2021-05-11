@@ -177,4 +177,13 @@ Route::get('/latestdonation', 'LatestProductController@donindex');
 Route::get('/user/otp', 'UserOTPController@index');
 Route::post('/user/otp/verify', 'Front\RegistrationController@otpverify');
 
+// About and contact
+Route::get('/about', 'Front\HomeController@aboutindex');
+Route::get('/contact', 'Front\HomeController@contactindex');
+
+// Terms and conditions
+Route::get('/tc', 'Front\HomeController@tcindex');
+
+
+
 

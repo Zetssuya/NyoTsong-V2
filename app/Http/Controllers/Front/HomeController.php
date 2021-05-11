@@ -27,9 +27,43 @@ class HomeController extends Controller
             $user = User::where('id', Auth::user()->id)->first();
             return view('front.index', compact('saledata','dondata','user'));
         }
-
-        
     }
+    public function aboutindex()
+    {  
+        if(!auth()->check()){
+            $user = User::find('id');
+            return view('front.abtcontact.about', compact('user'));
+        }
+        else{
+            $user = User::where('id', Auth::user()->id)->first();
+            return view('front.abtcontact.about', compact('user'));
+        }   
+    }
+
+    public function contactindex()
+    {  
+        if(!auth()->check()){
+            $user = User::find('id');
+            return view('front.abtcontact.contact', compact('user'));
+        }
+        else{
+            $user = User::where('id', Auth::user()->id)->first();
+            return view('front.abtcontact.contact', compact('user'));
+        } 
+    }
+
+    public function tcindex()
+    {  
+        if(!auth()->check()){
+            $user = User::find('id');
+            return view('front.registration.termscond', compact('user'));
+        }
+        else{
+            $user = User::where('id', Auth::user()->id)->first();
+            return view('front.registration.termscond', compact('user'));
+        } 
+    }
+
 
     public function searches(Request $request){
         $saledata = Sale::paginate(4);

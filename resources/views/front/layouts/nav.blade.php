@@ -15,13 +15,13 @@
     </li>
 
     <li class="nav-item">
-    <a class="nav-link" href="about" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link" href="/about" aria-haspopup="true" aria-expanded="false">
     About
     </a>
     </li>
 
     <li class="nav-item">
-    <a class="nav-link" href="contact">
+    <a class="nav-link" href="/contact">
     Contact
     </a>
     </li>
