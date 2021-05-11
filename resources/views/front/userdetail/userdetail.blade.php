@@ -120,13 +120,13 @@
         background-size: 15%;
     }
 </style>
-<div class="container flex-row mt-4">
-    <h1 class="heading">Ads by <strong>{{$users->name}}</strong></h1>
+<div class="container">
+    <h3 class="heading" style="color: #400a64">Ads by <strong>{{$users->name}}</strong></h3>
 <div class="row">
         {{-- For Sale --}}
         <div class = "container">
             <div class = "products">
-                <h3 class = "lg-title">Products for sale</h3>
+                <h3 class = "lg-title" style="color: #400a64">Products for sale</h3>
               <div class="row">
               <!--Products for sale -->
                 @foreach($saledata as $i => $sdata)
@@ -165,9 +165,9 @@
             </div>
 
 {{-- For donation --}}
-<div class ="products" style="margin-top: -30px">
+<div class ="products" style="margin-top: -230px">
     <div class ="container">
-      <h3 class="lg-title">Products for donation</h3>
+      <h3 class="lg-title" style="color: #400a64">Products for donation</h3>
     <div class="row">
     @foreach($dondata as $i => $ddata)
     <div class="col-md-3">
