@@ -77,7 +77,7 @@ class ChangePwController extends Controller
     {
         
         $request->validate([
-            'password' => 'required|confirmed',
+            'password' => 'required|confirmed|min:6',
         ]);
     
         $users = User::find($id);

@@ -24,7 +24,7 @@ class RegistrationController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|confirmed',
+            'password' => 'required|confirmed|min:6',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|required',
             'contact_no' => 'required|min:8',
             'location' => 'required'

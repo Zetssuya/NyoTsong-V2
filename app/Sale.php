@@ -8,7 +8,7 @@ class Sale extends Model
 {
     public $table = 'sales';
 
-    protected $fillable = ['user_id','name','categories','price','negotiation','detail','image','location'];
+    protected $fillable = ['user_id','name','categories','price','negotiation','detail','image','location','status'];
 
     // public $timestamps = false;
     

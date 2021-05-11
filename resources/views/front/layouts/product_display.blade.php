@@ -60,6 +60,9 @@
                   <div class = "product-info-top">
                       <h2 class = "sm-title justify-text-center">{{$sdata->name}}</h2>
                   </div>
+                  @if($sdata->status)
+                  <a class = "product-name">Status: {{$sdata->status}}</a>
+                  @endif
                   <a class = "product-name">Nu. {{$sdata->price}}</a>
                   <p class = "product-price">{{$sdata->detail}}</p>
                   <a href="/front/saledetail/{{$sdata->id}}" class="text-success product-name">
@@ -105,6 +108,9 @@
                 <div class = "product-info-top">
                     <h2 class = "sm-title justify-text-center">Item name: {{$ddata->name}}</h2>
                 </div>
+                @if($ddata->status)
+                  <a class = "product-name">Status: {{$ddata->status}}</a>
+                  @endif
                 <p class = "product-price">Item description: {{$ddata->detail}}</p>
                 <a href="/front/donationdetail/{{$ddata->id}}" class="text-success product-name">
                   View details </a>

@@ -20,6 +20,7 @@ class CreateDonationsTable extends Migration
             $table->string('detail');
             $table->string('image');
             $table->string('location');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

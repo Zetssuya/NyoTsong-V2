@@ -24,23 +24,49 @@
                             <i class="fa fa-cogs"></i> Edit</a>
                         </div>
                         <div class="third mt-4"> 
-                            <a href="/front/profile/deleteproduct/{{$sdata->id}}" title="Delete Product" class="btn btn-danger" onclick="return confirm('Are you sure? You will not be able to recover this.')">
-                                <i class="fa fa-user-times"></i> Delete</a>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                                <i class="fa fa-cogs"></i>Update product status
+                                </button>
+                                <!-- modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Update Product Status</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                    </div>
+                                    <form method="POST" action="/front/profile/markproduct/{{$sdata->id}}" class="profile-form border border-info form-shadow">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="dashboard-wrapper">
+                                        <div class="">
+                                        <select name="status" class="pl-lg-3 location form-control" id="location" required>
+                                        <option value="">Select status</option>
+                                            <option value="Available">Available</option>
+                                            <option value="Sold">Mark as Sold</option>
+                                        </select>
+                                        </div>
+                                        </div>
+                                        <div class="pl-lg-2 col-lg-10 col-8 mb-2">
+                                            <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                                                Update</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- modal end -->
                         </div>
                         <div class="third mt-4"> 
                     <a href="/front/saledetail/{{$sdata->id}}" title="Product Detail" class="btn btn-success">
                     <i class="fa fa-cogs"></i> View Details</a>
                     </div>
-                            <!-- <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div> -->
+                            
                             <div class="product-info mx-auto d-block border">
                                 <img  height = "200px" src="{{ url('/uploads/') . '/' . $sdata->image }}" alt="Product image here" >
                             </div>
@@ -81,8 +107,45 @@
                             <i class="fa fa-cogs"></i> Edit</a>
                         </div>
                         <div class="third mt-4"> 
-                            <a href="/front/profile/deletedonproduct/{{$ddata->id}}" title="Delete Product" class="btn btn-danger" onclick="return confirm('Are you sure? You will not be able to recover this.')">
-                                <i class="fa fa-user-times"></i> Delete</a>
+                            
+                                
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampledModal">
+                                <i class="fa fa-cogs"></i>Update product status
+                                </button>
+                                <!-- modal -->
+                                <div class="modal fade" id="exampledModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Update Product Status</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                    </div>
+                                    <form method="POST" action="/front/profile/markdonproduct/{{$ddata->id}}" class="profile-form border border-info form-shadow">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="dashboard-wrapper">
+                                        <div class="">
+                                        <select name="status" class="pl-lg-3 location form-control" id="location" required>
+                                        <option value="">Select status</option>
+                                            <option value="Available">Available</option>
+                                            <option value="Donated">Mark as Donated</option>
+                                        </select>
+                                        </div>
+                                        </div>
+                                        <div class="pl-lg-2 col-lg-10 col-8 mb-2">
+                                            <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                                                Update</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- modal end -->
                         </div>
                         <div class="third mt-4"> 
                                           <a href="/front/donationdetail/{{$ddata->id}}" title="Product Detail" class="btn btn-success">

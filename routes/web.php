@@ -92,12 +92,12 @@ Route::prefix('front')->group(function() {
         Route::get('/profile/editproduct/{id}','EditProductController@index');
         // Route::get('/profile/editprod/{id}','EditProductController@edit');
         Route::put('/profile/updateproduct/{id}','EditProductController@update');
-        Route::get('/profile/deleteproduct/{id}','EditProductController@destroy');
+        Route::put('/profile/markproduct/{id}','EditProductController@updatestatus');
 
         // Donation Product edit and delete
         Route::get('/profile/editdonproduct/{id}','EditDonProdController@index');
         Route::put('/profile/updatedonproduct/{id}','EditDonProdController@update');
-        Route::get('/profile/deletedonproduct/{id}','EditDonProdController@destroy');
+        Route::put('/profile/markdonproduct/{id}','EditDonProdController@updatestat');
 
         // Change Password
         Route::get('/profile/changepw/{id}','ChangePwController@index');

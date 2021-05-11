@@ -107,10 +107,15 @@ class EditDonProdController extends Controller
      * @param  \App\EditDonProd  $editDonProd
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function updatestat(Request $request, $id)
     {
-        $proddondata = Donation:: find($id);
-        $proddondata->delete();
+        
+        $request->validate([
+            'status' => 'required'
+        ]);
+        $proddondata = Donation::find($id);
+        $proddondata->status = $request->input('status');
+        $proddondata->update();
         return redirect()->back();
     }
 }

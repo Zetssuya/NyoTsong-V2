@@ -118,10 +118,14 @@ class EditProductController extends Controller
      * @param  \App\EditProduct  $editProduct
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function updatestatus(Request $request, $id)
     {
-        $proddata = Sale:: find($id);
-        $proddata->delete();
+        $request->validate([
+            'status' => 'required'
+        ]);
+        $proddata = Sale::find($id);
+        $proddata->status = $request->input('status');
+        $proddata->update();
         return redirect()->back();
     }
 }

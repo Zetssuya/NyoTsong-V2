@@ -79,6 +79,9 @@ class UpdateUserProfileController extends Controller
      */
     public function nameupdate(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required'
+        ]);
         $users = User::find($id);
         $users->name = $request->input('name');
         $users->update();
@@ -86,6 +89,10 @@ class UpdateUserProfileController extends Controller
     }
     public function emailupdate(Request $request, $id)
     {
+        $request->validate([
+            
+            'email' => 'required|email'
+        ]);
         $users = User::find($id);
         $useremail = $users->email;
         // $uemail = $this->otpemail($request, $useremail);
@@ -108,10 +115,11 @@ class UpdateUserProfileController extends Controller
     // }
     public function imageupdate(Request $request, $id)
     {
+        $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|required'
+        ]);
         $users = User::find($id);
-       
-       
-       
+  
         if($request->has('image')) {
             $image = $request->file('image');
             $filename = $image->getClientOriginalName();
@@ -124,6 +132,9 @@ class UpdateUserProfileController extends Controller
 
     public function numberupdate(Request $request, $id)
     {
+        $request->validate([
+            'contact_no' => 'required|min:8'
+        ]);
         $users = User::find($id);
        
         $users->contact_no = $request->input('contact_no');
@@ -132,6 +143,9 @@ class UpdateUserProfileController extends Controller
     }
     public function locupdate(Request $request, $id)
     {
+        $request->validate([
+            'location' => 'required'
+        ]);
         $users = User::find($id);
         
         $users->location = $request->input('location');
