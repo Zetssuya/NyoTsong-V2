@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\UserOTP;
+use App\Location;
 use Auth;
 use App\UpdateUserProfile;
 use Illuminate\Http\Request;
@@ -16,10 +18,11 @@ class UpdateUserProfileController extends Controller
     public function index()
     { 
         $user = User::where('id', Auth::user()->id)->first();
+        $locations = Location::all();
         
         $id = auth()->user()->id;
         $users = User::where('id', $id)->first();
-        return view('front.profile.updateprofile', compact('users','user'));
+        return view('front.profile.updateprofile', compact('users','user', 'locations'));
     }
 
     /**
@@ -74,11 +77,39 @@ class UpdateUserProfileController extends Controller
      * @param  \App\UpdateUserProfile  $updateUserProfile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function nameupdate(Request $request, $id)
     {
         $users = User::find($id);
         $users->name = $request->input('name');
+        $users->update();
+        return redirect()->back()->with('msg','Your name has been updated successfully!');
+    }
+    public function emailupdate(Request $request, $id)
+    {
+        $users = User::find($id);
+        $useremail = $users->email;
+        // $uemail = $this->otpemail($request, $useremail);
+        $otpemail = UserOTP::where('email', $useremail);
+        // $otpid = $otp->id;
+        // $otpemail = UserOTP::find($otpid);
+        $otpemail->email = $request->input('email');
+        // dd($otpemail->email);
+        $otpemail->update(['email' => $otpemail->email]);
+        
         $users->email = $request->input('email');
+        
+        $users->update();
+        
+        return redirect()->back()->with('msg','Your email has been updated successfully!');
+    }
+    // public function otpemail(Request $request, $useremail){
+    //     // $replyComment = ReplyComment::where('id', $id);
+        
+    // }
+    public function imageupdate(Request $request, $id)
+    {
+        $users = User::find($id);
+       
        
        
         if($request->has('image')) {
@@ -87,11 +118,25 @@ class UpdateUserProfileController extends Controller
             $image->move(public_path('uploads'), $filename);
             $users->image = $request->file('image')->getClientOriginalName();
         }
-    
+        $users->update();
+        return redirect()->back()->with('msg','Your Profile image has been updated successfully!');
+    }
 
+    public function numberupdate(Request $request, $id)
+    {
+        $users = User::find($id);
+       
         $users->contact_no = $request->input('contact_no');
         $users->update();
-        return redirect()->back()->with('msg','Your details have been updated successfully!');
+        return redirect()->back()->with('msg','Your Phone Number has been updated successfully!');
+    }
+    public function locupdate(Request $request, $id)
+    {
+        $users = User::find($id);
+        
+        $users->location = $request->input('location');
+        $users->update();
+        return redirect()->back()->with('msg','Your location has been updated successfully!');
     }
 
     /**

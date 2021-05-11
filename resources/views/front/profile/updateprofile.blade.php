@@ -26,53 +26,197 @@
                         Update your profile
                     </h2>
                 </div>
-
-                <form method="POST" action="/front/profile/updateuser/{{$users->id}}" enctype="multipart/form-data" class="profile-form border border-info form-shadow">
-                @csrf
-                @method('PUT')
-                <div class="dashboard-wrapper">
-        
-                {{-- Name --}}
-                <div class="pl-lg-2 col-lg-10 col-8 mb-2">
-                    <label class="form-text text-muted">
-                        <strong> New name</strong>
-                    </label>
-                    <input type="text" name="name" placeholder="Name" id="name"class="form-control">
-                </div>
-
-                {{-- e-mail --}}
-                <div class="pl-lg-2 col-lg-10 col-8 mb-2">
-                    <label class="form-text text-muted">
-                        <strong> New e-mail</strong>
-                    </label>
-                    <input type="text" name="email" placeholder="Email" id="email" class="form-control">
-                </div>
-                {{-- image --}}
-                <div class="pl-lg-2 col-lg-10 col-8 mb-2">
-                    <label class="form-text text-muted">
-                        <strong> New profile picture</strong>
-                     </label>
-                    <div>
-                        <input type="file" name="image" id="image" class="form-control ">
+                <div class = "mb-5">
+                
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                <i class="fa fa-cogs"></i>Update Name
+                </button>
+                <!-- modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Name</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <form method="POST" action="/front/profile/updatename/{{$users->id}}" enctype="multipart/form-data" class="profile-form border border-info form-shadow">
+                        @csrf
+                        @method('PUT')
+                        <div class="dashboard-wrapper">
+                        <div class="">
+                            <input type="text" name="name" placeholder="Enter New Name" id="name"class="form-control">
+                        </div>
+                        </div>
+                        <div class="pl-lg-2 col-lg-10 col-8 mb-2">
+                            <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                                Update</button>
+                        </div>
+                        </form>
                     </div>
                 </div>
-                {{-- Contact No --}}
-                <div class="pl-lg-2 col-lg-10 col-8 mb-2">
-                    <label class="form-text text-muted">
-                        <strong> New contact no.</strong>
-                     </label>
-                    <div>
-                    <input type="text" name="contact_no" placeholder="Contact number" id="contact_no" class="form-control required">
                 </div>
+                <!-- modal end -->
 
-                <div class="pl-lg-2 col-lg-10 col-8 mb-2">
-                    <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
-                         Update profile </button>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#emailModal">
+                <i class="fa fa-cogs"></i>Update Email
+                </button>
+                <!-- modal -->
+                <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Email</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <form method="POST" action="/front/profile/updateemail/{{$users->id}}" enctype="multipart/form-data" class="profile-form border border-info form-shadow">
+                        @csrf
+                        @method('PUT')
+                        <div class="dashboard-wrapper">
+                        <div class="">
+                            <input type="text" name="email" placeholder="Enter New email" id="email" class="form-control">
+                        </div>
+                        </div>
+                        <div class="pl-lg-2 col-lg-10 col-8 mb-2">
+                            <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                                Update</button>
+                        </div>
+                        </form>
+                    </div>
                 </div>
-                </form>
-            </div>
+                </div>
+                <!-- modal end -->
+
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#imageModal">
+                <i class="fa fa-cogs"></i>Update Profile Image
+                </button>
+                <!-- modal -->
+                <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Profile Image</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <form method="POST" action="/front/profile/updateimage/{{$users->id}}" enctype="multipart/form-data" class="profile-form border border-info form-shadow">
+                        @csrf
+                        @method('PUT')
+                        <div class="dashboard-wrapper">
+                        <div class="">
+                            <div>
+                                <input type="file" name="image" id="image" class="form-control ">
+                            </div>
+                        </div>
+                        </div>
+                        <div class="pl-lg-2 col-lg-10 col-8 mb-2">
+                            <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                                Update</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <!-- modal end -->
+
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#pnoModal">
+                <i class="fa fa-cogs"></i>Update Phone Number
+                </button>
+                <!-- modal -->
+                <div class="modal fade" id="pnoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Phone Number</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <form method="POST" action="/front/profile/updatenumber/{{$users->id}}" enctype="multipart/form-data" class="profile-form border border-info form-shadow">
+                        @csrf
+                        @method('PUT')
+                        <div class="dashboard-wrapper">
+                        <div class="">
+                            <div>
+                                <input type="text" name="contact_no" placeholder="Contact number" id="contact_no" class="form-control required">
+                               
+                            </div>
+                        </div>
+                        </div>
+                        <div class="pl-lg-2 col-lg-10 col-8 mb-2">
+                            <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                                Update</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <!-- modal end -->
+
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#locModal">
+                <i class="fa fa-cogs"></i>Update Location
+                </button>
+                <!-- modal -->
+                <div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Location</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <form method="POST" action="/front/profile/updatelocation/{{$users->id}}" enctype="multipart/form-data" class="profile-form border border-info form-shadow">
+                        @csrf
+                        @method('PUT')
+                        <div class="dashboard-wrapper">
+                        <div class="">
+                            <div>
+                            <select name="location" class="pl-lg-3 location form-control" id="location" required>
+                            <option value="">Select location</option>
+                            @foreach($locations as $i => $location)
+                                <option value="{{$location->location}}">{{$location->location}}</option>
+                            @endforeach
+                            </select>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="pl-lg-2 col-lg-10 col-8 mb-2">
+                            <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                                Update</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <!-- modal end -->
+
+                </div>
+                
+
+     
             </div>
         </div>
+    </div>
 </div>
 
 @endsection

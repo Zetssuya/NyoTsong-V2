@@ -94,7 +94,7 @@
                     <a class="dropdown-item " href="{{  url('user/login') }}">Login</a>
                     <a class="dropdown-item" href="{{  url('user/register') }}">Register</a>
                 @else
-                    <a class="dropdown-item" href="{{  url('user/profile') }}"><i class="fa fa-user"></i> Profile</a>
+                    <a class="dropdown-item" href="{{  url('/front/user/profile') }}"><i class="fa fa-user"></i> Profile</a>
                     <hr>
                     <a class="dropdown-item" href="{{  url('user/logout') }}"><i class="fa fa-lock"></i> Logout</a>
                 @endif

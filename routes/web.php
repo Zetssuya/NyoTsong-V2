@@ -73,9 +73,15 @@ Route::prefix('front')->group(function() {
         Route::get('/postadd/donation', 'DonationController@index');
         
         //user profile
-        Route::get('/profile/updateprofile/{id}','UpdateUserProfileController@index');
+        Route::get('/user/profile', 'Front\UserProfileController@index');
+
+        Route::get('/profile/updateprofile/','UpdateUserProfileController@index');
         Route::get('/profile/edituser/{id}','UpdateUserProfileController@edit');
-        Route::put('/profile/updateuser/{id}','UpdateUserProfileController@update');
+        Route::put('/profile/updatename/{id}','UpdateUserProfileController@nameupdate');
+        Route::put('/profile/updateemail/{id}','UpdateUserProfileController@emailupdate');
+        Route::put('/profile/updateimage/{id}','UpdateUserProfileController@imageupdate');
+        Route::put('/profile/updatenumber/{id}','UpdateUserProfileController@numberupdate');
+        Route::put('/profile/updatelocation/{id}','UpdateUserProfileController@locupdate');
         Route::get('/profile/deleteuser/{id}','UpdateUserProfileController@destroy');
 
         //My ads
@@ -153,7 +159,6 @@ Route::post('/user/login','Front\SessionsController@store');
 // Logout
 Route::get('/user/logout','Front\SessionsController@logout');
 
-Route::get('/user/profile', 'Front\UserProfileController@index');
 
 // Search functionality
 Route::any('/search', 'Front\HomeController@searches');

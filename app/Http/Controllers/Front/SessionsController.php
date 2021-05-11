@@ -44,7 +44,7 @@ class SessionsController extends Controller
                     'message' => 'Wrong credentials please try again'
                 ]);
             }
-            return redirect('/user/profile');
+            return redirect('/front/user/profile');
         }
         }
         

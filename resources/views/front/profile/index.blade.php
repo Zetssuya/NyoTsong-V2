@@ -45,8 +45,9 @@
         </div>
             <hr class="line-color">
             <div class="third mt-2"> 
-                <a href="/front/profile/updateprofile/{{$user->id}}" title="Update your profile" class="btn btn-success">
+                <a href="/front/profile/updateprofile/" title="Update your profile" class="btn btn-success">
                 <i class="fa fa-cogs"></i> Update Profile</a>
+                
             </div>
             <div class="third mt-4"> 
                 <a href="/front/profile/changepw/{{$user->id}}" title="Password update" class="btn btn-success">

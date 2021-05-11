@@ -32,25 +32,43 @@ class HomeController extends Controller
     }
 
     public function searches(Request $request){
-        $saledata = Sale::paginate(10);
-        $dondata = Donation::paginate(10);
-        $user = User::where('id', Auth::user()->id)->first();
+        $saledata = Sale::paginate(4);
+        $dondata = Donation::paginate(4);
+        
 
         $search = $request->search;
         $saleresult = Sale::where ( 'name', 'LIKE', '%' . $search . '%' )->orWhere ( 'categories', 'LIKE', '%' . $search . '%' )->get ();
         $donresult = Donation::where ( 'name', 'LIKE', '%' . $search . '%' )->get ();
         // dd($result);
-        if($search !=""){
-            if (count ( $saleresult ) > 0 OR count ( $donresult ) > 0  ){
-                return view('front.index', compact('saleresult', 'donresult', 'search', 'saledata','dondata','user'));
+        if(!auth()->check()){
+            $user = User::find('id');
+            if($search !=""){
+                if (count ( $saleresult ) > 0 OR count ( $donresult ) > 0  ){
+                    return view('front.index', compact('saleresult', 'donresult', 'search', 'saledata','dondata','user'));
+                }
+                else{
+                    return redirect()->back()->with('msg', 'No Details found. Try to search again !' );
+                }
+                // return view('front.index', compact('saledata','dondata'))->with('msg', 'No Details found. Try to search again !' );
             }
-            else{
-                return redirect()->back()->with('msg', 'No Details found. Try to search again !' );
-            }
-            // return view('front.index', compact('saledata','dondata'))->with('msg', 'No Details found. Try to search again !' );
+            //     return redirect()->back();
+                return view('front.index', compact('saledata','dondata','user'));
         }
-        //     return redirect()->back();
-            return view('front.index', compact('saledata','dondata','user'));
+        else{
+            $user = User::where('id', Auth::user()->id)->first();
+            if($search !=""){
+                if (count ( $saleresult ) > 0 OR count ( $donresult ) > 0  ){
+                    return view('front.index', compact('saleresult', 'donresult', 'search', 'saledata','dondata','user'));
+                }
+                else{
+                    return redirect()->back()->with('msg', 'No Details found. Try to search again !' );
+                }
+                // return view('front.index', compact('saledata','dondata'))->with('msg', 'No Details found. Try to search again !' );
+            }
+            //     return redirect()->back();
+                return view('front.index', compact('saledata','dondata','user'));
+        }
+        
     }
 
     public function markingread($id){
