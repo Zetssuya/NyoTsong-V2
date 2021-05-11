@@ -1,6 +1,11 @@
-<div class="footer">
-    <div class="useful-links">
-        
-    </div>
-    <p>&#169; All right reserved, NyoTsong. 2021</p>
-  </div>
+<link href="{{ url('assets/css/footer.css') }}" rel="stylesheet">
+
+<footer class="footer">
+    <center>
+        <a href="/front/feedbacksystem" class="feedback">
+            Provide System Feedback
+            </a>
+            <p class="copyright">NyoTsong © 2021</p>
+    </center>
+  </footer>
+  

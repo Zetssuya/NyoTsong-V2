@@ -1,3 +1,4 @@
+<link href="{{ asset('assets/css/feedbacksys.css') }}" rel="stylesheet">
 @extends('front.layouts.master')
 @section('content')
 
@@ -9,25 +10,34 @@
     @endif 
 
 <!-- Feedback system -->
-<div>
-    <h3>System Feedback</h3>
+<center>
+<div  class="border-primary"  style="margin-top: 20px;
+                            width: 50%;
+                            border: 2px solid;
+                            border-radius: 25px;">
+    <div class="modal-body text-center border" >
+    <div class="h3 font-weight-bold mb-4" style="color: rgb(101, 33, 156)">
+            We would like to hear from you
+    </div>
+            <form  method="post" action="{{ action('FeedbackSystemController@store')}}">
+            @csrf
+            <div>
+            <h5 class="font-weight-bold mb-4" style="color: rgb(101, 33, 156)">Help us improve our application </h5>
+            <textarea class="description" name="feedback" placeholder="Enter product description" type="text" style="
+                    align-content: center;
+                    width: 60%;
+                    border: 2px solid rgb(90, 13, 134)">
+            </textarea>
+            </div><br/>
+            <button type="submit" class="btn btn-outline-info text-dark">Send Feedback</button>
+            </form>
+            <h3 style=" color: rgb(101, 33, 156)">Some feedbacks given by our users</h3>
+    </div>
 </div>
-<div class="modal-body" >
-        <form  method="post" action="{{ action('FeedbackSystemController@store')}}">
-        @csrf
-        <div>
-        <h6>Provide us feedback </h6>
-        <textarea class="form-control description" name="feedback" placeholder="Enter product description" type="text"></textarea>
-        </div><br/>
-        <button type="submit" class="btn btn-primary">Send Feedback</button>
-        </form>
-</div>
-<div>
-    <h3>Some feedbacks given by our users</h3>
-</div>
-<div>
-    @foreach($feedbacks as $i => $feed)
-    <p>{{$feed->feedback}}</p>
-    @endforeach
-</div>
+</center>
+    <div>
+        @foreach($feedbacks as $i => $feed)
+        <p>{{$feed->feedback}}</p>
+        @endforeach
+    </div>
 @endsection

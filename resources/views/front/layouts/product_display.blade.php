@@ -42,11 +42,11 @@
 
 <div class = "container">
   <div class = "products">
-      <h1 class = "lg-title">Products for sale</h1>
+      <h3 class = "lg-title">Products for sale</h3>
     <div class="row">
     <!--Products for sale -->
       @foreach($saledata as $i => $sdata)
-      <div class="col-md-3">
+      <div id="saleproduct" class="col-md-3 column">
       <div class = "product-items">
           <!-- single product -->
           <div class = "product">
@@ -78,29 +78,21 @@
       @endforeach
       </div>
     </div>
+    <center>
+      <div> 
+        <a href="/latestsale" title="See more like this" class="btn btn-outline-danger" style="margin-top: -70px">
+        See more</a>
+      </div>
+      </center>
   </div>
-  <center>
-    <div class="third mb-4" style="margin-top: 500px"> 
-      <a href="/latestsale" title="Product Detail" class="btn btn-outline-danger">
-      See more</a>
-    </div>
-    </center>
 
-
-  <div class ="container-donation">
-    <style scoped>
-        @media(max-width:900px){
-          .container-donation{
-            margin-top:2800px
-          }
-        }
-    </style>
-    <div class ="products">
-      <h1 class="lg-title">Products for donation</h1>
+  <div class ="products" style="margin-top: -30px">
+    <div class ="container">
+      <h3 class="lg-title">Products for donation</h3>
     <div class="row">
     @foreach($dondata as $i => $ddata)
     <div class="col-md-3">
-    <div class = "product-items" style="margin-top:100px !important">
+    <div class = "product-items">
         <!-- single product -->
         <div class = "product">
             <div class = "product-content">
@@ -120,16 +112,15 @@
         </div>
       </div>
     </div>
-      @endforeach
-</div>
+      @endforeach  
 </div>
 <center>
-<a href="/latestdonation" class="text-success product-name">
-  See more </a>
-</center>
+  <div> 
+    <a href="/latestdonation" title="See more like this" class="btn btn-outline-danger">
+    See more</a>
+  </div>
+  </center>
 </div>
 </div>
-<a href="/front/feedbacksystem" class="btn btn-primary">
-  <i class="fa fa-archive"></i>Provide System Feedback</a>
-
+</div>
 

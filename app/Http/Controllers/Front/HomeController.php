@@ -15,8 +15,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $saledata = Sale::latest()->paginate(10);
-        $dondata = Donation::latest()->paginate(10);
+        $saledata = Sale::latest()->paginate(4);
+        $dondata = Donation::latest()->paginate(4);
         
         
         if(!auth()->check()){

@@ -150,4 +150,6 @@
 <!-- {{-- End of Search-bar and NyoTsong heading --}} -->
 
 @include('front.layouts.product_display')
+@include('front.layouts.footer')
 @endsection
+
