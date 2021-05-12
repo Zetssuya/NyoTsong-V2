@@ -1,51 +1,72 @@
+<link href="{{ asset('assets/css/product_display.css') }}" rel="stylesheet">
 @extends('front.layouts.master')
 @section('content')
 
-<div class="container flex-row mt-4">
-    <h1 class="border mb-4 heading">Nearby Products</h1>
-<div class="row">
-
-<section class="products">
+<div class = "container">
+  <div class = "products">
+      <h3 class = "lg-title">Products nearby me</h3>
     <div class="row">
-    
-    <div class="product-card text-center col-sm" >
-    <h3>Sale Products</h3>
-          <div class="product-image">
-          @foreach($saledata as $i => $sdata)
-          <div class="product-info">
-              <img  src="{{ url('/uploads/') . '/' . $sdata->image }}" alt="Product image here" >
-          </div>
-            <h5>{{$sdata->name}}</h5>
-            <h6>Nu. {{$sdata->price}}</h6>
-            <h6>{{$sdata->negotiation}}</h6>
-            <h6>{{$sdata->detail}}</h6>
-            <div class="third mt-4"> 
-                            <a href="/front/saledetail/{{$sdata->id}}" title="Edit Product" class="btn btn-success">
-                            <i class="fa fa-cogs"></i> View Details</a>
-                        </div>
-          @endforeach
-            
+    <!--Products for sale -->
+      @foreach($saledata as $i => $sdata)
+      <div id="saleproduct" class="col-md-3 column">
+      <div class = "product-items">
+          <!-- single product -->
+          <div class = "product">
+              <div class = "product-content">
+                  <div class = "product-img">
+                      <img src="{{ url('/uploads/') . '/' . $sdata->image }}" alt = "product image" height="200px" width="100%">
+                  </div>
+              </div>
+
+              <div class = "product-info">
+                  <div class = "product-info-top">
+                      <h2 class = "sm-title justify-text-center">{{$sdata->name}}</h2>
+                  </div>
+                  @if($sdata->status)
+                  <a class = "product-name">Status: {{$sdata->status}}</a>
+                  @endif
+                  <a class = "product-name">Nu. {{$sdata->price}}</a>
+                  <p class = "product-price">{{$sdata->detail}}</p>
+                  <a href="/front/saledetail/{{$sdata->id}}" class="text-success product-name">
+                    View details </a>
+              </div>
+              <div class = "off-info">
+                  <h2 class = "sm-title">{{$sdata->negotiation}}</h2>
+              </div>
           </div>
         </div>
+      </div>
+      @endforeach
 
-        <div class="product-card text-center col-sm">
-        <h3>Donation Products</h3>
-          <div class="product-image">
-          @foreach($dondata as $i => $ddata)
-          <div class="product-info">
-              <img src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Product image here" >
-          </div>
-            <h5>{{$ddata->name}}</h5>
-            <h6>{{$ddata->detail}}</h6>
-            <div class="third mt-4"> 
-                            <a href="/front/donationdetail/{{$ddata->id}}" title="Edit Product" class="btn btn-success">
-                            <i class="fa fa-cogs"></i> View Details</a>
-                        </div>
 
-          @endforeach
-          </div>
+@foreach($dondata as $i => $ddata)
+  <div class="col-md-3">
+    <div class = "product-items">
+        <!-- single product -->
+        <div class = "product">
+            <div class = "product-content">
+                <div class = "product-img">
+                    <img src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Products for donation" height="200px" width="100%">
+                </div>
+            </div>
+            <div class = "product-info">
+                <div class = "product-info-top">
+                    <h2 class = "sm-title justify-text-center">Item name: {{$ddata->name}}</h2>
+                </div>
+                @if($ddata->status)
+                  <a class = "product-name">Status: {{$ddata->status}}</a>
+                  @endif
+                <p class = "product-price">Item description: {{$ddata->detail}}</p>
+                <a href="/front/donationdetail/{{$ddata->id}}" class="text-success product-name">
+                  View details </a>
+            </div> 
         </div>
+      </div>
     </div>
-      </section>
+      @endforeach  
+</div>
+</div>
+</div>
+</div>
 
 @endsection

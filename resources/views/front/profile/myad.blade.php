@@ -1,4 +1,5 @@
-<link href="{{ asset('/css/myad.css') }}" rel="stylesheet">
+{{-- <link href="{{ asset('/css/myad.css') }}" rel="stylesheet"> --}}
+<link href="{{ asset('assets/css/product_display.css') }}" rel="stylesheet">
 @extends('front.layouts.master')
 @section('content')
 <style>
@@ -10,169 +11,168 @@
         background-size: 15%;
     }
 </style>
-<div class="container flex-row mt-4">
-    <h1 class="border mb-4 heading">My Ads</h1>
-<div class="row">
-        {{-- For Sale --}}
-        <div class="col-sm offset-1 border border-info sale product-shadow">
-            <h3>For Sale</h3>
-            @foreach($saledata as $i => $sdata)
-                <div class="product-image border-bottom border-top border-success mb-4">
-                        <center>
-                        <div class="third mt-4"> 
-                            <a href="/front/profile/editproduct/{{$sdata->id}}" title="Edit Product" class="btn btn-success">
-                            <i class="fa fa-cogs"></i> Edit</a>
-                        </div>
-                        <div class="third mt-4"> 
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-                                <i class="fa fa-cogs"></i>Update product status
-                                </button>
-                                <!-- modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Update Product Status</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        
-                                    </div>
-                                    <form method="POST" action="/front/profile/markproduct/{{$sdata->id}}" class="profile-form border border-info form-shadow">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="dashboard-wrapper">
-                                        <div class="">
-                                        <select name="status" class="pl-lg-3 location form-control" id="location" required>
-                                        <option value="">Select status</option>
-                                            <option value="Available">Available</option>
-                                            <option value="Sold">Mark as Sold</option>
-                                        </select>
-                                        </div>
-                                        </div>
-                                        <div class="pl-lg-2 col-lg-10 col-8 mb-2">
-                                            <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
-                                                Update</button>
-                                        </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                </div>
-                                <!-- modal end -->
-                        </div>
-                        <div class="third mt-4"> 
-                    <a href="/front/saledetail/{{$sdata->id}}" title="Product Detail" class="btn btn-success">
-                    <i class="fa fa-cogs"></i> View Details</a>
+<!--Trial -->
+<div class = "container" style="margin-top:-50px">
+    <div class = "products">
+        <h5 class ="lg-title lead">Products for sale</h5>
+      <div class="row">
+      <!--Products for sale -->
+        @foreach($saledata as $i => $sdata)
+        <div id="saleproduct" class="col-md-3 column">
+        <div class = "product-items" style="margin-top:-50px">
+            <!-- single product -->
+            <div class = "product">
+                <div class = "product-content" style="background-color: rgb(81, 216, 176)">
+                    <div class = "product-img">
+                        <img src="{{ url('/uploads/') . '/' . $sdata->image }}" alt = "product image" height="200px" width="100%">
                     </div>
-                            
-                            <div class="product-info mx-auto d-block border">
-                                <img  height = "200px" src="{{ url('/uploads/') . '/' . $sdata->image }}" alt="Product image here" >
-                            </div>
-                            <div class="border">
-                            <label>Product name <i class="fa fa-product-hunt" aria-hidden="true"></i> :</label>
-                                <h6 class="text-primary">{{$sdata->name}}</h6>
-                            </div>
-                            <div class="border">
-                            <label>Product category <i class="fa fa-sitemap" aria-hidden="true"></i> :</label>
-                                <h6 class="text-warning">{{$sdata->categories}}</h6>
-                            </div>
-                            <div class="border">
-                            <label>Product price <i class="fa fa-money" aria-hidden="true"></i> :</label>
-                                <h6 class="text-warning">Nu.{{$sdata->price}}</h6>
-                            </div>
-                            <div class="border">
-                            <label>Product description <i class="fa fa-asterisk" aria-hidden="true"></i> :</label>
-                                <h6 class="text-warning">{{$sdata->detail}}</h6>
-                            </div>
-                            <div class="border">
-                            <label>Product location <i class="fa fa-map-marker" aria-hidden="true"></i> :</label>
-                                <h6 class="text-warning">{{$sdata->location}}</h6>
-                            </div>
-                        </center>
                 </div>
-            @endforeach
-                <!-- {{ $saledata->links() }} -->
-        </div>
-
-{{-- For donation --}}
-<div class="col-sm offset-1 border border-info donation product-shadow">
-<h3>For Donation</h3>
-@foreach($dondata as $i => $ddata)
-          <div class="product-image border-bottom border-top border-success mb-4">
-            <center>
-            <div class="third mt-4"> 
-                            <a href="/front/profile/editdonproduct/{{$ddata->id}}" title="Edit Product" class="btn btn-success">
-                            <i class="fa fa-cogs"></i> Edit</a>
-                        </div>
-                        <div class="third mt-4"> 
-                            
-                                
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampledModal">
-                                <i class="fa fa-cogs"></i>Update product status
+                <div class = "product-info">
+                    <div class = "product-info-top">
+                        <h2 class = "sm-title justify-text-center">{{$sdata->name}}</h2>
+                    </div>
+                    <a class = "product-name">Category: {{$sdata->categories}}</a>
+                    <a class = "product-name" style="color: blueviolet">Price <i class="fa fa-money" aria-hidden="true"></i> Nu.{{$sdata->price}}</a>
+                    <a class = "product-name">Detail: {{$sdata->detail}}</a>
+                    <a class = "product-name" style="color: blueviolet">Location
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i>:  
+                        {{$sdata->location}}
+                    </a>
+                    <a href="/front/saledetail/{{$sdata->id}}" class="text-success product-name">
+                      View details </a>
+                    <div class="third mt-4"> 
+                        <a href="/front/profile/editproduct/{{$sdata->id}}" title="Edit Product" class="btn btn-outline-success btn-sm">
+                        Edit product info</a>
+                    </div>
+                    <!--Product Status Update -->
+                    <div class="third mt-4"> 
+                        <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#exampleModal">
+                            Update product status
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <!--Modal -->
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update Product Status</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
                                 </button>
-                                <!-- modal -->
-                                <div class="modal fade" id="exampledModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Update Product Status</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        
-                                    </div>
-                                    <form method="POST" action="/front/profile/markdonproduct/{{$ddata->id}}" class="profile-form border border-info form-shadow">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="dashboard-wrapper">
-                                        <div class="">
-                                        <select name="status" class="pl-lg-3 location form-control" id="location" required>
-                                        <option value="">Select status</option>
-                                            <option value="Available">Available</option>
-                                            <option value="Donated">Mark as Donated</option>
-                                        </select>
-                                        </div>
-                                        </div>
-                                        <div class="pl-lg-2 col-lg-10 col-8 mb-2">
-                                            <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
-                                                Update</button>
-                                        </div>
-                                        </form>
-                                    </div>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <form method="POST" action="/front/profile/markproduct/{{$sdata->id}}" class="profile-form border border-info form-shadow">
+                                @csrf
+                                @method('PUT')
+                                <div class="dashboard-wrapper">
+                                <div class="">
+                                <select name="status" class="pl-lg-3 location form-control" id="location" required>
+                                <option value="">Select status</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Sold">Mark as Sold</option>
+                                </select>
                                 </div>
                                 </div>
-                                <!-- modal end -->
+                                <div class="pl-lg-2 col-lg-10 col-8 mb-2">
+                                    <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                                        Update</button>
+                                </div>
+                                </form>
+                            </div>
+                            <!--End of Modal -->
                         </div>
-                        <div class="third mt-4"> 
-                                          <a href="/front/donationdetail/{{$ddata->id}}" title="Product Detail" class="btn btn-success">
-                                          <i class="fa fa-cogs"></i> View Details</a>
-                                      </div>
-
-            <div class="product-info mx-auto d-block border">
-                <img  height = "200px" src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Product image here" >
+                        </div>
+                    </div>
+                    <!--End of Product Status Update -->
+                </div>
+                <div class = "off-info">
+                    <h2 class = "sm-title">{{$sdata->negotiation}}</h2>
+                </div>
             </div>
-            <div class="border">
-            <label>Item name <i class="fa fa-product-hunt" aria-hidden="true"></i> :</label>
-                <h6 class="text-primary">{{$ddata->name}}</h6>
-            </div>
-            <div class="border">
-            <label>Product description <i class="fa fa-asterisk" aria-hidden="true"></i> :</label>
-                <h6 class="text-warning">{{$ddata->detail}}</h6>
-            </div>
-            <div class="border">
-            <label>Product location <i class="fa fa-map-marker" aria-hidden="true"></i> :</label>
-                <h6 class="text-warning">{{$ddata->location}}</h6>
-            </div>
-            </center>
           </div>
-          @endforeach
-          <!-- {{ $dondata->links() }} -->
-</div>
-</div>
-</div>
+        </div>
+        @endforeach
+        </div>
+      </div>
+    </div>
 
+<div class ="products" style="margin-top: -50px">
+    <div class ="container" >
+        <h6 class ="lg-title lead">Items for donation</h6>
+    <div class="row">
+      @foreach($dondata as $i => $ddata)
+      <div class="col-md-3" >
+      <div class = "product-items" >
+          <!-- single product -->
+          <div class = "product" style="margin-top: -40px">
+              <div class = "product-content" style="background-color: rgb(81, 216, 176)">
+                  <div class = "product-img">
+                      <img src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Products for donation" height="200px" width="100%">
+                  </div>
+              </div>
+              <div class = "product-info">
+                <div class = "product-info-top">
+                    <h2 class = "sm-title justify-text-center">Item name: {{$ddata->name}}</h2>
+                </div>
+                <a class = "product-name">Location: {{$ddata->location}}</a>
+                <a class = "product-name">Details: {{$ddata->detail}}</a>
+                <a href="/front/donationdetail/{{$ddata->id}}" class="text-success product-name">
+                    View details
+                </a>
+                <div class="third mt-4"> 
+                    <a href="/front/profile/editdonproduct/{{$ddata->id}}" title="Edit Product" class="btn btn-outline-success btn-sm">
+                    Edit item</a>
+                </div>
+                <div class="third mt-4">
+                        <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#exampledModal">
+                        Update item status
+                        </button>
+                        <!-- modal -->
+                        <div class="modal fade" id="exampledModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update Product Status</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+
+                            <form method="POST" action="/front/profile/markdonproduct/{{$ddata->id}}" class="profile-form border border-info form-shadow">
+                                @csrf
+                                @method('PUT')
+                                <div class="dashboard-wrapper">
+                                <div class="">
+                                <select name="status" class="pl-lg-3 location form-control" id="location" required>
+                                <option value="">Select status</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Donated">Mark as Donated</option>
+                                </select>
+                                </div>
+                                </div>
+                                <div class="pl-lg-2 col-lg-10 col-8 mb-2">
+                                    <button type="submit" class="btn btn-info btn-lg btn-rounded" data-mdb-ripple-color="#6d721d" style="background-color:#b56912">
+                                        Update</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- modal end -->
+                </div>
+              </div>
+          </div>
+          @if($ddata->status)
+          <div class = "off-info">
+              <h2 class = "sm-title">Status: {{$ddata->status}}</h2>
+          </div>
+          @endif
+        </div>
+      </div>
+        @endforeach  
+  </div>
+  </div>
+  </div>
 @endsection

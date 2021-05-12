@@ -50,7 +50,7 @@
       <div class = "product-items">
           <!-- single product -->
           <div class = "product">
-              <div class = "product-content">
+              <div class = "product-content" style="background-color: rgb(81, 216, 176)">
                   <div class = "product-img">
                       <img src="{{ url('/uploads/') . '/' . $sdata->image }}" alt = "product image" height="200px" width="100%">
                   </div>
@@ -98,7 +98,7 @@
     <div class = "product-items">
         <!-- single product -->
         <div class = "product">
-            <div class = "product-content">
+            <div class = "product-content" style="background-color: rgb(81, 216, 176)">
                 <div class = "product-img">
                     <img src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Products for donation" height="200px" width="100%">
                 </div>
