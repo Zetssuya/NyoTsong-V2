@@ -96,15 +96,15 @@
       </div>
     </div>
 
-<div class ="products" style="margin-top: -50px">
+<div class ="products" >
     <div class ="container" >
-        <h6 class ="lg-title lead">Items for donation</h6>
+        <h6 class ="lg-title lead" style="margin-top: -60px">Items for donation</h6>
     <div class="row">
       @foreach($dondata as $i => $ddata)
       <div class="col-md-3" >
       <div class = "product-items" >
           <!-- single product -->
-          <div class = "product" style="margin-top: -40px">
+          <div class = "product" >
               <div class = "product-content" style="background-color: rgb(81, 216, 176)">
                   <div class = "product-img">
                       <img src="{{ url('/uploads/') . '/' . $ddata->image }}" alt="Products for donation" height="200px" width="100%">
