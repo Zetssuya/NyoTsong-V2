@@ -1,12 +1,17 @@
 <link href="{{ asset('/css/navbar.css') }}" rel="stylesheet">
 <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top page-header navbar-inner">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">NyoTsong : Market of Possibilities</a>
+        
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <a href="{{ url('/') }}">
+            <img src="{{ url('/assets/img/logo.png')  }}" }  alt = "product image" height="67px" width="200px"  >
+        </a>
+       
+        {{-- <a class="navbar-brand" href="{{ url('/') }}">NyoTsong : Market of Possibilities</a> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
     <li class="nav-item">
     <a class="nav-link" href="/" aria-haspopup="true" aria-expanded="false">

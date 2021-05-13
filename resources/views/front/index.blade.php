@@ -20,10 +20,10 @@
 <div class="container">
 <div class="hero-search-container">
   <div class="text-center text-md-left">
-      <h1 class="h1 font-weight-bold mb-4">NyoTsong:market of possibilities</h1>
+      <h1 class="h1 font-weight-bold mb-4">NyoTsong: <i>Market of possibilities</i></h1>
       <form class="search-box-container large" action="{{ action('Front\HomeController@searches')}}" method="POST" role="search">
 	  @csrf
-          <input placeholder="Search by product name" name="search" class="no-shadow border-0 form-control form-control-lg pac-taregt-input">
+          <input placeholder="Search by product name or category" name="search" class="no-shadow border-0 form-control form-control-lg pac-taregt-input">
           <button type="submit" class="btn button-search-box btn-round btn-success fa fa-search">
           </button>
       </form>
