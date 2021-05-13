@@ -6,7 +6,7 @@
 <!--User Profile -->
 <div class="container mt-6 d-flex justify-content-center mb-5" style="
                                                                   margin-top: 20px !important">
-  <div class="card p-4 mt-3 shadow-custom">
+  <div class="card p-4 mt-3 shadow-custom" style="background-color: #ffffff !important">
       <div class="first">
           <h6 class="heading">User info</h6>
       </div>
@@ -121,12 +121,14 @@
     }
 </style>
 <div class="container">
-    <h3 class="heading" style="color: #400a64">Ads by <strong>{{$users->name}}</strong></h3>
+    
 <div class="row">
+
         {{-- For Sale --}}
         <div class = "container">
             <div class = "products">
-                <h3 class = "lg-title" style="color: #400a64">Products for sale</h3>
+              <h3 class="heading" style="color: #400a64">Ads by <strong>{{$users->name}}</strong></h3>
+                <h6 class = "lg-title lead" style="color: #400a64">Products for sale</h6>
               <div class="row">
               <!--Products for sale -->
                 @foreach($saledata as $i => $sdata)
@@ -165,9 +167,9 @@
             </div>
 
 {{-- For donation --}}
-<div class ="products" style="margin-top: -230px">
+<div class ="products" style="margin-top: -200px">
     <div class ="container">
-      <h3 class="lg-title" style="color: #400a64">Products for donation</h3>
+      <h3 class="lg-title lead" style="color: #400a64">Products for donation</h3>
     <div class="row">
     @foreach($dondata as $i => $ddata)
     <div class="col-md-3">
