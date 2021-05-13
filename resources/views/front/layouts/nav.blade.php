@@ -32,6 +32,42 @@
     </li>
    
 
+
+
+    {{-- Post Ad --}}
+    <li class="nav-item p-0 px-md-3 nav-item-special mx-auto mx-md-0">
+    <a class="nav-link" href="{{ url('/front/postadd/postad') }}" target="_self">
+    {{-- <button class="btn btn-success" type="button"> --}}
+    <span>Post an Ad </span>
+    {{-- </button> --}}
+    </a>
+    </li>
+
+    <li class="nav-item dropdown account">
+        @if (!auth()->check())
+        <a class="nav-link" href="#"
+             data-toggle="dropdown" aria-haspopup="true">
+                <i class="fa fa-user-circle-o"></i>
+                    {{ auth()->check() ? auth()->user()->name : 'Account' }}
+                </a>
+        @else
+        <a class="nav-link" href="#"
+             data-toggle="dropdown" aria-haspopup="true">
+             <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="30" height="30">
+                    {{ auth()->check() ? auth()->user()->name : 'Account' }}
+                </a>
+        @endif
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                @if (!auth()->check())
+                    <a class="dropdown-item " href="{{  url('user/login') }}">Login</a>
+                    <a class="dropdown-item" href="{{  url('user/register') }}">Register</a>
+                @else
+                    <a class="dropdown-item" href="{{  url('/front/user/profile') }}"><i class="fa fa-user"></i> Profile</a>
+                    <hr>
+                    <a class="dropdown-item" href="{{  url('user/logout') }}"><i class="fa fa-lock"></i> Logout</a>
+                @endif
+            </div>
+    </li>
     <li class="nav-item dropdown notification">
         @if (!auth()->check())
         @else
@@ -67,41 +103,6 @@
             </div>
         @endif
             
-    </li>
-
-    {{-- Post Ad --}}
-    <li class="nav-item p-0 px-md-3 nav-item-special mx-auto mx-md-0">
-    <a class="nav-link" href="{{ url('/front/postadd/postad') }}" target="_self">
-    {{-- <button class="btn btn-success" type="button"> --}}
-    <span>Post an Ad </span>
-    {{-- </button> --}}
-    </a>
-    </li>
-
-    <li class="nav-item dropdown account">
-        @if (!auth()->check())
-        <a class="nav-link" href="#"
-             data-toggle="dropdown" aria-haspopup="true">
-                <i class="fa fa-user-circle-o"></i>
-                    {{ auth()->check() ? auth()->user()->name : 'Account' }}
-                </a>
-        @else
-        <a class="nav-link" href="#"
-             data-toggle="dropdown" aria-haspopup="true">
-             <img src="{{ url('/uploads/') . '/' . $user->image }}" class="rounded-circle" width="30" height="30">
-                    {{ auth()->check() ? auth()->user()->name : 'Account' }}
-                </a>
-        @endif
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-                @if (!auth()->check())
-                    <a class="dropdown-item " href="{{  url('user/login') }}">Login</a>
-                    <a class="dropdown-item" href="{{  url('user/register') }}">Register</a>
-                @else
-                    <a class="dropdown-item" href="{{  url('/front/user/profile') }}"><i class="fa fa-user"></i> Profile</a>
-                    <hr>
-                    <a class="dropdown-item" href="{{  url('user/logout') }}"><i class="fa fa-lock"></i> Logout</a>
-                @endif
-            </div>
     </li>
 
     </ul>

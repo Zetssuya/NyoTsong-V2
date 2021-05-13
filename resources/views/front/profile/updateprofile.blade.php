@@ -28,8 +28,8 @@
                 </div>
                 <div class = "mb-5">
                 
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-                <i class="fa fa-cogs"></i>Update Name
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
+                Update Name <i class="fa fa-user" aria-hidden="true"></i>
                 </button>
                 <!-- modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -60,10 +60,12 @@
                     </div>
                 </div>
                 </div>
+                <br>
+                <br>
                 <!-- modal end -->
 
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#emailModal">
-                <i class="fa fa-cogs"></i>Update Email
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#emailModal">
+                Update Email <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 </button>
                 <!-- modal -->
                 <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,10 +96,12 @@
                     </div>
                 </div>
                 </div>
+                <br>
+                <br>
                 <!-- modal end -->
 
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#imageModal">
-                <i class="fa fa-cogs"></i>Update Profile Image
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#imageModal">
+                Update profile photo <i class="fa fa-picture-o" aria-hidden="true"></i>
                 </button>
                 <!-- modal -->
                 <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -130,10 +134,12 @@
                     </div>
                 </div>
                 </div>
+                <br>
+                <br>
                 <!-- modal end -->
 
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#pnoModal">
-                <i class="fa fa-cogs"></i>Update Phone Number
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#pnoModal">
+                Update Phone Number <i class="fa fa-mobile" aria-hidden="true"></i>
                 </button>
                 <!-- modal -->
                 <div class="modal fade" id="pnoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -167,10 +173,12 @@
                     </div>
                 </div>
                 </div>
+                <br>
+                <br>
                 <!-- modal end -->
 
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#locModal">
-                <i class="fa fa-cogs"></i>Update Location
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#locModal">
+                Update Location <i class="fa fa-thumb-tack" aria-hidden="true"></i>
                 </button>
                 <!-- modal -->
                 <div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
