@@ -67,7 +67,7 @@
                         </div>
                         <div class="form-group">
                             <label>
-                                <input id="check_1" name="check_1"  type="checkbox" required><small> I read and agree to T&Cs</small> 
+                                <input id="check_1" name="check_1"  type="checkbox" required><small><a href="/tc"> I read and agree to T&Cs</a></small> 
                                 <div class="invalid-feedback">You must check the box.</div>
                             </label>
                         </div>

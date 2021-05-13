@@ -132,7 +132,7 @@
             <div class="tg-checkbox mb-5">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input required" value="" id="tg-agreetermsandrules" required>
-                    <label class="custom-control-label" for="tg-agreetermsandrules">I agree to all NyoTsong <a href="javascript:void(0);">Product Guidelines &amp; Conditions</a></label>
+                    <label class="custom-control-label" for="tg-agreetermsandrules"><a href="/tc">I agree to all NyoTsong Terms and Conditions</a></label>
                 </div>
             </div>
             <div>
