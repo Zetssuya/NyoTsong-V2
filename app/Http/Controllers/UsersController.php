@@ -25,6 +25,16 @@ class UsersController extends Controller
     
     public function update(Request $request, $id){
         $users = User::find($id);
+
+        $useremail = $users->email;
+        // $uemail = $this->otpemail($request, $useremail);
+        $otpemail = UserOTP::where('email', $useremail);
+        // $otpid = $otp->id;
+        // $otpemail = UserOTP::find($otpid);
+        $otpemail->email = $request->input('email');
+        // dd($otpemail->email);
+        $otpemail->update(['email' => $otpemail->email]);
+
         $users->name = $request->input('name');
         $users->email = $request->input('email');
         $users->contact_no = $request->input('contact_no');

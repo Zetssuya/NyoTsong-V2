@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                     
-                        <input type="submit" class="butt" value="Update User Account">
+                        <input type="submit" class="btn btn-success" value="Update User Account">
                         </div>
                 </form>
                                                 
