@@ -1,10 +1,10 @@
 <link href="{{ asset('/css/navbar.css') }}" rel="stylesheet">
-<nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top page-header navbar-inner">
+<nav class="navbar navbar-expand-lg fixed-top bg-light page-header navbar-inner">
     <div class="container">
         
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <a href="{{ url('/') }}">
-            <img src="{{ url('/assets/img/logo.png')  }}" }  alt = "product image" height="67px" width="200px"  >
+            <img src="{{ url('/assets/img/logo.PNG')  }}" }  alt = "product image" height="67px" width="200px"  >
         </a>
        
         {{-- <a class="navbar-brand" href="{{ url('/') }}">NyoTsong : Market of Possibilities</a> --}}
