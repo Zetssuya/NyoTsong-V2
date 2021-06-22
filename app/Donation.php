@@ -8,7 +8,7 @@ class Donation extends Model
 {
     public $table = 'donations';
 
-    protected $fillable = ['user_id','name','detail','image','location','status'];
+    protected $fillable = ['user_id','name','quantity','detail','image','location','status'];
 
     // public $timestamps = false;
 }

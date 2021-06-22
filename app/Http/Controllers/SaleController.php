@@ -46,6 +46,7 @@ class SaleController extends Controller
 
         $request->validate([
             'name' => 'required',
+            'quantity' => 'required',
             'categories' => 'required',
             'price' => 'required',
             'negotiation' => 'required',
@@ -63,6 +64,7 @@ class SaleController extends Controller
         Sale::create([
             'user_id' => $user_id,
             'name' => $request->name,
+            'quantity' => $request->quantity,
             'categories'=> $request->categories,
             'price' => $request->price,
             'negotiation' => $request->negotiation,

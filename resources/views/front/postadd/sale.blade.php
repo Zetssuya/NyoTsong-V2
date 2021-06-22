@@ -47,6 +47,16 @@
 
         </div>
 
+        
+        <div class="pl-lg-2 col-lg-10 col-8 mb-4">
+            <label class="form-text text-muted" required>
+                Product Quantity
+            </label>
+        <input class="form-control" name="quantity" placeholder="E.g. 1 or 2 or 10 ..." autocomplete="off" type="text" aria-label="Product name">
+        <span class="text-danger">{{$errors->first('quantity')}}</span>
+
+        </div>
+
         {{-- Select Category --}}
         <div class="pl-lg-2 col-lg-10 col-8">
             <label class="form-text text-muted">

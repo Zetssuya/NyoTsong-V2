@@ -39,6 +39,14 @@
     <span class="text-danger">{{$errors->first('name')}}</span>
     </div>
 
+    <div class="pl-lg-2 col-lg-10 col-8 mb-4">
+        <label class="form-text text-muted">
+            Item Quantity
+        </label>
+    <input class="form-control" name="quantity" placeholder="E.g. 1 or 2 or 10 ..." type="text" autocomplete="off" aria-label="Item name" value="" required>
+    <span class="text-danger">{{$errors->first('quantity')}}</span>
+    </div>
+
     {{-- Item Details --}}
     <div class="pl-lg-2 col-lg-10 col-8 mb-4">
         <label class="form-text text-muted">

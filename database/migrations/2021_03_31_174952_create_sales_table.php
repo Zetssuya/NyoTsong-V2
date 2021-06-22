@@ -17,6 +17,7 @@ class CreateSalesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('name');
+            $table->string('quantity');
             $table->string('categories');
             $table->string('price');
             $table->string('negotiation');

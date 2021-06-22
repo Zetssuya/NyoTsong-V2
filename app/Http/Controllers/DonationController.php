@@ -43,6 +43,7 @@ class DonationController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'quantity' => 'required',
             'detail' => 'required',
             'image' => 'image|required|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'location' => 'required'
@@ -56,6 +57,7 @@ class DonationController extends Controller
         Donation::create([
             'user_id' => $user_id,
             'name' => $request->name,
+            'quantity' => $request->quantity,
             'detail' => $request->detail,
             'image' => $request->image->getClientOriginalName(),
             'location' => $request->location,
