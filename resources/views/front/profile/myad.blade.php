@@ -33,6 +33,7 @@
                     </div>
                     <a class = "product-name">Category: {{$sdata->categories}}</a>
                     <a class = "product-name" style="color: blueviolet">Price <i class="fa fa-money" aria-hidden="true"></i> Nu.{{$sdata->price}}</a>
+                    <a class = "product-name">Quantity: {{$sdata->quantity}}</a>
                     <a class = "product-name">Detail: {{$sdata->detail}}</a>
                     <a class = "product-name" style="color: blueviolet">Location
                         <i class="fa fa-location-arrow" aria-hidden="true"></i>:  
@@ -114,6 +115,7 @@
                 <div class = "product-info-top">
                     <h2 class = "sm-title justify-text-center">Item name: {{$ddata->name}}</h2>
                 </div>
+                <a class = "product-name">Quantity: {{$sdata->quantity}}</a>
                 <a class = "product-name">Location: {{$ddata->location}}</a>
                 <a class = "product-name">Details: {{$ddata->detail}}</a>
                 <a href="/front/donationdetail/{{$ddata->id}}" class="text-success product-name">

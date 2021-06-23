@@ -79,6 +79,7 @@
 						<div class = "product-info-top">
 							<h2 class = "sm-title justify-text-center">{{$sres->name}}</h2>
 						</div>
+						<a class = "product-name">Quantity: {{$sres->quantity}}</a>
 						<a class = "product-name">Nu. {{$sres->price}}</a>
 						<p class = "product-price">{{$sres->detail}}</p>
 						<a href="/front/saledetail/{{$sres->id}}" class="text-success product-name">
@@ -130,6 +131,7 @@
 							<div class = "product-info-top">
 								<h2 class = "sm-title justify-text-center">Item name: {{$dres->name}}</h2>
 							</div>
+							<a class = "product-name">Quantity {{$sres->quantity}}</a>
 							<p class = "product-price">Item description: {{$dres->detail}}</p>
 							<a href="/front/donationdetail/{{$dres->id}}" class="text-success product-name">
 							  View details </a>

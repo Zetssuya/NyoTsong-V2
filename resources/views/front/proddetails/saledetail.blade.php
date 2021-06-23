@@ -54,6 +54,8 @@
             <br>
             <label>Price <b>Nu. {{$saledata->price}}</b></label>
             <br>
+            <label>Quantity: <b>{{$saledata->quantity}}</b></label>
+            <br>
             <label>Description: <b>{{$saledata->detail}}</b></label>
             <br>      
             <label>Category: <b>{{$saledata->categories}}</b></label>

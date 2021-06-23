@@ -1,5 +1,5 @@
 <link href="{{ asset('/css/navbar.css') }}" rel="stylesheet">
-<nav class="navbar navbar-expand-lg fixed-top bg-light page-header navbar-inner">
+<nav class="navbar navbar-expand-lg fixed-top bg-light page-header navbar-inner" style="background-color:#ffffff !important">
     <div class="container">
         
     <div class="collapse navbar-collapse" id="navbarResponsive">

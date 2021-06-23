@@ -98,6 +98,8 @@
                     border-radius: 25px;">
             <label >Name: <b>{{$users->name}}</b></label>
             <br>
+            <label >Quantity: <b>{{$users->quantity}}</b></label>
+            <br>
             <label >Phone no. <b>{{$users->contact_no}}</b></label>
             <br>
             <label >Location: <b>{{$users->location}}</b></label>
